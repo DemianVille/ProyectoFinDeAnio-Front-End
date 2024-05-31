@@ -36,9 +36,6 @@ footer {
 /* Footer */
 
 .footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
   background: linear-gradient(180deg, #5c5c5cb4, #3d3d3d);
   color: #b3b3b3;
   padding: 20px 0;
