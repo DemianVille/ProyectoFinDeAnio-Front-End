@@ -1,10 +1,11 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function User() {
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <div className="container">
         <div className="row">
           <div className="col-2">
@@ -25,6 +26,7 @@ export default function User() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 export default function Product() {
   return (
@@ -36,6 +37,7 @@ export default function Product() {
           <div className="col-12 border border-dark"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

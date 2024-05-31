@@ -1,4 +1,4 @@
-div {
+/* div {
   border: 1px solid red;
 }
 header {
@@ -6,7 +6,7 @@ header {
 }
 footer {
   border: 1px solid purple;
-}
+} */
 
 /* clases provisionales */
 
@@ -26,4 +26,56 @@ footer {
 
 .buttonNav {
   border-radius: 0 7px 7px 0;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(180deg, #5c5c5cb4, #3d3d3d);
+  color: #b3b3b3;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footerList {
+  list-style: none;
+  padding: 0;
+}
+
+.footerListContact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.footerSection {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footerSectionTitle {
+  color: #eaeaea;
+}
+
+.footerLink {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.footerEnd {
+  border-top: 1px solid #333;
+  padding-top: 20px;
 }
