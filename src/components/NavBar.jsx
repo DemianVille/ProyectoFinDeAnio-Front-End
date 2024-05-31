@@ -1,59 +1,82 @@
 import React from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function NavBar() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <nav class="navbar navbar-expand bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             Navbar
           </a>
-          <div class="navbar-collapse navBar" id="navbarSupportedContent">
-            <div >
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
+          <div className="navbar-collapse navBar" id="navbarSupportedContent">
+            <div>
+              <ul className="navbar-nav mb-2">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
                     Home
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
                     Link
                   </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li className="nav-item dropdown" ref={dropdownRef}>
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    onClick={handleDropdownToggle}
+                    aria-expanded={isDropdownOpen}
                   >
                     Dropdown
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul
+                    className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
+                  >
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Action
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Another action
                       </a>
                     </li>
                     <li>
-                      <hr class="dropdown-divider" />
+                      <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a className="dropdown-item" href="#">
                         Something else here
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
                     Disabled
                   </a>
                 </li>
