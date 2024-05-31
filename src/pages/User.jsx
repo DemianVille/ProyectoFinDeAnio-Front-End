@@ -1,8 +1,10 @@
 import React from "react";
+import NavBar from "../components/NavBar";
 
 export default function User() {
   return (
     <>
+    <NavBar/>
       <div className="container">
         <div className="row">
           <div className="col-2">

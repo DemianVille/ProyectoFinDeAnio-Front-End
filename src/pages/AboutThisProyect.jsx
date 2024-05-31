@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/NavBar";
 
 export default function AboutThisProyect() {
   return (
-    <div>AboutThisProyect</div>
-  )
+    <>
+      <NavBar />
+    </>
+  );
 }
