@@ -28,10 +28,10 @@ footer {
   border-radius: 0 7px 7px 0;
 }
 
- .altura {
+.altura {
   height: 20rem;
   background-color: blueviolet;
- }
+}
 
 /* Footer */
 
@@ -81,4 +81,3 @@ footer {
   border-top: 1px solid #333;
   padding-top: 20px;
 }
-
