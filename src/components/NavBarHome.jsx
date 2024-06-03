@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBarHome() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -25,12 +26,13 @@ export default function NavBarHome() {
     <>
       <nav class="navbar navPosition navbar-expand bg-body-tertiary">
         <div class="container-fluid">
-          <div className="">
-            <img className="logotipo" src="/img/Logo.png" alt="" />
-          </div>
-          <div className="pt-3 mx-3">
-            <p>Nombre</p>
-          </div>
+          <div className=""></div>
+          <Link to={"/home"}>
+            <div className="pt-3 mx-3 d-flex">
+              <img className="logotipo" src="/img/Logo.png" alt="" />
+              <p>Nombre</p>
+            </div>
+          </Link>
 
           <div class="navbar-collapse navBarHome" id="navbarSupportedContent">
             <form class="d-flex" role="search">
