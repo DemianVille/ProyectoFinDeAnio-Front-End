@@ -25,9 +25,13 @@ export default function NavBarHome() {
     <>
       <nav class="navbar navPosition navbar-expand bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
+          <div className="">
+            <img className="logotipo" src="/img/Logo.png" alt="" />
+          </div>
+          <div className="pt-3 mx-3">
+            <p>Nombre</p>
+          </div>
+
           <div class="navbar-collapse navBarHome" id="navbarSupportedContent">
             <form class="d-flex" role="search">
               <input
@@ -59,9 +63,7 @@ export default function NavBarHome() {
                     role="button"
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
-                  >
-                    
-                  </a>
+                  ></a>
                   <ul
                     className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
                   >
@@ -71,9 +73,7 @@ export default function NavBarHome() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        
-                      </a>
+                      <a className="dropdown-item" href="#"></a>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
