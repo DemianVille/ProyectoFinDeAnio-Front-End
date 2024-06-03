@@ -39,7 +39,7 @@ export default function NavBar() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Link
+                    Categories
                   </a>
                 </li>
                 <li className="nav-item dropdown" ref={dropdownRef}>
@@ -50,19 +50,19 @@ export default function NavBar() {
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
                   >
-                    Dropdown
+                    Carrito
                   </a>
                   <ul
                     className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
                   >
                     <li>
                       <a className="dropdown-item" href="#">
-                        Action
+                        Iniciar sesion
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Another action
+                        Registro
                       </a>
                     </li>
                     <li>
@@ -70,7 +70,7 @@ export default function NavBar() {
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Something else here
+                        Sobre nosotros
                       </a>
                     </li>
                   </ul>

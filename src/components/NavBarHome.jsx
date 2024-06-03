@@ -44,12 +44,12 @@ export default function NavBarHome() {
               <ul class="navbar-nav mb-2">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">
-                    Home
+                    Iniciar Sesion
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">
-                    Link
+                    Registrarse
                   </a>
                 </li>
                 <li className="nav-item dropdown" ref={dropdownRef}>
@@ -60,19 +60,19 @@ export default function NavBarHome() {
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
                   >
-                    Dropdown
+                    
                   </a>
                   <ul
                     className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
                   >
                     <li>
                       <a className="dropdown-item" href="#">
-                        Action
+                        Politica de Privacidad
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Another action
+                        
                       </a>
                     </li>
                     <li>
@@ -80,14 +80,14 @@ export default function NavBarHome() {
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Something else here
+                        Politica de cancelacion
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" aria-disabled="true">
-                    Disabled
+                    Carrito
                   </a>
                 </li>
               </ul>
