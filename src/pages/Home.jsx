@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 
@@ -103,20 +104,39 @@ export default function Home() {
         </div>
         <div className="row">
           <div className="col-3">
-            <ul>
-              {" "}
-              <p>Categorias</p>
-              <li>Hombre</li>
-              <li>Mujer</li>
-              <li>Niño</li>
-              <li>Calzado</li>
-              <li>Merchandaising</li>
+            <ul className="unstyleList">
+              <h5>Categorias</h5>
+              <li className="filterStyle">
+                <Link className="linkLi" to={`/category`}>
+                  Hombre
+                </Link>
+              </li>
+              <li className="filterStyle">
+                <Link className="linkLi" to={`/category`}>
+                  Mujer
+                </Link>
+              </li>
+              <li className="filterStyle">
+                <Link className="linkLi" to={`/category`}>
+                  Niño
+                </Link>
+              </li>
+              <li className="filterStyle">
+                <Link className="linkLi" to={`/category`}>
+                  Calzado
+                </Link>
+              </li>
+              <li className="filterStyle">
+                <Link className="linkLi" to={`/category`}>
+                  Merchandaising
+                </Link>
+              </li>
             </ul>
-            <ul>
-              <p>Filtros</p>
-              <li>Precio</li>
-              <li>Talle</li>
-              <li>Ofertas</li>
+            <ul className="unstyleList">
+              <h5>Filtros</h5>
+              <li className="filterStyle">Precio</li>
+              <li className="filterStyle">Talle</li>
+              <li className="filterStyle">Ofertas</li>
             </ul>
           </div>
           <div className="col-9">
