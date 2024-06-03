@@ -5,7 +5,7 @@ export default function Categories() {
   return (
     <>
       <NavBar />
-      <div className="container border border-primary">
+      <div className="container body border border-primary">
         <div className="row border border-danger pt-3 pb-3">
           <div className="col-3 border border-dark ">Option 1</div>
           <div className="col-3 border border-dark">Option 2</div>

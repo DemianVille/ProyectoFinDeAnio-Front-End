@@ -6,7 +6,7 @@ export default function User() {
   return (
     <>
       <NavBar />
-      <div className="container">
+      <div className="container body">
         <div className="row">
           <div className="col-2">
             <div>Foto</div>

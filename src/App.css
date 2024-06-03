@@ -10,6 +10,15 @@ footer {
 
 /* clases provisionales */
 
+/* navBar */
+
+.navPosition{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
 .navBar {
   display: flex;
   justify-content: end;
@@ -28,6 +37,12 @@ footer {
   border-radius: 0 7px 7px 0;
 }
 
+/* body */
+
+.body{
+  margin-top: 5rem;
+}
+
 .altura {
   height: 20rem;
   background-color: blueviolet;
@@ -36,7 +51,7 @@ footer {
 /* Footer */
 
 .footer {
-  background: linear-gradient(180deg, #5c5c5cb4, #3d3d3d);
+  background-color: #3d3d3d;
   color: #b3b3b3;
   padding: 20px 0;
   text-align: center;
@@ -78,6 +93,6 @@ footer {
 }
 
 .footerEnd {
-  border-top: 1px solid #333;
+  border-top: 1px solid #646464;
   padding-top: 20px;
 }

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <NavBarHome />
-      <div className="container">
+      <div className="container body">
         <div className="row">
           <div className="d-flex justify-content-center">
             <h1>Header</h1>

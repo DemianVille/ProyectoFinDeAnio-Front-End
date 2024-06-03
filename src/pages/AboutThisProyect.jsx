@@ -6,6 +6,7 @@ export default function AboutThisProyect() {
   return (
     <>
       <NavBar />
+      <div className="container body"></div>
       <Footer />
     </>
   );

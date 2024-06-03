@@ -6,7 +6,7 @@ export default function Product() {
   return (
     <>
       <NavBar />
-      <div className="container border border-primary">
+      <div className="container body border border-primary">
         <div className="row border border-danger pt-3 pb-3 mt-3 mb-3">
           <div className="col-8 border border-dark ">
             <div class="card">

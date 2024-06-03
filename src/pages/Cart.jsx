@@ -6,7 +6,7 @@ export default function Cart() {
   return (
     <>
       <NavBar />
-      <div className="container">
+      <div className="container body">
         <div className="row">
           <div className="col-8">
             <div class="input-group mb-3">

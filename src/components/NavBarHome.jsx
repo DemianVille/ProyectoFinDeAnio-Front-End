@@ -23,7 +23,7 @@ export default function NavBarHome() {
   }, []);
   return (
     <>
-      <nav class="navbar navbar-expand bg-body-tertiary">
+      <nav class="navbar navPosition navbar-expand bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             Navbar
