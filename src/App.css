@@ -43,9 +43,11 @@ footer {
   margin-top: 5rem;
 }
 
-.altura {
+.carousel-inner {
   height: 20rem;
-  background-color: blueviolet;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 /* Footer */

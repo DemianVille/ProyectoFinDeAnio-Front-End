@@ -1,102 +1,105 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const slides = [
+    {
+      imgSrc:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/1024px-Number_1_in_green_rounded_square.svg.png",
+      captionTitle: "First slide label",
+      captionText:
+        "Some representative placeholder content for the first slide.",
+    },
+    {
+      imgSrc:
+        "https://img.freepik.com/vector-premium/3d-numero-2-dos-numero-signo-color-rojo_165488-5565.jpg",
+      captionTitle: "Second slide label",
+      captionText:
+        "Some representative placeholder content for the second slide.",
+    },
+    {
+      imgSrc:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Eo_circle_blue_number-3.svg/2048px-Eo_circle_blue_number-3.svg.png",
+      captionTitle: "Third slide label",
+      captionText:
+        "Some representative placeholder content for the third slide.",
+    },
+  ];
+
+  const nextSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <NavBarHome />
       <div className="container body">
-        <div className="row">
-          <div className="d-flex justify-content-center">
-            <h1>Header</h1>
-          </div>
+        <div className="d-flex justify-content-center">
+          <h1>Header</h1>
         </div>
-        <div className="row">
-          <div id="carouselExampleCaptions" class="carousel slide altura">
-            <div class="carousel-indicators">
+        <div id="carouselExampleCaptions" class="carousel slide altura">
+          <div class="carousel-indicators">
+            {slides.map((_, index) => (
               <button
+                key={index}
                 type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
+                onClick={() => setActiveIndex(index)}
+                className={index === activeIndex ? "active" : ""}
+                aria-current={index === activeIndex}
+                aria-label={`Slide ${index + 1}`}
               ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>
-                    Some representative placeholder content for the first slide.
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>
-                    Some representative placeholder content for the second
-                    slide.
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>
-                    Some representative placeholder content for the third slide.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            ))}
           </div>
+          <div class="carousel-inner">
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${
+                  index === activeIndex ? "active" : ""
+                }`}
+              >
+                <img src={slide.imgSrc} className="w-100" alt="..." />
+                <div className="carousel-caption top-50">
+                  <h5>{slide.captionTitle}</h5>
+                  <p>{slide.captionText}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            onClick={prevSlide}
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            onClick={nextSlide}
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div className="row">
-          <div>
-            <h2>Imagen</h2>
-            <h2>Promociones</h2>
-          </div>
+        <div>
+          <h2>Imagen</h2>
+          <h2>Promociones</h2>
         </div>
         <div className="row">
           <div className="col-3">
