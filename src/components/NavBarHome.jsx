@@ -24,13 +24,14 @@ export default function NavBarHome() {
   }, []);
   return (
     <>
-      <nav class="navbar navPosition navbar-expand bg-body-tertiary">
+      <nav class="navbar navPosition navShadow navbar-expand">
         <div class="container-fluid">
-          <div className=""></div>
-          <Link to={"/home"}>
-            <div className="pt-3 mx-3 d-flex">
-              <img className="logotipo" src="/img/Logo.png" alt="" />
-              <p>Nombre</p>
+          <Link to={"/"} className="homeInfo">
+            <div className="logoInfo">
+              <div className="logotipo">
+                <img className="logoImg" src="/img/Logo.png" alt="" />
+              </div>
+              <p className="m-0 pageName">Nombre</p>
             </div>
           </Link>
 
@@ -48,49 +49,37 @@ export default function NavBarHome() {
             </form>
             <div>
               <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
-                    Iniciar Sesion
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">
-                    Registrarse
-                  </a>
-                </li>
                 <li className="nav-item dropdown" ref={dropdownRef}>
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
+                  <p
+                    className="nav-link m-0"
                     role="button"
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
-                  ></a>
-                  <ul
-                    className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
                   >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Politica de Privacidad
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#"></a>
+                    <i class="bi bi-person-fill navIcon"></i>
+                  </p>
+                  <ul
+                    className={`dropDownPosition dropdown-menu${isDropdownOpen ? " show" : ""}`}
+                  >
+                    <li class="nav-item dropDownItem">
+                      <Link class="nav-link active" to={"/login"}>
+                        Iniciar Sesion
+                      </Link>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Politica de cancelacion
-                      </a>
+                    <li class="nav-item dropDownItem">
+                      <Link class="nav-link active" to={"/register"}>
+                        Registrarse
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">
-                    Carrito
-                  </a>
+                  <Link class="nav-link" to={"/cart"}>
+                    <i class="bi bi-basket-fill navIcon"></i>
+                  </Link>
                 </li>
               </ul>
             </div>

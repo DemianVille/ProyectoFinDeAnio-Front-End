@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -24,61 +25,52 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand bg-body-tertiary">
+      <nav className="navbar navPosition navbar-expand navShadow">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
+          <Link to={"/"} className="homeInfo">
+            <div className="logoInfo">
+              <div className="logotipo">
+                <img className="logoImg" src="/img/Logo.png" alt="" />
+              </div>
+              <p className="m-0 pageName">Nombre</p>
+            </div>
+          </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
             <div>
-              <ul className="navbar-nav mb-2">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Categories
-                  </a>
-                </li>
+              <ul class="navbar-nav mb-2">
                 <li className="nav-item dropdown" ref={dropdownRef}>
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
+                  <p
+                    className="nav-link m-0"
                     role="button"
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
                   >
-                    Carrito
-                  </a>
+                    <i class="bi bi-person-fill navIcon"></i>
+                  </p>
                   <ul
-                    className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}
+                    className={`dropDownPosition dropdown-menu${
+                      isDropdownOpen ? " show" : ""
+                    }`}
                   >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Iniciar sesion
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Registro
-                      </a>
+                    <li class="nav-item dropDownItem">
+                      <Link class="nav-link active" to={"/login"}>
+                        Iniciar Sesion
+                      </Link>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Sobre nosotros
-                      </a>
+                    <li class="nav-item dropDownItem">
+                      <Link class="nav-link active" to={"/register"}>
+                        Registrarse
+                      </Link>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled" aria-disabled="true">
-                    Disabled
-                  </a>
+                <li class="nav-item">
+                  <Link class="nav-link" to={"/cart"}>
+                    <i class="bi bi-basket-fill navIcon"></i>
+                  </Link>
                 </li>
               </ul>
             </div>

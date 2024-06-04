@@ -7,6 +7,8 @@ import User from "./pages/User";
 import Category from "./pages/Category";
 import Cart from "./pages/Cart";
 import AboutThisProyect from "./pages/AboutThisProyect";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +31,14 @@ function App() {
     {
       path: "/cart",
       element: <Cart />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
     {
       path: "/about-this-proyect",

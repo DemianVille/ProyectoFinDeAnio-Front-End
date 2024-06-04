@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [categories, setCategories] = useState([]);
+
   const slides = [
     {
       imgSrc:
@@ -41,6 +43,34 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            /*      Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
+          },
+        };
+
+        const response = await fetch(
+          `http://localhost:3000/categories`,
+          options
+        );
+        const allCategoriesObject = await response.json();
+        const newCategories = allCategoriesObject;
+        console.log(allCategoriesObject);
+
+        setCategories(newCategories);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getCategories();
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -59,7 +89,9 @@ export default function Home() {
                 key={index}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={index === activeIndex ? "active" : ""}
+                className={`styleCarrouselBars ${
+                  index === activeIndex ? "activeBar" : ""
+                }`}
                 aria-current={index === activeIndex}
                 aria-label={`Slide ${index + 1}`}
               ></button>
@@ -74,8 +106,8 @@ export default function Home() {
                 }`}
               >
                 <img src={slide.imgSrc} className="w-100" alt="..." />
-                <div className="carousel-caption top-50">
-                  <h5>{slide.captionTitle}</h5>
+                <div className="carousel-caption h-100">
+                  <h5 className="textPostition">{slide.captionTitle}</h5>
                   <p>{slide.captionText}</p>
                 </div>
               </div>
@@ -104,39 +136,23 @@ export default function Home() {
         </div>
         <div className="row">
           <div className="col-3">
-            <ul className="unstyleList">
-              <h5>Categorias</h5>
-              <li className="filterStyle">
-                <Link className="linkLi" to={`/category`}>
-                  Hombre
-                </Link>
-              </li>
-              <li className="filterStyle">
-                <Link className="linkLi" to={`/category`}>
-                  Mujer
-                </Link>
-              </li>
-              <li className="filterStyle">
-                <Link className="linkLi" to={`/category`}>
-                  Niño
-                </Link>
-              </li>
-              <li className="filterStyle">
-                <Link className="linkLi" to={`/category`}>
-                  Calzado
-                </Link>
-              </li>
-              <li className="filterStyle">
-                <Link className="linkLi" to={`/category`}>
-                  Merchandaising
-                </Link>
-              </li>
+            <h5>Categorias</h5>
+            <ul className="unstyleList p-0">
+              {categories.map((category) => {
+                return (
+                  <li className="categoryItem">
+                    <Link className="linkLi" to={`/category`}>
+                      <p className="w-100 m-0 filterStyle">{category.name}</p>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
-            <ul className="unstyleList">
-              <h5>Filtros</h5>
-              <li className="filterStyle">Precio</li>
-              <li className="filterStyle">Talle</li>
-              <li className="filterStyle">Ofertas</li>
+            <h5>Filtros</h5>
+            <ul className="unstyleList p-0">
+              <li className="filterStyle firstItem">Precio</li>
+              <li className="filterStyle ">Talle</li>
+              <li className="filterStyle lastItem">Ofertas</li>
             </ul>
           </div>
           <div className="col-9">
