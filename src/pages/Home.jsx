@@ -8,6 +8,7 @@ import Products from "../components/Products";
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const slides = [
     {
@@ -67,6 +68,28 @@ export default function Home() {
       }
     };
     getCategories();
+  }, []);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            /*      Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
+          },
+        };
+
+        const response = await fetch(`http://localhost:3000/products`, options);
+        const allProductsObject = await response.json();
+        setProducts(allProductsObject);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getProducts();
   }, []);
 
   useEffect(() => {
@@ -155,7 +178,11 @@ export default function Home() {
             </ul>
           </div>
           <div className="col-9">
-            <Products />
+            <div className="row">
+              {products.map((product) => {
+                return <Products key={product.id} id={product.id} />;
+              })}
+            </div>
           </div>
         </div>
       </div>

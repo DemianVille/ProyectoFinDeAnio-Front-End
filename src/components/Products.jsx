@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Products() {
-  const [products, setProducts] = useState([]);
+export default function Products(id) {
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getProduct = async () => {
       try {
         const options = {
           method: "GET",
@@ -16,37 +16,28 @@ export default function Products() {
           },
         };
 
-        const response = await fetch(`http://localhost:3000/products`, options);
-        const allProductsObject = await response.json();
-        const newProducts = allProductsObject;
-        console.log(allProductsObject);
-
-        setProducts(newProducts);
+        const response = await fetch(
+          `http://localhost:3000/products/${id.id}`,
+          options
+        );
+        const allProductObject = await response.json();
+        setProduct(allProductObject);
       } catch (err) {
         console.error(err);
       }
     };
-    getProducts();
+    getProduct();
   }, []);
-
   return (
-    <div className="row">
-      {products.map((product) => {
-        return (
-          <div className="col-4">
-            <div class="card">
-              <img src={product.photo} class="card-img-top" />
-              <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">{product.description}</p>
-                <Link to={"/"} className="btn btn-primary">
-                  Comprar
-                </Link>
-              </div>
-            </div>
+    <div className="col-6 my-2 col-lg-4">
+      <Link to={`/product/${id.id}`}>
+        <div class="card h-100 prodrctCard">
+          <img src={product.photo} class="card-img h-100" />
+          <div className="card-body productName">
+            <h5 className="card-title">{product.name}</h5>
           </div>
-        );
-      })}
+        </div>
+      </Link>
     </div>
   );
 }
