@@ -61,8 +61,7 @@ export default function Home() {
           options
         );
         const allCategoriesObject = await response.json();
-        const newCategories = allCategoriesObject;
-        setCategories(newCategories);
+        setCategories(allCategoriesObject);
       } catch (err) {
         console.error(err);
       }
