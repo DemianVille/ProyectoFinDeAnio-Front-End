@@ -17,7 +17,7 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/product",
+      path: "/product/:id",
       element: <Product />,
     },
     {
@@ -41,7 +41,7 @@ function App() {
       element: <Register />,
     },
     {
-      path: "/about-this-proyect",
+      path: "/about-this-project",
       element: <AboutThisProyect />,
     },
     {

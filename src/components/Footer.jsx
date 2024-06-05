@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -9,9 +10,9 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Sobre Hackflix</h4>
             <ul className="footerList">
               <li>
-                <a href="/about" className="footerLink">
+                <Link to={"/about-this-project"} className="footerLink">
                   Quiénes Somos
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="/careers" className="footerLink">
