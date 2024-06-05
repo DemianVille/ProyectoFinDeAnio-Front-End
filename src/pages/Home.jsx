@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
+import Products from "../components/Products";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -60,8 +61,6 @@ export default function Home() {
         );
         const allCategoriesObject = await response.json();
         const newCategories = allCategoriesObject;
-        console.log(allCategoriesObject);
-
         setCategories(newCategories);
       } catch (err) {
         console.error(err);
@@ -156,104 +155,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="col-9">
-            <div className="row">
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                {" "}
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Products />
           </div>
         </div>
       </div>
