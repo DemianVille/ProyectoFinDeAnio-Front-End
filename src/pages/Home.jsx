@@ -156,13 +156,17 @@ export default function Home() {
           <h2>Promociones</h2>
         </div>
         <div className="row">
-          <div className="col-3">
+          <div className="col-3 categoriesDiv">
             <h5>Categorias</h5>
             <ul className="unstyleList p-0">
               {categories.map((category) => {
                 return (
                   <li className="categoryItem">
-                    <Link className="linkLi" to={`/category`}>
+                    <Link
+                      key={category.id}
+                      className="linkLi"
+                      to={`/category/${category.id}`}
+                    >
                       <p className="w-100 m-0 filterStyle">{category.name}</p>
                     </Link>
                   </li>

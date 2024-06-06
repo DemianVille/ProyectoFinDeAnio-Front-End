@@ -25,7 +25,7 @@ function App() {
       element: <User />,
     },
     {
-      path: "/category",
+      path: "/category/:id",
       element: <Category />,
     },
     {

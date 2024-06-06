@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 
 export default function Product() {
   const [product, setProduct] = useState({});
-  const paramas = useParams();
+  const params = useParams();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -20,7 +20,7 @@ export default function Product() {
         };
 
         const response = await fetch(
-          `http://localhost:3000/products/${paramas.id}`,
+          `http://localhost:3000/products/${params.id}`,
           options
         );
         const allProductObject = await response.json();
