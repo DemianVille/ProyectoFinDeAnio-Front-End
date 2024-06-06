@@ -71,7 +71,7 @@ export default function Categories() {
           <div className="col-3 border border-dark">Optione 3</div>
           <div className="col-3 border border-dark">Optione 4</div>
         </div>
-        <div className="mt-3 mb-3">{category.name}</div>
+        <h2 className="mt-3 mb-3 text-center">{category.name}</h2>
         <div className="row border border-danger pt-3 pb-3">
           <div className="col-3 border border-dark">Option 1</div>
           <div className="col-3 border border-dark">Optione 2</div>
@@ -80,16 +80,18 @@ export default function Categories() {
         </div>
         <div className="row border border-danger pt-3 pb-3 ">
           {filterProducts.map((product) => {
-            <div className="col-3">
-              <Link to={`/product/${product.id}`}>
-                <div className="card h-100 prodrctCard">
-                  <img src={product.photo} class="card-img h-100" />
-                  <div className="card-body productName">
-                    <h5 className="card-title">{product.name}</h5>
+            return (
+              <div className="col-3 my-2">
+                <Link to={`/product/${product.id}`}>
+                  <div className="card h-100 prodrctCard">
+                    <img src={product.photo} class="card-img h-100" />
+                    <div className="card-body productName">
+                      <h5 className="card-title">{product.name}</h5>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>;
+                </Link>
+              </div>
+            );
           })}
         </div>
       </div>
