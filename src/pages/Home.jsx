@@ -144,7 +144,7 @@ export default function Home() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div className="container body">
+      <div className="container">
         <div>
           <h2>Imagen</h2>
           <h2>Promociones</h2>
