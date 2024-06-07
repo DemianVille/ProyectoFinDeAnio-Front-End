@@ -9,6 +9,7 @@ export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [direction, setDirection] = useState(null);
 
   const slides = [
     {
@@ -35,10 +36,12 @@ export default function Home() {
   ];
 
   const nextSlide = () => {
+    setDirection("next");
     setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
   const prevSlide = () => {
+    setDirection("prev");
     setActiveIndex(
       (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
     );
@@ -123,7 +126,13 @@ export default function Home() {
               <div
                 key={index}
                 className={`carousel-item ${
-                  index === activeIndex ? "active" : ""
+                  index === activeIndex
+                    ? "active"
+                    : direction === "next"
+                    ? "carousel-item-next carousel-item-left"
+                    : direction === "prev"
+                    ? "carousel-item-prev carousel-item-right"
+                    : ""
                 }`}
               >
                 <img src={slide.imgSrc} className="w-100" alt="..." />
