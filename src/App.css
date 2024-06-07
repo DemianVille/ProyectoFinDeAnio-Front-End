@@ -363,8 +363,14 @@ body {
 
 /* LogIn Btns */
 
-.ingresarBtn {
-  background-color: blue;
+.ingresarBtn,
+.crearBtn:hover {
+  background-color: #acacac;
+}
+
+.ingresarBtn,
+.crearBtn {
+  background-color: #979797;
 }
 
 .googleBtn:hover {

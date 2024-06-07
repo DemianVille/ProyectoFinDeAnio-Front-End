@@ -113,7 +113,7 @@ export default function Home() {
             ></button>
           ))}
         </div>
-        <div class="carousel-inner">
+        <div className="carousel-inner">
           {slides.map((slide, index) => (
             <div
               key={index}
