@@ -6,7 +6,7 @@ export default function Register() {
   return (
     <>
       <NavBar />
-      <div className="body container">
+      <div className="body container-fluid">
         <div className="row d-flex">
           <div className="d-flex justify-content-center col-12">
             <form>

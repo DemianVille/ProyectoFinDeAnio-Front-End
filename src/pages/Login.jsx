@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <>
       <NavBar />
-      <div className="body container">
+      <div className="body container-fluid">
         <div className="row d-flex justify-content-center">
           <div className="col-4">
             <h2 className="text-center my-3">Iniciar sesión</h2>
