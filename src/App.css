@@ -155,23 +155,6 @@ body {
   animation: slideOutRight 0.5s forwards;
 }
 
-@media (min-width: 600px) {
-  .carousel-inner {
-    height: 20rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-}
-@media (min-width: 1000px) {
-  .carousel-inner {
-    height: 40rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-}
-
 .carousel-caption {
   display: flex;
   flex-direction: column;
@@ -202,7 +185,7 @@ body {
 }
 
 .headerContainer {
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 .linkLi {

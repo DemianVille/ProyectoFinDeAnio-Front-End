@@ -95,10 +95,11 @@ export default function Home() {
   return (
     <>
       <NavBarHome />
-      <div className="headerContainer d-flex justify-content-center">
-        <h1>Header</h1>
-      </div>
-      <div id="carouselExampleCaptions" class="carousel slide altura">
+
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide altura headerContainer"
+      >
         <div class="carousel-indicators">
           {slides.map((bar, index) => (
             <button
@@ -143,6 +144,9 @@ export default function Home() {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+      </div>
+      <div className="d-flex justify-content-center">
+        <h1>Header</h1>
       </div>
       <div className="container">
         <div>
