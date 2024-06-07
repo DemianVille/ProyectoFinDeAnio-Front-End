@@ -86,13 +86,6 @@ body {
   background-color: #e4e4e444;
 }
 
-/* body */
-
-.body {
-  margin-top: 6rem;
-  min-height: 100vh;
-}
-
 /* carousel */
 
 @keyframes slideInRight {
@@ -164,7 +157,6 @@ body {
 
 .carousel-inner {
   height: 20rem;
-  border-radius: 15px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -192,6 +184,16 @@ body {
   background-color: #cac9c9;
 }
 
+/* body */
+
+.body {
+  min-height: 100vh;
+}
+
+.headerContainer {
+  margin-top: 6rem;
+}
+
 .linkLi {
   text-decoration: none;
   color: black;
@@ -208,7 +210,7 @@ body {
 
 .filterStyle {
   padding: 5px 10px;
-  /* border-bottom: solid gray 1px; */
+  border-bottom: solid gray 1px;
 }
 
 .filterStyle:hover {
@@ -272,9 +274,23 @@ body {
   cursor: pointer;
 }
 
-/* .categoriesDiv {
+.filterPosition {
+  position: relative;
+}
+
+.categoriesDiv {
   position: sticky;
-} */
+  top: 6rem;
+}
+
+.unstyleButton {
+  border: none;
+}
+
+.textStyleCard {
+  text-decoration: none;
+  color: black;
+}
 
 /* Footer */
 

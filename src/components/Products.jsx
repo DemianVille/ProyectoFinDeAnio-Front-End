@@ -30,11 +30,17 @@ export default function Products(id) {
   }, []);
   return (
     <div className="col-6 my-2 col-lg-4">
-      <Link to={`/product/${id.id}`}>
-        <div class="card h-100 prodrctCard">
-          <img src={product.photo} class="card-img h-100" />
-          <div className="card-body productName">
-            <h5 className="card-title">{product.name}</h5>
+      <Link to={`/product/${id.id}`} className="textStyleCard">
+        <div class="prodrctCard h-100">
+          <img src={product.photo} className="w-100 mb-3" />
+          <div>
+            <h5 className="text-center">{product.name}</h5>
+            <p className="text-center m-0">
+              <b>${product.price}</b>
+            </p>
+            <p className="text-center">
+              <b>Stock: {product.stock}</b>
+            </p>
           </div>
         </div>
       </Link>

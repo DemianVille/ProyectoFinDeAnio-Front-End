@@ -77,56 +77,64 @@ export default function Categories() {
         setFilterProducts(
           allProductsObject.filter((product) => product.categoryId == params.id)
         );
-        console.log(allProductsObject[0].categoryId);
         setProducts(filterProducts);
       } catch (err) {
         console.error(err);
       }
     };
     getProducts();
-  }, []);
+  }, [params.id]);
 
   return (
     <>
       <NavBar />
       <div className="container body ">
-        <div className="row pt-3 pb-3">
-          <h4 className="p-0 col-4 d-flex justify-content-evenly">
-            {categories.map((category) => {
-              return (
-                <button className="categoryItem">
-                  <Link
-                    key={category.id}
-                    className="linkLi"
-                    to={`/category/${category.id}`}
-                  >
-                    <p className="w-100 m-0 filterStyle">{category.name}</p>
-                  </Link>
-                </button>
-              );
-            })}
-            <button className="categoryItem   ">Precio</button>
-            <button className="categoryItem  ">Talle</button>
-            <button className="categoryItem  ">Ofertas</button>
-          </h4>
-          {/*  <h4 className="unstyleList p-0  col-4 d-flex justify-content-evenly">
-            <p className="filterStyle firstItem">Precio</p>
-            <p className="filterStyle ">Talle</p>
-            <p className="filterStyle lastItem">Ofertas</p>
-          </h4> */}
+        <div className="row d-flex justify-content-evenly">
+          {categories.map((category) => {
+            return (
+              <div className="col-4 p-0">
+                <Link
+                  key={category.id}
+                  className="linkLi"
+                  to={`/category/${category.id}`}
+                >
+                  <button className="styleButton w-100 p-2">
+                    {category.name}
+                  </button>
+                </Link>
+              </div>
+            );
+          })}
         </div>
         <h3 className="mt-3 mb-3 text-center">{category.name}</h3>
+        <div className="row">
+          <div className="col-4 p-0">
+            <button className="styleButton w-100 p-2">Precio</button>
+          </div>
+          <div className="col-4 p-0">
+            <button className="styleButton w-100 p-2">Talle</button>
+          </div>
+          <div className="col-4 p-0">
+            <button className="styleButton w-100 p-2">Ofertas</button>
+          </div>
+        </div>
 
-        <div className="row border border-danger pt-3 pb-3 ">
+        <div className="row pt-3 pb-3 ">
           {filterProducts.map((product) => {
             return (
               <div className="col-3 my-2">
-                <Link to={`/product/${product.id}`}>
-                  <div className="card h-100 prodrctCard">
-                    <img src={product.photo} class="card-img h-100" />
-                    <div className="card-body productName">
-                      <h5 className="card-title">{product.name}</h5>
-                    </div>
+                <Link to={`/product/${product.id}`} className="textStyleCard">
+                  <div class="prodrctCard">
+                    <img src={product.photo} className="w-100 mb-3" />
+                  </div>
+                  <div>
+                    <h5 className="text-center">{product.name}</h5>
+                    <p className="text-center m-0">
+                      <b>${product.price}</b>
+                    </p>
+                    <p className="text-center">
+                      <b>Stock: {product.stock}</b>
+                    </p>
                   </div>
                 </Link>
               </div>
