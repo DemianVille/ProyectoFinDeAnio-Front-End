@@ -89,23 +89,6 @@ export default function Categories() {
     <>
       <NavBar />
       <div className="container body ">
-        <div className="row d-flex justify-content-evenly">
-          {categories.map((category) => {
-            return (
-              <div className="col-4 p-0">
-                <Link
-                  key={category.id}
-                  className="linkLi"
-                  to={`/category/${category.id}`}
-                >
-                  <button className="styleButton w-100 p-2">
-                    {category.name}
-                  </button>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
         <h3 className="mt-3 mb-3 text-center">{category.name}</h3>
         <div className="row">
           <div className="col-4 p-0">

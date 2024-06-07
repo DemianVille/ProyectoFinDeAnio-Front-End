@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavBarHome() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [categories, setCategories] = useState([]);
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -22,6 +23,32 @@ export default function NavBarHome() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            /*      Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
+          },
+        };
+
+        const response = await fetch(
+          `http://localhost:3000/categories`,
+          options
+        );
+        const allCategoriesObject = await response.json();
+        setCategories(allCategoriesObject);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getCategories();
+  }, []);
+
   return (
     <>
       <nav className="navbar navPosition navShadow navbar-expand">
@@ -35,7 +62,10 @@ export default function NavBarHome() {
             </div>
           </Link>
 
-          <div className="navbar-collapse navBarHome" id="navbarSupportedContent">
+          <div
+            className="navbar-collapse navBarHome"
+            id="navbarSupportedContent"
+          >
             <form className="d-flex" role="search">
               <input
                 className="form-control inputNav"
@@ -43,10 +73,30 @@ export default function NavBarHome() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success buttonNav" type="submit">
+              <button
+                className="btn btn-outline-success buttonNav"
+                type="submit"
+              >
                 Search
               </button>
             </form>
+            <div className="d-flex">
+              {categories.map((category) => {
+                return (
+                  <div className="col-4 p-0">
+                    <Link
+                      key={category.id}
+                      className="linkLi"
+                      to={`/category/${category.id}`}
+                    >
+                      <button className="styleButton w-100 p-2">
+                        {category.name}
+                      </button>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
             <div>
               <ul className="navbar-nav mb-2">
                 <li className="nav-item dropdown" ref={dropdownRef}>
@@ -59,7 +109,9 @@ export default function NavBarHome() {
                     <i className="bi bi-person-fill navIcon"></i>
                   </p>
                   <ul
-                    className={`dropDownPosition dropdown-menu${isDropdownOpen ? " show" : ""}`}
+                    className={`dropDownPosition dropdown-menu${
+                      isDropdownOpen ? " show" : ""
+                    }`}
                   >
                     <li className="nav-item dropDownItem">
                       <Link className="nav-link active" to={"/login"}>
