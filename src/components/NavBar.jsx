@@ -37,7 +37,7 @@ export default function NavBar() {
           </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
             <div>
-              <ul class="navbar-nav mb-2">
+              <ul className="navbar-nav mb-2">
                 <li className="nav-item dropdown" ref={dropdownRef}>
                   <p
                     className="nav-link m-0"
@@ -45,31 +45,31 @@ export default function NavBar() {
                     onClick={handleDropdownToggle}
                     aria-expanded={isDropdownOpen}
                   >
-                    <i class="bi bi-person-fill navIcon"></i>
+                    <i className="bi bi-person-fill navIcon"></i>
                   </p>
                   <ul
                     className={`dropDownPosition dropdown-menu${
                       isDropdownOpen ? " show" : ""
                     }`}
                   >
-                    <li class="nav-item dropDownItem">
-                      <Link class="nav-link active" to={"/login"}>
+                    <li className="nav-item dropDownItem">
+                      <Link className="nav-link active" to={"/login"}>
                         Iniciar Sesion
                       </Link>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
-                    <li class="nav-item dropDownItem">
-                      <Link class="nav-link active" to={"/register"}>
+                    <li className="nav-item dropDownItem">
+                      <Link className="nav-link active" to={"/register"}>
                         Registrarse
                       </Link>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to={"/cart"}>
-                    <i class="bi bi-basket-fill navIcon"></i>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/cart"}>
+                    <i className="bi bi-basket-fill navIcon"></i>
                   </Link>
                 </li>
               </ul>

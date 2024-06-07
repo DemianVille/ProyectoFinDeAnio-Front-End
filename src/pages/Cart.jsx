@@ -9,87 +9,87 @@ export default function Cart() {
       <div className="container body">
         <div className="row">
           <div className="col-8">
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
                 @
               </span>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Username"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
             </div>
 
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Recipient's username"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
               />
-              <span class="input-group-text" id="basic-addon2">
+              <span className="input-group-text" id="basic-addon2">
                 @example.com
               </span>
             </div>
 
-            <div class="mb-3">
-              <label for="basic-url" class="form-label">
+            <div className="mb-3">
+              <label for="basic-url" className="form-label">
                 Your vanity URL
               </label>
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">
                   https://example.com/users/
                 </span>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="basic-url"
                   aria-describedby="basic-addon3 basic-addon4"
                 />
               </div>
-              <div class="form-text" id="basic-addon4">
+              <div className="form-text" id="basic-addon4">
                 Example help text goes outside the input group.
               </div>
             </div>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text">$</span>
+            <div className="input-group mb-3">
+              <span className="input-group-text">$</span>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Amount (to the nearest dollar)"
               />
-              <span class="input-group-text">.00</span>
+              <span className="input-group-text">.00</span>
             </div>
 
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Username"
                 aria-label="Username"
               />
-              <span class="input-group-text">@</span>
+              <span className="input-group-text">@</span>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Server"
                 aria-label="Server"
               />
             </div>
 
-            <div class="input-group">
-              <span class="input-group-text">With textarea</span>
+            <div className="input-group">
+              <span className="input-group-text">With textarea</span>
               <textarea
-                class="form-control"
+                className="form-control"
                 aria-label="With textarea"
               ></textarea>
             </div>
           </div>
-          <div className="col-4">
+          <div classNameName="col-4">
             <h3>Resumen de compra</h3>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.

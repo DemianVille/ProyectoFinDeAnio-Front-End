@@ -123,7 +123,7 @@ export default function Categories() {
               <div className="col-3 my-2">
                 <Link to={`/product/${product.id}`}>
                   <div className="card h-100 prodrctCard">
-                    <img src={product.photo} class="card-img h-100" />
+                    <img src={product.photo} className="card-img h-100" />
                     <div className="card-body productName">
                       <h5 className="card-title">{product.name}</h5>
                     </div>

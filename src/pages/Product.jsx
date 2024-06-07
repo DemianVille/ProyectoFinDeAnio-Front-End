@@ -38,8 +38,8 @@ export default function Product() {
       <div className="container body">
         <div className="row pt-3 pb-3 mt-3 mb-3">
           <div className="col-8 ">
-            <div class="card h-100">
-              <img src={product.photo} class="card-img h-100" />
+            <div className="card h-100">
+              <img src={product.photo} className="card-img h-100" />
             </div>
           </div>
           <div className="col-4 border border-dark">

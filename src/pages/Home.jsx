@@ -106,8 +106,8 @@ export default function Home() {
         <div className="d-flex justify-content-center">
           <h1>Header</h1>
         </div>
-        <div id="carouselExampleCaptions" class="carousel slide altura">
-          <div class="carousel-indicators">
+        <div id="carouselExampleCaptions" className="carousel slide altura">
+          <div className="carousel-indicators">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -121,7 +121,7 @@ export default function Home() {
               ></button>
             ))}
           </div>
-          <div class="carousel-inner">
+          <div className="carousel-inner">
             {slides.map((slide, index) => (
               <div
                 key={index}
@@ -144,20 +144,20 @@ export default function Home() {
             ))}
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             onClick={prevSlide}
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             onClick={nextSlide}
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
         <div>
