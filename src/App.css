@@ -139,7 +139,7 @@ body {
 
 .filterStyle {
   padding: 5px 10px;
-  border-bottom: solid gray 1px;
+  /* border-bottom: solid gray 1px; */
 }
 
 .filterStyle:hover {
