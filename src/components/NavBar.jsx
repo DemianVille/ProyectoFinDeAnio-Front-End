@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [categories, setCategories] = useState([]);
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -23,6 +24,31 @@ export default function NavBar() {
     };
   }, []);
 
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            /*      Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
+          },
+        };
+
+        const response = await fetch(
+          `http://localhost:3000/categories`,
+          options
+        );
+        const allCategoriesObject = await response.json();
+        setCategories(allCategoriesObject);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getCategories();
+  }, []);
+
   return (
     <>
       <nav className="navbar navPosition navbar-expand navShadow">
@@ -36,6 +62,23 @@ export default function NavBar() {
             </div>
           </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
+            <div className="d-flex">
+              {categories.map((category) => {
+                return (
+                  <div className="col-4 p-0">
+                    <Link
+                      key={category.id}
+                      className="linkLi"
+                      to={`/category/${category.id}`}
+                    >
+                      <button className="styleButton w-100 p-2">
+                        {category.name}
+                      </button>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
             <div>
               <ul className="navbar-nav mb-2">
                 <li className="nav-item dropdown" ref={dropdownRef}>
