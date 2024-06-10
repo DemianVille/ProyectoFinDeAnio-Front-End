@@ -183,6 +183,15 @@ body {
   text-overflow: ellipsis; */
 }
 
+.styleButton {
+  border: none;
+}
+
+.categoryPosition {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .unstyleList {
   list-style: none;
   border-radius: 10px;
@@ -263,10 +272,6 @@ body {
 .categoriesDiv {
   position: sticky;
   top: 6rem;
-}
-
-.unstyleButton {
-  border: none;
 }
 
 .textStyleCard {

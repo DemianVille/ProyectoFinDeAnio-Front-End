@@ -62,10 +62,10 @@ export default function NavBar() {
             </div>
           </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
-            <div className="d-flex">
+            <div className="categoryPosition w-100">
               {categories.map((category) => {
                 return (
-                  <div className="col-4 p-0">
+                  <div>
                     <Link
                       key={category.id}
                       className="linkLi"
