@@ -187,6 +187,10 @@ body {
   border: none;
 }
 
+.styleButton:hover {
+  border-bottom: #000000 solid 1px;
+}
+
 .categoryPosition {
   display: flex;
   justify-content: space-evenly;
