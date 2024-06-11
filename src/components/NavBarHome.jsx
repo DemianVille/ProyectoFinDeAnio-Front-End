@@ -83,7 +83,7 @@ export default function NavBarHome() {
             <div className="categoryPosition w-100">
               {categories.map((category) => {
                 return (
-                  <div>
+                  <div className="mx-4">
                     <Link
                       key={category.id}
                       className="linkLi"
