@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
@@ -9,6 +10,10 @@ export default function Categories() {
   const [category, setCategory] = useState({});
   const params = useParams();
   const [filterProducts, setFilterProducts] = useState([]);
+
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
 
   useEffect(() => {
     const getCategory = async () => {
@@ -107,17 +112,17 @@ export default function Categories() {
             return (
               <div className="col-3 my-2">
                 <Link to={`/product/${product.id}`} className="textStyleCard">
-                  <div className="prodrctCard">
-                    <img src={product.photo} className="w-100 mb-3" />
-                  </div>
-                  <div>
-                    <h5 className="text-center">{product.name}</h5>
-                    <p className="text-center m-0">
-                      <b>${product.price}</b>
-                    </p>
-                    <p className="text-center">
-                      <b>Stock: {product.stock}</b>
-                    </p>
+                  <div className="prodrctCard p-1">
+                    <img src={product.photo} className="w-100 mb-3 cardImg" />
+                    <div>
+                      <h5 className="text-center">{product.name}</h5>
+                      <p className="text-center m-0">
+                        <b>${product.price}</b>
+                      </p>
+                      <p className="text-center">
+                        <b>Stock: {product.stock}</b>
+                      </p>
+                    </div>
                   </div>
                 </Link>
               </div>
@@ -125,6 +130,7 @@ export default function Categories() {
           })}
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );

@@ -1,9 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 export default function Register() {
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
+
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,7 +39,11 @@ export default function Register() {
     <>
       <NavBar />
       <div className="body d-flex justify-content-center">
-        <form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
           <div className="text-center mb-2">
             <h2>Registro</h2>
           </div>
@@ -146,13 +155,14 @@ export default function Register() {
             <button
               type="submit"
               className="btn mt-2 w-100 crearBtn"
-              onClick={() => {}}
+              onClick={notify}
             >
               Crear cuenta
             </button>
           </div>
         </form>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );

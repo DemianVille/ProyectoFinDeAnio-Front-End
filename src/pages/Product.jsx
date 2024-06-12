@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
@@ -7,6 +8,10 @@ export default function Product() {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const params = useParams();
+
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
 
   const addQty = () => {
     setQuantity(quantity + 1);
@@ -61,13 +66,13 @@ export default function Product() {
             <div>
               <p>Colors -</p>
               <div className="d-flex">
-                <div className="col-3 colorStyle">
+                <div className="col-3 colorStyle" onClick={notify}>
                   <div className="color1"></div>
                 </div>
-                <div className="col-3 colorStyle">
+                <div className="col-3 colorStyle" onClick={notify}>
                   <div className="color2"></div>
                 </div>
-                <div className="col-3 colorStyle">
+                <div className="col-3 colorStyle" onClick={notify}>
                   <div className="color3"></div>
                 </div>
               </div>
@@ -94,13 +99,13 @@ export default function Product() {
                 </button>
               </div>
             </div>
-            <button className="mt-4 w-100 addToCart">
+            <button className="mt-4 w-100 addToCart" onClick={notify}>
               <b>Añadir al carro</b>
             </button>
           </div>
         </div>
-        <div className="row"></div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );

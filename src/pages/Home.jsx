@@ -1,15 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [direction, setDirection] = useState(null);
+
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
 
   const slides = [
     {
@@ -39,31 +42,6 @@ export default function Home() {
       (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
     );
   };
-
-  useEffect(() => {
-    const getCategories = async () => {
-      try {
-        const options = {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            /*      Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
-          },
-        };
-
-        const response = await fetch(
-          `http://localhost:3000/categories`,
-          options
-        );
-        const allCategoriesObject = await response.json();
-        setCategories(allCategoriesObject);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getCategories();
-  }, []);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -158,9 +136,15 @@ export default function Home() {
             <div className="categoriesDiv">
               <h5>Filtros</h5>
               <ul className="unstyleList p-0">
-                <li className="filterStyle firstItem">Precio</li>
-                <li className="filterStyle ">Talle</li>
-                <li className="filterStyle lastItem">Ofertas</li>
+                <li className="filterStyle firstItem" onClick={notify}>
+                  Precio
+                </li>
+                <li className="filterStyle" onClick={notify}>
+                  Talle
+                </li>
+                <li className="filterStyle lastItem" onClick={notify}>
+                  Ofertas
+                </li>
               </ul>
             </div>
           </div>
@@ -173,6 +157,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );

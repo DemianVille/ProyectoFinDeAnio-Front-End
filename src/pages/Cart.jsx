@@ -1,14 +1,19 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function Cart() {
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
+
   return (
     <>
       <NavBar />
-      <div className="container-fluid body">
-        <div className="row d-flex">
-          <div className="col-8 justify-content-center">
+      <div className="container body">
+        <div className="row">
+          <div className="col-8">
             <h2 className="text-center my-3">Carrito</h2>
             <form>
               <div className="mb-3">
@@ -107,6 +112,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );

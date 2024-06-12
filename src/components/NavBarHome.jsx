@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,6 +7,10 @@ export default function NavBarHome() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [categories, setCategories] = useState([]);
+
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -66,7 +71,13 @@ export default function NavBarHome() {
             className="navbar-collapse navBarHome"
             id="navbarSupportedContent"
           >
-            <form className="d-flex" role="search">
+            <form
+              className="d-flex"
+              role="search"
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
               <input
                 className="form-control inputNav"
                 type="search"
@@ -76,6 +87,7 @@ export default function NavBarHome() {
               <button
                 className="btn btn-outline-success buttonNav"
                 type="submit"
+                onClick={notify}
               >
                 Search
               </button>
@@ -138,6 +150,7 @@ export default function NavBarHome() {
           </div>
         </div>
       </nav>
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

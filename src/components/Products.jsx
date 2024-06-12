@@ -31,8 +31,8 @@ export default function Products(id) {
   return (
     <div className="col-6 my-2 col-lg-4">
       <Link to={`/product/${id.id}`} className="textStyleCard">
-        <div className="prodrctCard h-100">
-          <img src={product.photo} className="w-100 mb-3" />
+        <div className="prodrctCard p-1 h-100">
+          <img src={product.photo} className="w-100 mb-3 cardImg" />
           <div>
             <h5 className="text-center">{product.name}</h5>
             <p className="text-center m-0">

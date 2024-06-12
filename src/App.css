@@ -198,30 +198,19 @@ body {
 
 .unstyleList {
   list-style: none;
-  border-radius: 10px;
-  background-color: white;
-  border: 1px solid gray;
 }
 
 .filterStyle {
-  padding: 5px 10px;
-  border-bottom: solid gray 1px;
+  padding: 15px 10px;
+  border-bottom: solid rgb(192, 192, 192) 1px;
 }
 
 .filterStyle:hover {
-  background-color: #e6e6e6;
-}
-
-.firstItem:hover {
-  border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
 
 .lastItem {
   border-bottom: none;
-}
-
-.lastItem:hover {
-  border-radius: 0 0 10px 10px;
 }
 
 .prodrctCard {
@@ -233,9 +222,13 @@ body {
 }
 
 .prodrctCard:hover {
-  background-color: #e2e2e2;
+  background-color: rgba(97, 238, 191, 0.288);
   z-index: 2;
   cursor: pointer;
+}
+
+.cardImg{
+  border-radius: 10px 10px 0 0;
 }
 
 .filterPosition {

@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import AboutThisProyect from "./pages/AboutThisProyect";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const router = createBrowserRouter([
