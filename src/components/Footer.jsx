@@ -7,7 +7,15 @@ export default function Footer() {
       <div className="container">
         <div className="footerInfo">
           <div className="footerSection">
-            <h4 className="footerSectionTitle">Sobre Hackflix</h4>
+            <h4 className="footerSectionTitle">
+              Sobre{" "}
+              <img
+                className="logoFooter pb-1"
+                src="/public/img/Logo.png"
+                alt="Facebook Logo"
+              />{" "}
+              Nombre
+            </h4>
             <ul className="footerList">
               <li>
                 <Link to={"/about-this-project"} className="footerLink">
@@ -15,13 +23,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/careers" className="footerLink">
-                  Carreras
-                </a>
-              </li>
-              <li>
                 <a href="/press" className="footerLink">
-                  Prensa
+                  Sobre este proyecto
                 </a>
               </li>
               <li>
@@ -81,16 +84,31 @@ export default function Footer() {
             <ul className="footerListContact">
               <li>
                 <a href="https://facebook.com/hackflix" className="footerLink">
+                  <img
+                    className="pb-1"
+                    src="/src/assets/facebookLogo.svg"
+                    alt="Facebook Logo"
+                  />{" "}
                   Facebook
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/hackflix" className="footerLink">
+                  <img
+                    className="pb-1"
+                    src="/src/assets/twitterLogo.svg"
+                    alt="Facebook Logo"
+                  />{" "}
                   Twitter
                 </a>
               </li>
               <li>
                 <a href="https://instagram.com/hackflix" className="footerLink">
+                  <img
+                    className="pb-1"
+                    src="/src/assets/instagramLogo.svg"
+                    alt="Facebook Logo"
+                  />{" "}
                   Instagram
                 </a>
               </li>
@@ -98,8 +116,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footerEnd">
-          <p>&copy; 2024 Hackflix. Todos los derechos reservados.</p>
-          <p>Desarrollado por Hackflix Team</p>
+          <p>© 2024 Nombre. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
