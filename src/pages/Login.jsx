@@ -21,8 +21,8 @@ export default function Login() {
                 event.preventDefault();
               }}
             >
-              <div className="row d-flex">
-                <div className="col-12 justify-content-center">
+              <div className="row d-flex justify-content-center">
+                <div className="col-12">
                   <div className="mb-3">
                     <label for="email" className="form-label">
                       Correo

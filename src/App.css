@@ -317,9 +317,13 @@ body {
 
 /* Footer */
 
+.logoFooter {
+  width: 20px;
+}
+
 .footer {
-  background-color: #3d3d3d;
-  color: #b3b3b3;
+  background-color: rgba(97, 238, 191, 0.568);
+  color: #000;
   padding: 20px 0;
   text-align: center;
   font-size: 14px;
@@ -351,12 +355,16 @@ body {
 }
 
 .footerSectionTitle {
-  color: #eaeaea;
+  color: #000;
 }
 
 .footerLink {
-  color: #b3b3b3;
+  color: #505050;
   text-decoration: none;
+}
+
+.footerLink:hover {
+  border-bottom: 1px solid #505050;
 }
 
 .footerEnd {
@@ -386,14 +394,14 @@ body {
 
 /* LogIn Btns */
 
-.ingresarBtn,
+.ingresarBtn:hover,
 .crearBtn:hover {
-  background-color: #acacac;
+  background-color: rgba(114, 221, 185, 0.568);
 }
 
 .ingresarBtn,
 .crearBtn {
-  background-color: #979797;
+  background-color: rgba(97, 238, 191, 0.568);
 }
 
 .googleBtn:hover {
