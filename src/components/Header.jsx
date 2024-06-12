@@ -9,16 +9,14 @@ export default function Header() {
     {
       imgSrc:
         "https://www.sodanca.com/cdn/shop/files/Tiler2-banner.jpg?v=1717042733&width=2400",
-      captionTitle: "First slide label",
-      captionText:
-        "Some representative placeholder content for the first slide.",
+      captionTitle: "TILER PECK",
+      captionText: "Revisa la colección Tiler Peck en nombre ahora",
     },
     {
       imgSrc:
         "https://www.sodanca.com/cdn/shop/files/kya-socks-details.jpg?v=1715798267&width=2400",
-      captionTitle: "Second slide label",
-      captionText:
-        "Some representative placeholder content for the second slide.",
+      captionTitle: "TILER PECK",
+      captionText: "Revisa la colección Tiler Peck en nombre ahora",
     },
   ];
 
@@ -74,8 +72,12 @@ export default function Header() {
             >
               <img src={slide.imgSrc} className="w-100" alt="..." />
               <div className="carousel-caption h-100">
-                <h5 className="textPostition">{slide.captionTitle}</h5>
-                <p>{slide.captionText}</p>
+                <p className="textPostition headerBrand">Nueva marca</p>
+                <h5 className="textPostition headerTitle">
+                  {slide.captionTitle}
+                </h5>
+                <p className="textPostition headerText">{slide.captionText}</p>
+                <button className="headerBtn">TILER PECK</button>
               </div>
             </div>
           ))}

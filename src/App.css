@@ -1,3 +1,7 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
   background-color: #f1f1f1;
 }
@@ -147,10 +151,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.textPostition {
-  margin-top: 250px;
+  align-items: baseline;
 }
 
 .styleCarrouselBars {
@@ -163,6 +164,13 @@ body {
 .activeBar {
   border: 1px solid rgb(173, 173, 173);
   background-color: #cac9c9;
+}
+
+.headerBtn {
+  border: none;
+  background-color: rgb(97, 238, 191);
+  padding: 10px 30px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* body */
