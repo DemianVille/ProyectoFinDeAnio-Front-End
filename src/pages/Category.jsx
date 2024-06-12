@@ -112,7 +112,7 @@ export default function Categories() {
             return (
               <div className="col-3 my-2">
                 <Link to={`/product/${product.id}`} className="textStyleCard">
-                  <div className="prodrctCard p-1">
+                  <div className="productCard p-1">
                     <img src={product.photo} className="w-100 mb-3 cardImg" />
                     <div>
                       <h5 className="text-center">{product.name}</h5>
