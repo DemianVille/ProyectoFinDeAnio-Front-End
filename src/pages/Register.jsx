@@ -47,7 +47,7 @@ export default function Register() {
               }}
             >
               <div className="text-center mb-2">
-                <h2>Registro</h2>
+                <h2>Registrarse</h2>
               </div>
               <div className=" mb-3">
                 <label for="username" className="form-label">
