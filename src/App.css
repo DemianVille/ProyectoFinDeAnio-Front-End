@@ -213,7 +213,7 @@ body {
   border-bottom: none;
 }
 
-.prodrctCard {
+.productCard {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -221,13 +221,12 @@ body {
   z-index: 1;
 }
 
-.prodrctCard:hover {
+.productCard:hover {
   background-color: rgba(97, 238, 191, 0.288);
-  z-index: 2;
   cursor: pointer;
 }
 
-.cardImg{
+.cardImg {
   border-radius: 10px 10px 0 0;
 }
 
