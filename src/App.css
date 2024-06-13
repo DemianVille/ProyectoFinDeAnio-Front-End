@@ -258,6 +258,26 @@ body {
   font-size: 50px;
 }
 
+/* Checkout */
+
+.cheackoutBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.returnToCart {
+  border: none;
+  padding: 20px 0;
+}
+
+.continueShoping {
+  background-color: black;
+  border-radius: 7px;
+  color: white;
+  border: none;
+  padding: 20px;
+}
+
 /* Product */
 
 .colorStyle {
