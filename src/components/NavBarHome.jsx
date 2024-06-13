@@ -81,7 +81,7 @@ export default function NavBarHome() {
               <input
                 className="form-control inputNav"
                 type="search"
-                placeholder="Search"
+                placeholder="Buscar"
                 aria-label="Search"
               />
               <button
@@ -89,7 +89,7 @@ export default function NavBarHome() {
                 type="submit"
                 onClick={notify}
               >
-                Search
+                <i class="bi bi-search"></i>
               </button>
             </form>
             <div className="categoryPosition w-100">
