@@ -73,7 +73,8 @@ body {
 
 .inputNav {
   border-radius: 7px 0 0 7px;
-  border-color: rgb(0, 0, 0, 0.5);
+  border: solid rgb(0, 0, 0, 0.5) 1px;
+  border-right: none;
 }
 
 .buttonNav {

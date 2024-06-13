@@ -63,12 +63,12 @@ export default function NavBarHome() {
               <div className="logotipo">
                 <img className="logoImg" src="/img/Logo.png" alt="" />
               </div>
-              <p className="m-0 pageName">Nombre</p>
+              <p className="m-0 pageName px-3">Nombre</p>
             </div>
           </Link>
 
           <div
-            className="navbar-collapse navBarHome"
+            className="navbar-collapse navBarHome px-3"
             id="navbarSupportedContent"
           >
             <form
@@ -79,8 +79,8 @@ export default function NavBarHome() {
               }}
             >
               <input
-                className="form-control inputNav"
-                type="search"
+                className="inputNav"
+                type="text"
                 placeholder="Buscar"
                 aria-label="Search"
               />
