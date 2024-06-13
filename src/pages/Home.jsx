@@ -41,30 +41,34 @@ export default function Home() {
       <Header />
       <div className="container mt-2">
         <div className="row">
-          <div className="d-flex justyfy-content-center mb-5">
-            <div className="col-6 ">
+          <div className="d-flex justify-content-evenly mt-5">
+            <div className="col-6 px-2">
               <img
-                className="subportada"
+                className="subportada "
                 src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
                 alt=""
               />
             </div>
-            <div className="col-6">
+            <div className="col-6 px-2">
               <img
-                className="subportada mx-3"
+                className="subportada "
                 src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
                 alt=""
               />
             </div>
           </div>
 
-          <div className="mt-5 mb-5 mx-2">
-            <div>
-              <img
-                className=" portada2"
-                src="https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400"
-                alt=""
-              />{" "}
+          <div className="d-flex justify-content-center mt-5 mb-5 backportada">
+            
+            <div className="alineado text-center">
+              <h2 className="mt-5 mb-5">
+                {" "}
+                <strong>IDEALES PARA TI!</strong>
+              </h2>
+              <p className="mb-5">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              </p>
+              <button className="headerBtn mb-5">CUSTOM TAP</button>
             </div>
           </div>
         </div>
