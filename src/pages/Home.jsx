@@ -40,9 +40,33 @@ export default function Home() {
       <NavBarHome />
       <Header />
       <div className="container mt-2">
-        <div>
-          <h2>Imagen</h2>
-          <h2>Promociones</h2>
+        <div className="row">
+          <div className="d-flex justyfy-content-center mb-5">
+            <div className="col-6 ">
+              <img
+                className="subportada"
+                src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
+                alt=""
+              />
+            </div>
+            <div className="col-6">
+              <img
+                className="subportada mx-3"
+                src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="mt-5 mb-5 mx-2">
+            <div>
+              <img
+                className=" portada2"
+                src="https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400"
+                alt=""
+              />{" "}
+            </div>
+          </div>
         </div>
         <div className="row filterPosition">
           <div className="col-3">
