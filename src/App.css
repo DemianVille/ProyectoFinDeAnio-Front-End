@@ -492,3 +492,26 @@ body {
 .alineado {
   flex-wrap: wrap;
 }
+
+/* Cart */
+
+.continueShopping:hover {
+  border-bottom: solid #000 1px;
+}
+
+.continueShopping {
+  text-decoration: none;
+  color: black;
+}
+
+.cartProdImg {
+  width: 180px;
+}
+
+.comprarBtn:hover {
+  background-color: rgba(114, 221, 185, 0.568);
+}
+
+.comprarBtn {
+  background-color: rgba(97, 238, 191, 0.568);
+}
