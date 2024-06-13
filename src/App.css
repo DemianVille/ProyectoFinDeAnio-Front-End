@@ -3,14 +3,14 @@
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 
 /* navBar */
 
 .navShadow {
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 }
 
 .navPosition {
@@ -193,6 +193,7 @@ body {
 
 .styleButton {
   border: none;
+  background-color: transparent;
 }
 
 .styleButton:hover {
@@ -479,4 +480,3 @@ body {
 .alineado {
   flex-wrap: wrap;
 }
-
