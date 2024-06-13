@@ -3,14 +3,14 @@
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 
 /* navBar */
 
 .navShadow {
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 }
 
 .navPosition {
@@ -58,12 +58,23 @@ body {
   justify-content: space-between;
 }
 
+.btn-outline-success {
+  color: rgba(0, 0, 0, 0.5);
+  border-color: rgb(0, 0, 0, 0.5);
+}
+
+.btn-outline-success:hover {
+  background-color: rgb(0, 0, 0);
+}
+
 .navIcon {
   font-size: 2rem;
 }
 
 .inputNav {
   border-radius: 7px 0 0 7px;
+  border: solid rgb(0, 0, 0, 0.5) 1px;
+  border-right: none;
 }
 
 .buttonNav {
@@ -193,6 +204,7 @@ body {
 
 .styleButton {
   border: none;
+  background-color: transparent;
 }
 
 .styleButton:hover {
@@ -256,6 +268,26 @@ body {
 
 .categoryName {
   font-size: 50px;
+}
+
+/* Checkout */
+
+.cheackoutBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.returnToCart {
+  border: none;
+  padding: 20px 0;
+}
+
+.continueShoping {
+  background-color: black;
+  border-radius: 7px;
+  color: white;
+  border: none;
+  padding: 20px;
 }
 
 /* Product */
@@ -449,9 +481,15 @@ body {
   width: 100%;
 }
 
-.portada2 {
+.backportada {
+  background-image: url(https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400);
   width: 100%;
   height: 100%;
+  color: white;
+}
+
+.alineado {
+  flex-wrap: wrap;
 }
 
 /* Cart */
