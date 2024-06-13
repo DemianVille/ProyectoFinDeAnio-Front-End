@@ -235,7 +235,7 @@ body {
 }
 
 .cardImg {
-  border-radius: 10px 10px 0 0;
+  border-radius: 7px 7px 0 0;
 }
 
 .filterPosition {
@@ -250,6 +250,12 @@ body {
 .textStyleCard {
   text-decoration: none;
   color: black;
+}
+
+/* Category */
+
+.categoryName {
+  font-size: 50px;
 }
 
 /* Product */

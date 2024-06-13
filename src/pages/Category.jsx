@@ -6,7 +6,6 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 export default function Categories() {
-  const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState({});
   const params = useParams();
   const [filterProducts, setFilterProducts] = useState([]);
@@ -93,41 +92,58 @@ export default function Categories() {
   return (
     <>
       <NavBar />
-      <div className="container body ">
-        <h3 className="mt-3 mb-3 text-center">{category.name}</h3>
+      <div className="body px-5">
+        <h1 className="my-3 text-center categoryName">{category.name}</h1>
         <div className="row">
-          <div className="col-4 p-0">
-            <button className="styleButton w-100 p-2">Precio</button>
+          <div className="col-3 p-0">
+            <div className="categoriesDiv">
+              <h5>Filtros</h5>
+              <ul className="unstyleList p-0">
+                <li className="filterStyle firstItem" onClick={notify}>
+                  Precio
+                </li>
+                <li className="filterStyle" onClick={notify}>
+                  Talle
+                </li>
+                <li className="filterStyle lastItem" onClick={notify}>
+                  Ofertas
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="col-4 p-0">
-            <button className="styleButton w-100 p-2">Talle</button>
-          </div>
-          <div className="col-4 p-0">
-            <button className="styleButton w-100 p-2">Ofertas</button>
-          </div>
-        </div>
-
-        <div className="row pt-3 pb-3 ">
-          {filterProducts.map((product) => {
-            return (
-              <div className="col-3 my-2">
-                <Link to={`/product/${product.id}`} className="textStyleCard">
-                  <div className="productCard p-1">
-                    <img src={product.photo} className="w-100 mb-3 cardImg" />
-                    <div>
-                      <h5 className="text-center">{product.name}</h5>
-                      <p className="text-center m-0">
-                        <b>${product.price}</b>
-                      </p>
-                      <p className="text-center">
-                        <b>Stock: {product.stock}</b>
-                      </p>
-                    </div>
+          <div className="col-9 pt-3 pb-3 ">
+            <div className="productsInfo">
+              <p className="ms-1">{filterProducts.length} productos</p>
+            </div>
+            <div className="row">
+              {filterProducts.map((product) => {
+                return (
+                  <div className="col-3 my-2">
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="textStyleCard"
+                    >
+                      <div className="productCard p-1">
+                        <img
+                          src={product.photo}
+                          className="w-100 mb-3 cardImg"
+                        />
+                        <div>
+                          <h5 className="text-center">{product.name}</h5>
+                          <p className="text-center m-0">
+                            <b>${product.price}</b>
+                          </p>
+                          <p className="text-center">
+                            <b>Stock: {product.stock}</b>
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
       <ToastContainer position="top-right" autoClose={3000} />

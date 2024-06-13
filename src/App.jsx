@@ -4,11 +4,12 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import User from "./pages/User";
 import Category from "./pages/Category";
-import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import AboutThisProyect from "./pages/AboutThisProyect";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "react-toastify/dist/ReactToastify.css";
+import Cart from "./pages/Cart";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ function App() {
     {
       path: "/category/:id",
       element: <Category />,
+    },
+    {
+      path: "/checkout",
+      element: <Checkout />,
     },
     {
       path: "/cart",
