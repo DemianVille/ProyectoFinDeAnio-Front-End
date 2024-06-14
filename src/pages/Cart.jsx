@@ -35,7 +35,9 @@ export default function Cart() {
           <div className="col-12 d-flex justify-content-space-between">
             <span>Total:</span>
             <span>$35</span>
-            <button className="comprarBtn w-100 btn">Comprar</button>
+            <Link className="w-100" to={"/checkout"}>
+              <button className="comprarBtn w-100 btn">Comprar</button>
+            </Link>
           </div>
           <input class="form-check-input mt-0" type="checkbox" />{" "}
           <span>Envolver para regalo</span>
