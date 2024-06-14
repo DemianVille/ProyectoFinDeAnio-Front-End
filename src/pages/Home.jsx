@@ -39,7 +39,6 @@ export default function Home() {
     <>
       <NavBarHome />
       <Header />
-      <div className="container mt-2">
         <div className="d-flex justify-content-evenly mt-5">
           <div className="px-2">
             <img
@@ -56,11 +55,9 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
-      <div className="d-flex justify-content-center mt-5 mb-5 backportada">
+      <div className="d-flex justify-content-center mt-5 mb-5 backportada ">
         <div className="alineado text-center">
           <h2 className="mt-5 mb-5">
-            {" "}
             <strong>IDEALES PARA TI!</strong>
           </h2>
           <p className="mb-5">
@@ -71,7 +68,7 @@ export default function Home() {
       </div>
       <div className="container">
         <div className="row filterPosition">
-          <div className="col-3">
+          <div className="col-3 fontFlamenco">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
               <ul className="unstyleList p-0">

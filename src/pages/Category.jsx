@@ -93,12 +93,12 @@ export default function Categories() {
     <>
       <NavBar />
       <div className="body px-5">
-        <h1 className="my-3 text-center categoryName">{category.name}</h1>
+        <h1 className="my-3 text-center categoryName fontFlamenco">{category.name}</h1>
         <div className="row">
           <div className="col-3 p-0">
-            <div className="categoriesDiv">
+            <div className="categoriesDiv fontFlamenco">
               <h5>Filtros</h5>
-              <ul className="unstyleList p-0">
+              <ul className="unstyleList p-0 ">
                 <li className="filterStyle firstItem" onClick={notify}>
                   Precio
                 </li>

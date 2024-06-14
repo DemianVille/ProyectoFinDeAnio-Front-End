@@ -51,14 +51,14 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="navbar navPosition navbar-expand navShadow">
+      <nav className="navbar navPosition navbar-expand navShadow fontFlamenco">
         <div className="container-fluid">
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
               <div className="logotipo">
                 <img className="logoImg" src="/img/Logo.png" alt="" />
               </div>
-              <p className="m-0 pageName">Nombre</p>
+              <h2 className="m-0 pageName fontEphesis">Copéllia</h2>
             </div>
           </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
