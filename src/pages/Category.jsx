@@ -93,7 +93,9 @@ export default function Categories() {
     <>
       <NavBar />
       <div className="body px-5">
-        <h1 className="my-3 text-center categoryName fontFlamenco">{category.name}</h1>
+        <h1 className="my-3 text-center categoryName fontFlamenco">
+          {category.name}
+        </h1>
         <div className="row">
           <div className="col-3 p-0">
             <div className="categoriesDiv fontFlamenco">
@@ -113,7 +115,12 @@ export default function Categories() {
           </div>
           <div className="col-9 pt-3 pb-3 ">
             <div className="productsInfo">
-              <p className="ms-1">{filterProducts.length} productos</p>
+              <p className="ms-1 d-flex align-items-center">
+                <p className="fontRoboto productsQty me-1">
+                  {filterProducts.length}
+                </p>
+                productos
+              </p>
             </div>
             <div className="row">
               {filterProducts.map((product) => {
@@ -130,11 +137,12 @@ export default function Categories() {
                         />
                         <div>
                           <h5 className="text-center">{product.name}</h5>
-                          <p className="text-center m-0">
-                            <b>${product.price}</b>
+                          <p className="text-center m-0 fontRoboto">
+                            ${product.price}
                           </p>
-                          <p className="text-center">
-                            <b>Stock: {product.stock}</b>
+                          <p className="text-center d-flex justify-content-center">
+                            Stock:{" "}
+                            <p className="fontRoboto ms-1">{product.stock}</p>
                           </p>
                         </div>
                       </div>

@@ -58,7 +58,7 @@ export default function NavBar() {
               <div className="logotipo">
                 <img className="logoImg" src="/img/Logo.png" alt="" />
               </div>
-              <h2 className="m-0 pageName fontEphesis">Copéllia</h2>
+              <h2 className="m-0 pageName fontPlaywrite">Copéllia</h2>
             </div>
           </Link>
           <div className="navbar-collapse navBar" id="navbarSupportedContent">
@@ -68,7 +68,7 @@ export default function NavBar() {
                   <div className="mx-4">
                     <Link
                       key={category.id}
-                      className="linkLi"
+                      className="linkLi categoriesNav"
                       to={`/category/${category.id}`}
                     >
                       <button className="styleButton w-100 p-2">

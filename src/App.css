@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ephesis&family=Flamenco:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Ephesis&family=Flamenco:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&display=swap');
 
-* {
-  font-family: "Flamenco", system-ui;
-  font-size: large;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.fontEphesis {
-  font-family: "Ephesis", cursive;
-  font-weight: 400;
+.fontPlaywrite {
+  font-family: "Playwrite CO", cursive;
+  font-optical-sizing: auto;
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -19,6 +16,13 @@
   font-family: "Dongle", sans-serif;
   font-size: 25px;
   font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -227,13 +231,14 @@ body {
   background-color: transparent;
 }
 
-.styleButton:hover {
+.categoriesNav:hover {
   border-bottom: #000000 solid 1px;
 }
 
 .categoryPosition {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .unstyleList {
@@ -290,6 +295,11 @@ body {
   font-size: 50px;
 }
 
+.productsQty {
+  font-size: 15px;
+  margin: 0;
+}
+
 /* Checkout */
 
 .cheackoutBtn {
@@ -299,7 +309,8 @@ body {
 
 .returnToCart {
   border: none;
-  padding: 20px 0;
+  padding: 20px 20px 20px 0;
+  background-color: transparent;
 }
 
 .continueShoping {
@@ -375,6 +386,13 @@ body {
 }
 
 /* Footer */
+
+.fontMontserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .logoFooter {
   width: 25px;

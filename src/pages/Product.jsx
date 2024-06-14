@@ -60,7 +60,7 @@ export default function Product() {
           </div>
           <div className="col-4">
             <h2 className="mb-3">{product.name}</h2>
-            <p>${product.price}.00</p>
+            <p className="fontRoboto">${product.price}.00</p>
             <p>{product.description}</p>
             <hr />
             <div>
@@ -88,7 +88,7 @@ export default function Product() {
                 >
                   -
                 </button>
-                <p className="m-0 qtyNum">{quantity}</p>
+                <p className="m-0 qtyNum fontRoboto">{quantity}</p>
                 <button
                   className="qtyBtn"
                   onClick={() => {

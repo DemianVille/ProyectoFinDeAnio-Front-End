@@ -7,14 +7,8 @@ export default function Footer() {
       <div className="container">
         <div className="footerInfo">
           <div className="footerSection">
-            <h4 className="footerSectionTitle">
-              Sobre{" "}
-              <img
-                className="logoFooter pb-1"
-                src="/public/img/Logo.png"
-                alt="Facebook Logo"
-              />{" "}
-              Nombre
+            <h4 className="footerSectionTitle d-flex justify-content-center">
+              Sobre <h5 className="fontPlaywrite ms-1">Copéllia</h5>
             </h4>
             <ul className="footerList">
               <li>
@@ -116,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footerEnd">
-          <p>© 2024 Nombre. Todos los derechos reservados.</p>
+          <p>© 2024 Copéllia. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

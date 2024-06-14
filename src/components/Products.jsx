@@ -35,8 +35,10 @@ export default function Products(id) {
           <img src={product.photo} className="w-100 mb-3 cardImg" />
           <div>
             <h5 className="text-center fontFlamenco">{product.name}</h5>
-            <p className="text-center m-0 fontDongle">${product.price}</p>
-            <p className="text-center m-0 fontDongle">Stock: {product.stock}</p>
+            <p className="text-center m-0 fontRoboto">${product.price}</p>
+            <p className="text-center d-flex justify-content-center">
+              Stock: <p className="fontRoboto ms-1">{product.stock}</p>
+            </p>
           </div>
         </div>
       </Link>
