@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
+
 export default function Cart() {
+  const [quantity, setQuantity] = useState(1);
+
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
+  const addQty = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const resQty = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
   return (
     <>
       <NavBar />
@@ -11,7 +26,7 @@ export default function Cart() {
         <div>
           <h2>Cart</h2>
           <Link to={"/"} className="continueShopping">
-            <span>Seguir explorando</span>
+            <span>Seguir explorando <i class="bi bi-shop"></i></span>
           </Link>
         </div>
         <div className="row">
@@ -22,25 +37,48 @@ export default function Cart() {
             />
             <span>Zapatilla para hombre</span>
             <span>Color: Negro</span>
-            {/* contador */}
-            {/* Eliminar */}
+            <div className="d-flex qtyDiv">
+                <button
+                  className="qtyBtn"
+                  onClick={() => {
+                    resQty();
+                  }}
+                >
+                  -
+                </button>
+                <p className="m-0 qtyNum">{quantity}</p>
+                <button
+                  className="qtyBtn"
+                  onClick={() => {
+                    addQty();
+                  }}
+                >
+                  +
+                </button>
+              </div>
+              <button className="deleteFromCart btn" onClick={notify}><i class="bi bi-trash"></i> Eliminar</button>
           </div>
           <div className="col-6">
             <span>Precio: $35</span>
           </div>
           <div className="col-12">
-            <span>Notas</span>
+            <span>Notas <i class="bi bi-pen"></i></span>
             <textarea class="form-control"></textarea>
           </div>
           <div className="col-12 d-flex justify-content-space-between">
             <span>Total:</span>
             <span>$35</span>
             <Link className="w-100" to={"/checkout"}>
-              <button className="comprarBtn w-100 btn">Comprar</button>
+              <button className="comprarBtn w-100 btn"><i class="bi bi-bag"></i> Comprar</button>
             </Link>
           </div>
-          <input class="form-check-input mt-0" type="checkbox" />{" "}
-          <span>Envolver para regalo</span>
+          <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+  <label class="form-check-label" for="flexCheckDefault">
+    Envolver para regalo <i class="bi bi-gift"></i>
+  </label>
+</div>
+
         </div>
       </div>
       <Footer />

@@ -499,7 +499,7 @@ body {
   border-bottom: solid #000 1px;
 }
 
-.continueShopping {
+.continueShopping, .deleteFromCart {
   text-decoration: none;
   color: black;
 }
@@ -508,10 +508,12 @@ body {
   width: 180px;
 }
 
-.comprarBtn:hover {
+.comprarBtn:hover, .deleteFromCart:hover {
+  color: black;
   background-color: rgba(114, 221, 185, 0.568);
 }
 
-.comprarBtn {
+.comprarBtn, .deleteFromCart {
+  color: black;
   background-color: rgba(97, 238, 191, 0.568);
 }
