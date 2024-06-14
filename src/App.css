@@ -2,6 +2,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+*::selection {
+  background: rgba(114, 221, 185, 0.568);
+}
+
 body {
   background-color: #ffffff;
 }
@@ -496,7 +500,8 @@ body {
 
 /* Cart */
 
-.continueShopping:hover {
+.continueShopping:hover,
+.deleteFromCart:hover {
   border-bottom: solid #000 1px;
 }
 
@@ -504,20 +509,27 @@ body {
 .deleteFromCart {
   text-decoration: none;
   color: black;
+  background-color: transparent;
+  border: none;
 }
 
 .cartProdImg {
   width: 180px;
+  border-radius: 1%;
 }
 
-.comprarBtn:hover,
-.deleteFromCart:hover {
+.comprarBtn:hover {
   color: black;
   background-color: rgba(114, 221, 185, 0.568);
 }
 
-.comprarBtn,
-.deleteFromCart {
+.comprarBtn {
   color: black;
   background-color: rgba(97, 238, 191, 0.568);
+}
+
+.cartBox {
+  background-color: rgba(215, 215, 215, 0.438);
+  padding: 20px;
+  border-radius: 1%;
 }
