@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <NavBarHome />
       <Header />
-      <div className="d-flex justify-content-evenly mt-5">
+      <div className="d-flex justify-content-evenly mt-5 dobleimg">
         <div className="px-2">
           <img
             className="subportada "
@@ -68,11 +68,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-<div className="container">
+      <div className="container"></div>
 
-
-</div>
-    
       <div className="container">
         <div className="row filterPosition">
           <div className="col-3 fontFlamenco">

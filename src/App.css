@@ -544,7 +544,7 @@ body {
 
 .imgflotante {
   width: 100%;
-  transition:all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .imgflotante:hover {
@@ -554,7 +554,18 @@ body {
 
 .imgzize {
   font-size: 50px;
-
 }
 
-
+.dobleimg {
+  transition: 0.5s ease;
+  -moz-transition: 0.5s ease; /* Firefox */
+  -webkit-transition: 0.5s ease; /* Chrome - Safari */
+  -o-transition: 0.5s ease; /* Opera */
+}
+.dobleimg:hover {
+  transform: scale(1.05);
+  -moz-transform: scale(1.05); /* Firefox */
+  -webkit-transform: scale(1.05); /* Chrome - Safari */
+  -o-transform: scale(1.05); /* Opera */
+  -ms-transform: scale(1.05); /* IE9 */
+}
