@@ -505,9 +505,10 @@ body {
 .backportada {
   background-image: url(https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400);
   width: 100%;
-  height: 100%;
+  height: 400px;
   color: white;
   background-position: center center;
+  background-size: cover;
 }
 
 .alineado {
@@ -548,12 +549,12 @@ body {
 }
 
 .imgflotante:hover {
-  width: 110%;
+  width: 110%; /* ajustar por el scroll que hace para la derecha*/
   opacity: 1;
 }
 
 .imgzize {
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .dobleimg {
