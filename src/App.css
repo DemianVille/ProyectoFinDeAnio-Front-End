@@ -1,5 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&family=Flamenco:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Ephesis&family=Flamenco:wght@300;400&display=swap");
+
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Flamenco", system-ui;
+  font-size: large;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fontEphesis {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fontDongle {
+  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 *::selection {
@@ -532,4 +552,31 @@ body {
   background-color: rgba(215, 215, 215, 0.438);
   padding: 20px;
   border-radius: 1%;
+}
+.imgflotante {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.imgflotante:hover {
+  width: 110%;
+  opacity: 1;
+}
+
+.imgzize {
+  font-size: 50px;
+}
+
+.dobleimg {
+  transition: 0.5s ease;
+  -moz-transition: 0.5s ease; /* Firefox */
+  -webkit-transition: 0.5s ease; /* Chrome - Safari */
+  -o-transition: 0.5s ease; /* Opera */
+}
+.dobleimg:hover {
+  transform: scale(1.05);
+  -moz-transform: scale(1.05); /* Firefox */
+  -webkit-transform: scale(1.05); /* Chrome - Safari */
+  -o-transform: scale(1.05); /* Opera */
+  -ms-transform: scale(1.05); /* IE9 */
 }

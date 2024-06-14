@@ -56,14 +56,14 @@ export default function NavBarHome() {
 
   return (
     <>
-      <nav className="navbar navPosition navShadow navbar-expand">
+      <nav className="navbar navPosition navShadow navbar-expand fontFlamenco">
         <div className="container-fluid">
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
               <div className="logotipo">
                 <img className="logoImg" src="/img/Logo.png" alt="" />
               </div>
-              <p className="m-0 pageName px-3">Nombre</p>
+              <h2 className="m-0 pageName fontEphesis">Copéllia</h2>
             </div>
           </Link>
 
