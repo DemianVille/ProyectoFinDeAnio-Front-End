@@ -19,16 +19,16 @@ export default function Footer() {
             <ul className="footerList">
               <li>
                 <Link to={"/about-this-project"} className="footerLink">
-                  Quiénes Somos
+                  Sobre este proyecto
                 </Link>
               </li>
               <li>
-                <a href="/press" className="footerLink">
-                  Sobre este proyecto
+                <a href="#" className="footerLink">
+                  Quiénes Somos
                 </a>
               </li>
               <li>
-                <a href="/blog" className="footerLink">
+                <a href="#" className="footerLink">
                   Blog
                 </a>
               </li>
@@ -38,22 +38,22 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Ayuda</h4>
             <ul className="footerList">
               <li>
-                <a href="/help" className="footerLink">
+                <a href="#" className="footerLink">
                   Centro de Ayuda
                 </a>
               </li>
               <li>
-                <a href="/support" className="footerLink">
+                <a href="#" className="footerLink">
                   Soporte
                 </a>
               </li>
               <li>
-                <a href="/faq" className="footerLink">
+                <a href="#" className="footerLink">
                   Preguntas Frecuentes
                 </a>
               </li>
               <li>
-                <a href="/contact" className="footerLink">
+                <a href="#" className="footerLink">
                   Contacto
                 </a>
               </li>
@@ -63,17 +63,17 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Legal</h4>
             <ul className="footerList">
               <li>
-                <a href="/terms" className="footerLink">
+                <a href="#" className="footerLink">
                   Términos de Servicio
                 </a>
               </li>
               <li>
-                <a href="/privacy" className="footerLink">
+                <a href="#" className="footerLink">
                   Política de Privacidad
                 </a>
               </li>
               <li>
-                <a href="/cookies" className="footerLink">
+                <a href="#" className="footerLink">
                   Política de Cookies
                 </a>
               </li>
@@ -83,7 +83,7 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Síguenos</h4>
             <ul className="footerListContact">
               <li>
-                <a href="https://facebook.com/hackflix" className="footerLink">
+                <a href="https://facebook.com" className="footerLink">
                   <img
                     className="pb-1"
                     src="/src/assets/facebookLogo.svg"
@@ -93,7 +93,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/hackflix" className="footerLink">
+                <a href="https://twitter.com" className="footerLink">
                   <img
                     className="pb-1"
                     src="/src/assets/twitterLogo.svg"
@@ -103,7 +103,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/hackflix" className="footerLink">
+                <a href="https://instagram.com" className="footerLink">
                   <img
                     className="pb-1"
                     src="/src/assets/instagramLogo.svg"
