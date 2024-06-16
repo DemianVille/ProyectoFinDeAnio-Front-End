@@ -95,7 +95,7 @@ export default function NavBarHome() {
               </Form>
               <Nav>
                 <ul className="navbar-nav mb-2">
-                  <li className="nav-item dropdown" ref={dropdownRef}>
+                  <li className="nav-item dropdown mt-1" ref={dropdownRef}>
                     <p
                       className="nav-link m-0"
                       role="button"
@@ -121,7 +121,7 @@ export default function NavBarHome() {
                     </ul>
                   </li>
                   <li className="nav-item ">
-                    <Link className="nav-link" to={"/cart"}>
+                    <Link className="nav-link pb-2" to={"/cart"}>
                       <i className="bi bi-basket-fill navIcon"></i>
                     </Link>
                   </li>

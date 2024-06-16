@@ -67,7 +67,7 @@ body {
 }
 
 .logoImg {
-  width: 100%;
+  width: 145%;
 }
 
 .homeInfo {
@@ -473,9 +473,11 @@ body {
 }
 
 .subportada {
-  height: 100%;
-  width: 100%;
-}
+    animation-name: fadeIn;
+    animation-duration: 2s; /* Duración de la animación */
+    animation-fill-mode: both; /* La animación se quedará en el estado final después de terminar */
+  }
+
 
 .backportada {
   background-image: url(https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400);
@@ -529,11 +531,12 @@ body {
 }
 .imgflotante {
   width: 100%;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
 }
 
 .imgflotante:hover {
-  width: 110%; /* ajustar por el scroll que hace para la derecha*/
+  transform: scale(1.03);
   opacity: 1;
 }
 
@@ -553,4 +556,9 @@ body {
   -webkit-transform: scale(1.05); /* Chrome - Safari */
   -o-transform: scale(1.05); /* Opera */
   -ms-transform: scale(1.05); /* IE9 */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
