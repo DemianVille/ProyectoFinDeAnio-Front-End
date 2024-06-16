@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function Login() {
   const notify = () => {
@@ -12,108 +13,91 @@ export default function Login() {
   return (
     <>
       <NavBar />
-      <div className="body container-fluid">
-        <div className="row d-flex justify-content-center">
-          <div className="col-4">
+      <Container fluid className="body">
+        <Row className="d-flex justify-content-center">
+          <Col md={4}>
             <h2 className="text-center my-3">Iniciar sesión</h2>
-            <form
+            <Form
               onSubmit={(event) => {
                 event.preventDefault();
               }}
             >
-              <div className="row d-flex justify-content-center">
-                <div className="col-12">
-                  <div className="mb-3">
-                    <label for="email" className="form-label">
-                      Correo
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label for="password" className="form-label">
-                      Contraseña
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password"
-                    />
-                  </div>
-                  <div className="mb-3 form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="checkbox"
-                    />
-                    <label className="form-check-label" for="checkbox">
-                      Mantenerme conectado
-                    </label>
-                  </div>
-                  <div className="col-12 d-flex flex-column">
-                    <button
-                      type="submit"
-                      className="ingresarBtn btn my-2 w-100"
-                      onClick={notify}
-                    >
-                      Ingresar
-                    </button>
-                  </div>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Correo</Form.Label>
+                <Form.Control type="email" placeholder="Ingrese su correo" />
+              </Form.Group>
 
-                  <Link to={"/login"} onClick={notify}>
-                    Olvidé mi contraseña
-                  </Link>
+              <Form.Group className="mb-3" controlId="password">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Ingrese su contraseña"
+                />
+              </Form.Group>
 
-                  <div className="row">
-                    <div className="col-12 py-2 d-flex flex-column">
-                      <button
-                        type="submit"
-                        className="googleBtn btn my-2"
-                        onClick={notify}
-                      >
-                        Ingresar con Google
-                        <img
-                          className="boton"
-                          src="/src/assets/googleLogo.svg"
-                          alt="Google Logo"
-                        />
-                      </button>
-                      <button
-                        type="submit"
-                        className="facebookBtn btn my-2"
-                        onClick={notify}
-                      >
-                        Ingresar con Facebook{" "}
-                        <img
-                          className="boton"
-                          src="/src/assets/facebookLogo.svg"
-                          alt="Facebook Logo"
-                        />
-                      </button>
-                      <button
-                        type="submit"
-                        className="appleBtn btn my-2"
-                        onClick={notify}
-                      >
-                        Ingresar con Apple{" "}
-                        <img
-                          className="boton"
-                          src="/src/assets/appleLogo.svg"
-                          alt="Apple Logo"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+              <Form.Group className="mb-3" controlId="checkbox">
+                <Form.Check
+                  type="checkbox"
+                  label="Mantenerme conectado"
+                />
+              </Form.Group>
+
+              <Button
+                type="submit"
+                className="ingresarBtn my-2 w-100"
+                onClick={notify}
+              >
+                Ingresar
+              </Button>
+
+              <Link to={"/login"} onClick={notify}>
+                Olvidé mi contraseña
+              </Link>
+
+              <Row>
+                <Col className="py-2 d-flex flex-column">
+                  <Button
+                    type="button"
+                    className="googleBtn my-2"
+                    onClick={notify}
+                  >
+                    Ingresar con Google
+                    <img
+                      className="boton"
+                      src="/src/assets/googleLogo.svg"
+                      alt="Google Logo"
+                    />
+                  </Button>
+                  <Button
+                    type="button"
+                    className="facebookBtn my-2"
+                    onClick={notify}
+                  >
+                    Ingresar con Facebook
+                    <img
+                      className="boton"
+                      src="/src/assets/facebookLogo.svg"
+                      alt="Facebook Logo"
+                    />
+                  </Button>
+                  <Button
+                    type="button"
+                    className="appleBtn my-2"
+                    onClick={notify}
+                  >
+                    Ingresar con Apple
+                    <img
+                      className="boton"
+                      src="/src/assets/appleLogo.svg"
+                      alt="Apple Logo"
+                    />
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>

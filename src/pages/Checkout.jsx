@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
 export default function Checkout() {
   const notify = () => {
@@ -12,14 +13,16 @@ export default function Checkout() {
   return (
     <>
       <NavBar />
-      <div className="container body">
+      <Container className="body">
         <h2 className="text-center my-3">Carrito</h2>
-        <form onSubmit={""}>
-          <div className="mb-3">
-            <label for="countrySelect" className="form-label">
-              País/Región
-            </label>
-            <select id="countrySelect" className="form-select">
+        <Form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <Form.Group className="mb-3" controlId="countrySelect">
+            <Form.Label>País/Región</Form.Label>
+            <Form.Select>
               <option value="Argentina">Uruguay</option>
               <option value="Brasil">Brasil</option>
               <option value="Colombia">Colombia</option>
@@ -31,91 +34,94 @@ export default function Checkout() {
               <option value="Ecuador">Ecuador</option>
               <option value="Perú">Perú</option>
               <option value="Uruguay">Argentina</option>
-            </select>
-          </div>
-          <div className="mb-3 d-flex">
-            <input
+            </Form.Select>
+          </Form.Group>
+
+          <Row className="mb-3">
+            <Col>
+              <Form.Control
+                type="text"
+                placeholder="Nombre"
+                aria-label="Nombre"
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                type="text"
+                placeholder="Apellido"
+                aria-label="Apellido"
+              />
+            </Col>
+          </Row>
+
+          <Form.Group className="mb-3" controlId="company">
+            <Form.Control
               type="text"
-              className="form-control me-1"
-              placeholder="Nombre"
-              aria-label="Nombre"
-              aria-describedby="basic-addon2"
-            />
-            <input
-              type="text"
-              className="form-control ms-1"
-              placeholder="Apellido"
-              aria-label="Apellido"
-              aria-describedby="basic-addon2"
-            />
-          </div>
-          <div className="mb-3">
-            <input
               placeholder="Companía (Opcional)"
-              type="text"
-              className="form-control"
-              id="basic-url"
-              aria-describedby="basic-addon3 basic-addon4"
+              aria-label="Companía"
             />
-          </div>
-          <div className=" mb-3">
-            <input
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="address">
+            <Form.Control
               type="text"
-              className="form-control"
-              aria-label="Amount (to the nearest dollar)"
               placeholder="Dirección"
+              aria-label="Dirección"
             />
-          </div>
-          <div className="mb-3">
-            <input
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="apartment">
+            <Form.Control
               type="text"
-              className="form-control"
               placeholder="Apartamento (Opcional)"
-              aria-label="Username"
+              aria-label="Apartamento"
             />
-          </div>
-          <div className="mb-3 d-flex">
-            <input
+          </Form.Group>
+
+          <Row className="mb-3">
+            <Col>
+              <Form.Control
+                type="text"
+                placeholder="Ciudad"
+                aria-label="Ciudad"
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                type="text"
+                placeholder="Código postal"
+                aria-label="Código postal"
+              />
+            </Col>
+          </Row>
+
+          <Form.Group className="mb-3" controlId="phone">
+            <Form.Control
               type="text"
-              className="form-control me-1"
-              placeholder="Ciudad"
-              aria-label="Nombre"
-              aria-describedby="basic-addon2"
-            />
-            <input
-              type="text"
-              className="form-control ms-1"
-              placeholder="Código postal"
-              aria-label="Apellido"
-              aria-describedby="basic-addon2"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
               placeholder="Teléfono"
-              aria-label="Username"
+              aria-label="Teléfono"
             />
-          </div>
-          <div className="mb-3 form-check">
-            <input type="checkbox" className="form-check-input" id="checkbox" />
-            <label className="form-check-label" for="checkbox">
-              Notificame por promociones
-            </label>
-          </div>
-        </form>
-        <div className="cheackoutBtn mb-3">
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="promotions">
+            <Form.Check
+              type="checkbox"
+              label="Notificame por promociones"
+            />
+          </Form.Group>
+        </Form>
+
+        <div className="checkoutBtn mb-3">
           <Link to={"/cart"}>
-            <button className="returnToCart">
-              <i class="bi bi-caret-left"></i> Volver al carrito
-            </button>
+            <Button className="returnToCart">
+              <i className="bi bi-caret-left"></i> Volver al carrito
+            </Button>
           </Link>
           <Link to={"/"}>
-            <button className="continueShoping">Continuar comprando</button>
+            <Button className="continueShoppingBtn">Continuar comprando</Button>
           </Link>
         </div>
-      </div>
+      </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>

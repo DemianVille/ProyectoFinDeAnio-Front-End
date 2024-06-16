@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 
 export default function Categories() {
   const [category, setCategory] = useState({});
-  const params = useParams();
   const [filterProducts, setFilterProducts] = useState([]);
+  const params = useParams();
 
   const notify = () => {
     toast.warn("En desarrollo");
@@ -21,8 +21,6 @@ export default function Categories() {
           method: "GET",
           headers: {
             accept: "application/json",
-            /*      Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
           },
         };
 
@@ -37,32 +35,7 @@ export default function Categories() {
       }
     };
     getCategory();
-  }, []);
-
-  useEffect(() => {
-    const getCategories = async () => {
-      try {
-        const options = {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            /*      Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
-          },
-        };
-
-        const response = await fetch(
-          `http://localhost:3000/categories`,
-          options
-        );
-        const allCategoriesObject = await response.json();
-        setCategories(allCategoriesObject);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getCategories();
-  }, []);
+  }, [params.id]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -71,8 +44,6 @@ export default function Categories() {
           method: "GET",
           headers: {
             accept: "application/json",
-            /*      Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
           },
         };
 
@@ -81,26 +52,24 @@ export default function Categories() {
         setFilterProducts(
           allProductsObject.filter((product) => product.categoryId == params.id)
         );
-        setProducts(filterProducts);
       } catch (err) {
         console.error(err);
       }
     };
     getProducts();
   }, [params.id]);
-
   return (
     <>
       <NavBar />
-      <div className="body px-5">
+      <Container className="body">
         <h1 className="my-3 text-center categoryName fontFlamenco">
           {category.name}
         </h1>
-        <div className="row">
-          <div className="col-3 p-0">
+        <Row className="filterPosition">
+          <Col md={3} className="p-0">
             <div className="categoriesDiv fontFlamenco">
               <h5>Filtros</h5>
-              <ul className="unstyleList p-0 ">
+              <ul className="unstyleList p-0">
                 <li className="filterStyle firstItem" onClick={notify}>
                   Precio
                 </li>
@@ -112,48 +81,40 @@ export default function Categories() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="col-9 pt-3 pb-3 ">
+          </Col>
+          <Col md={9} className="pt-3 pb-3">
             <div className="productsInfo">
               <p className="ms-1 d-flex align-items-center">
-                <p className="fontRoboto productsQty me-1">
+                <span className="fontRoboto productsQty me-1">
                   {filterProducts.length}
-                </p>
+                </span>
                 productos
               </p>
             </div>
-            <div className="row">
-              {filterProducts.map((product) => {
-                return (
-                  <div className="col-3 my-2">
-                    <Link
-                      to={`/product/${product.id}`}
-                      className="textStyleCard"
-                    >
-                      <div className="productCard p-1">
-                        <img
-                          src={product.photo}
-                          className="w-100 mb-3 cardImg"
-                        />
-                        <div>
-                          <h5 className="text-center">{product.name}</h5>
-                          <p className="text-center m-0 fontRoboto">
-                            ${product.price}
-                          </p>
-                          <p className="text-center d-flex justify-content-center">
-                            Stock:{" "}
-                            <p className="fontRoboto ms-1">{product.stock}</p>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+            <Row>
+              {filterProducts.map((product) => (
+                <Col md={3} key={product.id} className="my-2">
+                  <Link to={`/product/${product.id}`} className="textStyleCard">
+                    <Card className="productCard p-1">
+                      <Card.Img variant="top" src={product.photo} className="cardImg" />
+                      <Card.Body>
+                        <Card.Title className="text-center">{product.name}</Card.Title>
+                        <Card.Text className="text-center m-0 fontRoboto">
+                          ${product.price}
+                        </Card.Text>
+                        <Card.Text className="text-center d-flex justify-content-center">
+                          Stock: 
+                          <span className="fontRoboto ms-1">{product.stock}</span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>

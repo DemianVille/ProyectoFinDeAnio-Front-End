@@ -1,35 +1,40 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 export default function AboutThisProyect() {
   return (
     <>
       <NavBar />
-      <div className="container body">
-        <header className="row">
-          <div className="col-8">
-            <h5></h5>
-          </div>
-          <div className="col-4">
-            <img src="" alt="" />
-          </div>
+      <Container className="body">
+        <header>
+          <Row>
+            <Col md={8}>
+              <h5></h5>
+            </Col>
+            <Col md={4}>
+              <Image src="" alt="" fluid />
+            </Col>
+          </Row>
         </header>
-        <section className="row">
-          <div className="col-3">
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-          </div>
-          <div className="col-9">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
+        <section>
+          <Row>
+            <Col md={3}>
+              <Image src="" alt="" fluid />
+              <Image src="" alt="" fluid />
+              <Image src="" alt="" fluid />
+              <Image src="" alt="" fluid />
+            </Col>
+            <Col md={9}>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </Col>
+          </Row>
         </section>
-      </div>
+      </Container>
       <Footer />
     </>
   );

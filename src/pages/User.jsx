@@ -1,31 +1,32 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function User() {
   return (
     <>
       <NavBar />
-      <div className="container body">
-        <div className="row">
-          <div className="col-2">
+      <Container className="body">
+        <Row>
+          <Col xs={2}>
             <div>Foto</div>
             <div>Apartados sidebar</div>
-          </div>
+          </Col>
 
-          <div className="col-10">
+          <Col xs={10}>
             <div>nombre</div>
-            <div className="row">
-              <div className="col-6">hola</div>
-              <div className="col-6">hola</div>
-              <div className="col-6">hola</div>
-              <div className="col-6">hola</div>
-              <div className="col-6">hola</div>
-              <div className="col-6">hola</div>
-            </div>
-          </div>
-        </div>
-      </div>
+            <Row>
+              <Col xs={6}>hola</Col>
+              <Col xs={6}>hola</Col>
+              <Col xs={6}>hola</Col>
+              <Col xs={6}>hola</Col>
+              <Col xs={6}>hola</Col>
+              <Col xs={6}>hola</Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
       <Footer />
     </>
   );

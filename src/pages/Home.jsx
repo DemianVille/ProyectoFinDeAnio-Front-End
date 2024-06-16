@@ -5,6 +5,7 @@ import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import Header from "../components/Header";
+import { Container, Row, Col, Button, Image, Alert } from "react-bootstrap";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -39,40 +40,41 @@ export default function Home() {
     <>
       <NavBarHome />
       <Header />
-      <div className="d-flex justify-content-evenly mt-5 dobleimg">
-        <div className="px-2">
-          <img
-            className="subportada "
-            src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
-            alt=""
-          />
-        </div>
-        <div className="px-2">
-          <img
-            className="subportada "
-            src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
-            alt=""
-          />
-        </div>
+      <div className="d-flex justify-content-evenly mt-5">
+        <Row>
+          <Col xs={6}>
+            <Image
+              className="subportada"
+              src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
+              alt=""
+              fluid
+            />
+          </Col>
+          <Col xs={6}>
+            <Image
+              className="subportada"
+              src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
+              alt=""
+              fluid
+            />
+          </Col>
+        </Row>
       </div>
       <div className="imgflotante">
-        <div className="d-flex justify-content-center mt-5 mb-5 backportada ">
-          <div className="alineado text-center">
-            <h2 className="mt-5 mb-5">
-              <strong className="imgzize">IDEALES PARA TI!</strong>
-            </h2>
-            <p className="mb-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-            <button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</button>
-          </div>
-        </div>
+        <Alert variant="dark" className="text-center mt-5 mb-5 backportada">
+          <h2 className="mt-5 mb-5">
+            <strong className="imgzize">IDEALES PARA TI!</strong>
+          </h2>
+          <p className="mb-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          </p>
+          <Button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</Button>
+        </Alert>
       </div>
-      <div className="container"></div>
 
-      <div className="container">
-        <div className="row filterPosition">
-          <div className="col-3 fontFlamenco">
+      <Container>
+        <Row className="filterPosition">
+          <Col md={3} className="fontFlamenco">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
               <ul className="unstyleList p-0">
@@ -87,16 +89,16 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="col-9">
-            <div className="row">
+          </Col>
+          <Col md={9}>
+            <Row>
               {products.map((product) => {
                 return <Products key={product.id} id={product.id} />;
               })}
-            </div>
-          </div>
-        </div>
-      </div>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>

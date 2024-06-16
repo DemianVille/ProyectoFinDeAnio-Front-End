@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Col, Card } from "react-bootstrap";
 
-export default function Products(id) {
+export default function Products({ id }) {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
@@ -11,13 +12,11 @@ export default function Products(id) {
           method: "GET",
           headers: {
             accept: "application/json",
-            /*      Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE", */
           },
         };
 
         const response = await fetch(
-          `http://localhost:3000/products/${id.id}`,
+          `http://localhost:3000/products/${id}`,
           options
         );
         const allProductObject = await response.json();
@@ -27,21 +26,26 @@ export default function Products(id) {
       }
     };
     getProduct();
-  }, []);
+  }, [id]);
+
   return (
-    <div className="col-6 my-2 col-lg-4">
-      <Link to={`/product/${id.id}`} className="textStyleCard">
-        <div className="productCard p-1 h-100">
-          <img src={product.photo} className="w-100 mb-3 cardImg" />
-          <div>
-            <h5 className="text-center fontFlamenco">{product.name}</h5>
-            <p className="text-center m-0 fontRoboto">${product.price}</p>
-            <p className="text-center d-flex justify-content-center">
-              Stock: <p className="fontRoboto ms-1">{product.stock}</p>
-            </p>
-          </div>
-        </div>
+    <Col xs={12} md={6} lg={4} className="my-2">
+      <Link to={`/product/${id}`} className="text-decoration-none">
+        <Card className="productCard p-1 h-100">
+          <Card.Img variant="top" src={product.photo} className="cardImg" />
+          <Card.Body>
+            <Card.Title className="text-center fontFlamenco">
+              {product.name}
+            </Card.Title>
+            <Card.Text className="text-center m-0 fontRoboto">
+              ${product.price}
+            </Card.Text>
+            <Card.Text className="text-center d-flex justify-content-center">
+              Stock: <span className="fontRoboto ms-1">{product.stock}</span>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </Link>
-    </div>
+    </Col>
   );
 }

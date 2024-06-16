@@ -266,6 +266,8 @@ body {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   z-index: 1;
+  border: none;
+  height: 100%;
 }
 
 .productCard:hover {
@@ -304,7 +306,7 @@ body {
 
 /* Checkout */
 
-.cheackoutBtn {
+.checkoutBtn {
   display: flex;
   justify-content: space-between;
 }
@@ -313,11 +315,27 @@ body {
   border: none;
   padding: 20px 20px 20px 0;
   background-color: transparent;
+  color: #3b3b3b;
+  border-radius: 0;
+}
+.returnToCart:hover{
+  border: none;
+  padding: 20px 20px 20px 0;
+  background-color: transparent;
+  color: #000;
+  border-radius: 0;
 }
 
-.continueShoping {
-  background-color: black;
-  border-radius: 7px;
+.continueShoppingBtn {
+  background-color: #000;
+  border-radius: 0;
+  color: white;
+  border: none;
+  padding: 20px;
+}
+.continueShoppingBtn:hover {
+  background-color: #131313;
+  border-radius: 0;
   color: white;
   border: none;
   padding: 20px;
@@ -365,10 +383,13 @@ body {
   background-color: rgba(97, 238, 191, 0.568);
   padding: 10px;
   transition: all 0.3s ease-in-out;
+  color: #000;
+  border-radius: 0;
 }
 
 .addToCart:hover {
   background-color: rgba(114, 221, 185, 0.568);
+  color: #181818;
 }
 
 .qtyDiv {
@@ -476,11 +497,15 @@ body {
 .ingresarBtn:hover,
 .crearBtn:hover {
   background-color: rgba(114, 221, 185, 0.568);
+  color: #1d1d1d;
 }
 
 .ingresarBtn,
 .crearBtn {
   background-color: rgba(97, 238, 191, 0.568);
+  border: none;
+  border-radius: 0;
+  color: #000;
 }
 
 .googleBtn:hover {
@@ -491,6 +516,8 @@ body {
 .googleBtn {
   background-color: #d62d20;
   color: #ffff;
+  border: none;
+  border-radius: 0;
 }
 
 .facebookBtn:hover {
@@ -501,6 +528,8 @@ body {
 .facebookBtn {
   background-color: #4267b2;
   color: #ffff;
+  border: none;
+  border-radius: 0;
 }
 
 .appleBtn:hover {
@@ -511,6 +540,8 @@ body {
 .appleBtn {
   background-color: #000000;
   color: #ffff;
+  border: none;
+  border-radius: 0;
 }
 
 .boton {
@@ -563,6 +594,8 @@ body {
 .comprarBtn {
   color: black;
   background-color: rgba(97, 238, 191, 0.568);
+  border-radius: 0;
+  border: none;
 }
 
 .cartBox {

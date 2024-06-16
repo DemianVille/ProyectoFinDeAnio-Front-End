@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function Register() {
   const notify = () => {
@@ -38,10 +39,10 @@ export default function Register() {
   return (
     <>
       <NavBar />
-      <div className="body container-fluid">
-        <div className="row d-flex justify-content-center">
-          <div className="col-4">
-            <form
+      <Container className="body">
+        <Row className="d-flex justify-content-center">
+          <Col md={4}>
+            <Form
               onSubmit={(event) => {
                 event.preventDefault();
               }}
@@ -49,122 +50,103 @@ export default function Register() {
               <div className="text-center mb-2">
                 <h2>Registrarse</h2>
               </div>
-              <div className=" mb-3">
-                <label for="username" className="form-label">
-                  Nombre de usuario
-                </label>
-                <input
-                  from="username"
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="username">Nombre de usuario</Form.Label>
+                <Form.Control
+                  id="username"
                   type="text"
-                  className="form-control"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
                 />
-              </div>
-              <label for="name" className="form-label">
-                Nombre
-              </label>
-              <input
-                from="name"
-                type="text"
-                className="form-control mb-2"
-                aria-label="First name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <label for="lastname" className="form-label">
-                Apellido
-              </label>
-              <input
-                from="lastname"
-                type="text"
-                className="form-control"
-                aria-label="Last name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-              <label for="email" className="form-label">
-                E-mail
-              </label>
-              <input
-                from="email"
-                type="email"
-                className="form-control mb-2"
-                id="email"
-                aria-describedby="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label for="address" className="form-label">
-                Dirección
-              </label>
-              <input
-                from="address"
-                type="text"
-                className="form-control mb-2"
-                id="address"
-                aria-describedby="address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-              <label for="phone" className="form-label">
-                Teléfono
-              </label>
-              <input
-                from="phone"
-                type="text"
-                className="form-control mb-2"
-                id="phone"
-                aria-describedby="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <label for="password" className="form-label">
-                Contraseña
-              </label>
-              <input
-                from="password"
-                type="password"
-                className="form-control mb-2"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <label for="repeatPassword" className="form-label">
-                Repetir contraseña
-              </label>
-              <input
-                from="repeatPassword"
-                type="password"
-                className="form-control mb-2"
-                id="repeatPassword"
-                value={repeatPassword}
-                onChange={(e) => setRepeatPassword(e.target.value)}
-              />
-              <div className="form-check"></div>
-              <div className="form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input mb-2"
-                  id="politicsCheckbox"
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="name">Nombre</Form.Label>
+                <Form.Control
+                  id="name"
+                  type="text"
+                  aria-label="First name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
-                <label className="form-check-label mb-2" for="politicsCheckbox">
-                  Recordar contraseña
-                </label>
-              </div>
-              <div classNameName="d-flex justify-content-center">
-                <button
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="lastname">Apellido</Form.Label>
+                <Form.Control
+                  id="lastname"
+                  type="text"
+                  aria-label="Last name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="email">E-mail</Form.Label>
+                <Form.Control
+                  id="email"
+                  type="email"
+                  aria-describedby="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="address">Dirección</Form.Label>
+                <Form.Control
+                  id="address"
+                  type="text"
+                  aria-describedby="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="phone">Teléfono</Form.Label>
+                <Form.Control
+                  id="phone"
+                  type="text"
+                  aria-describedby="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="password">Contraseña</Form.Label>
+                <Form.Control
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label htmlFor="repeatPassword">Repetir contraseña</Form.Label>
+                <Form.Control
+                  id="repeatPassword"
+                  type="password"
+                  value={repeatPassword}
+                  onChange={(e) => setRepeatPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Check
+                  type="checkbox"
+                  id="politicsCheckbox"
+                  label="Recordar contraseña"
+                />
+              </Form.Group>
+              <div className="d-flex justify-content-center">
+                <Button
                   type="submit"
-                  className="btn mt-2 w-100 crearBtn"
+                  className="mt-2 w-100 crearBtn"
                   onClick={notify}
                 >
                   Crear cuenta
-                </button>
+                </Button>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
