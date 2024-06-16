@@ -135,13 +135,13 @@ export default function Register() {
                 />
               </Form.Group>
               <div className="d-flex justify-content-center">
-                <Button
+                <button
                   type="submit"
-                  className="mt-2 w-100 crearBtn"
+                  className="mt-2 py-1 w-100 crearBtn"
                   onClick={notify}
                 >
                   Crear cuenta
-                </Button>
+                </button>
               </div>
             </Form>
           </Col>

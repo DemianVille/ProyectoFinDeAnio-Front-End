@@ -78,9 +78,9 @@ export default function Cart() {
               <span>$35</span>
             </div>
             <Link className="w-100" to={"/checkout"}>
-              <Button className="comprarBtn w-100">
+              <button className="comprarBtn py-1 w-100">
                 <i className="bi bi-bag"></i> Comprar
-              </Button>
+              </button>
             </Link>
             <Form.Check
               className="mt-3"

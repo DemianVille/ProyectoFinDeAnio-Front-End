@@ -65,15 +65,15 @@ export default function Product() {
             <div>
               <p>Colors -</p>
               <div className="d-flex">
-                <Col xs={3} className="colorStyle" onClick={notify}>
+                <div className="colorStyle" onClick={notify}>
                   <div className="color1"></div>
-                </Col>
-                <Col xs={3} className="colorStyle" onClick={notify}>
+                </div>
+                <div className="colorStyle" onClick={notify}>
                   <div className="color2"></div>
-                </Col>
-                <Col xs={3} className="colorStyle" onClick={notify}>
+                </div>
+                <div className="colorStyle" onClick={notify}>
                   <div className="color3"></div>
-                </Col>
+                </div>
               </div>
             </div>
             <p className="mt-3">Cantidad -</p>
@@ -92,9 +92,9 @@ export default function Product() {
                 +
               </button>
             </div>
-            <Button className="mt-4 w-100 addToCart" onClick={notify}>
+            <button className="mt-4 w-100 addToCart" onClick={notify}>
               <b>Añadir al carro</b>
-            </Button>
+            </button>
           </Col>
         </Row>
       </Container>

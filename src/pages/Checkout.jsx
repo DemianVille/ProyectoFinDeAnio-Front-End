@@ -113,12 +113,12 @@ export default function Checkout() {
 
         <div className="checkoutBtn mb-3">
           <Link to={"/cart"}>
-            <Button className="returnToCart">
+            <button className="returnToCart">
               <i className="bi bi-caret-left"></i> Volver al carrito
-            </Button>
+            </button>
           </Link>
           <Link to={"/"}>
-            <Button className="continueShoppingBtn">Continuar comprando</Button>
+            <button className="continueShoppingBtn">Continuar comprando</button>
           </Link>
         </div>
       </Container>

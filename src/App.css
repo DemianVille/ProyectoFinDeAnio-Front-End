@@ -239,6 +239,7 @@ body {
   background-color: transparent;
   color: #3b3b3b;
   border-radius: 0;
+  transition: all 0.2s ease-in-out;
 }
 .returnToCart:hover{
   border: none;
@@ -254,6 +255,7 @@ body {
   color: white;
   border: none;
   padding: 20px;
+  transition: all 0.2s ease-in-out;
 }
 .continueShoppingBtn:hover {
   background-color: #131313;

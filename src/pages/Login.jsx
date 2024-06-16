@@ -42,13 +42,13 @@ export default function Login() {
                 />
               </Form.Group>
 
-              <Button
+              <button
                 type="submit"
-                className="ingresarBtn my-2 w-100"
+                className="ingresarBtn py-1 my-2 w-100"
                 onClick={notify}
               >
                 Ingresar
-              </Button>
+              </button>
 
               <Link to={"/login"} onClick={notify}>
                 Olvidé mi contraseña
@@ -56,9 +56,9 @@ export default function Login() {
 
               <Row>
                 <Col className="py-2 d-flex flex-column">
-                  <Button
+                  <button
                     type="button"
-                    className="googleBtn my-2"
+                    className="googleBtn py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Google
@@ -67,10 +67,10 @@ export default function Login() {
                       src="/src/assets/googleLogo.svg"
                       alt="Google Logo"
                     />
-                  </Button>
-                  <Button
+                  </button>
+                  <button
                     type="button"
-                    className="facebookBtn my-2"
+                    className="facebookBtn py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Facebook
@@ -79,10 +79,10 @@ export default function Login() {
                       src="/src/assets/facebookLogo.svg"
                       alt="Facebook Logo"
                     />
-                  </Button>
-                  <Button
+                  </button>
+                  <button
                     type="button"
-                    className="appleBtn my-2"
+                    className="appleBtn py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Apple
@@ -91,7 +91,7 @@ export default function Login() {
                       src="/src/assets/appleLogo.svg"
                       alt="Apple Logo"
                     />
-                  </Button>
+                  </button>
                 </Col>
               </Row>
             </Form>
