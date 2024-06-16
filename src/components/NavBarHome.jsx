@@ -70,17 +70,7 @@ export default function NavBarHome() {
           />
           <Collapse in={!isNavCollapsed}>
             <Navbar.Collapse id="navbarSupportedContent" className="navbar-collapse navBarHome px-3">
-              <Form className="d-flex" role="search" onSubmit={(event) => event.preventDefault()}>
-                <input
-                  type="text"
-                  placeholder="Buscar"
-                  className="inputNav"
-                  aria-label="Search"
-                />
-                <button className="buttonNav" type="submit" onClick={notify}>
-                  <i className="bi bi-search"></i>
-                </button>
-              </Form>
+              
               <Nav className="categoryPosition w-100">
                 {categories.map((category) => (
                   <div className="mx-4" key={category.id}>
@@ -92,6 +82,17 @@ export default function NavBarHome() {
                   </div>
                 ))}
               </Nav>
+              <Form className="d-flex mx-5" role="search" onSubmit={(event) => event.preventDefault()}>
+                <input
+                  type="text"
+                  placeholder="Buscar"
+                  className="inputNav"
+                  aria-label="Search"
+                />
+                <button className="buttonNav" type="submit" onClick={notify}>
+                  <i className="bi bi-search"></i>
+                </button>
+              </Form>
               <Nav>
                 <ul className="navbar-nav mb-2">
                   <li className="nav-item dropdown" ref={dropdownRef}>
@@ -119,7 +120,7 @@ export default function NavBarHome() {
                       </li>
                     </ul>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item ">
                     <Link className="nav-link" to={"/cart"}>
                       <i className="bi bi-basket-fill navIcon"></i>
                     </Link>
