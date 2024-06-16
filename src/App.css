@@ -47,9 +47,8 @@ body {
   max-height: 5rem;
 }
 
-.navBar {
-  display: flex;
-  justify-content: end;
+.navbar-collapse {
+  background-color: white;
 }
 
 .logoInfo {
@@ -79,11 +78,6 @@ body {
   color: rgba(0, 0, 0, 0.733);
 }
 
-.navBarHome {
-  display: flex;
-  justify-content: space-between;
-}
-
 .btn-outline-success {
   color: rgba(0, 0, 0, 0.5);
   border-color: rgb(0, 0, 0, 0.5);
@@ -99,12 +93,21 @@ body {
 
 .inputNav {
   border-radius: 7px 0 0 7px;
-  border: solid rgb(0, 0, 0, 0.5) 1px;
+  border: solid rgba(0, 0, 0, 0.5) 1px;
   border-right: none;
 }
 
 .buttonNav {
   border-radius: 0 7px 7px 0;
+  background-color: transparent;
+  border: 1px black solid;
+  padding: 7px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonNav:hover{
+  color: white;
+  background-color: #000;
 }
 
 .dropDownPosition {
@@ -117,90 +120,11 @@ body {
 
 /* carousel */
 
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.carousel-item {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-.carousel-item-next.carousel-item-left,
-.carousel-item-prev.carousel-item-right {
-  transform: translateX(0);
-}
-
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-  display: block;
-}
-
-.carousel-item-next {
-  animation: slideInRight 0.5s forwards;
-}
-
-.carousel-item-prev {
-  animation: slideInLeft 0.5s forwards;
-}
-
-.carousel-item-left {
-  animation: slideOutLeft 0.5s forwards;
-}
-
-.carousel-item-right {
-  animation: slideOutRight 0.5s forwards;
-}
-
 .carousel-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
-}
-
-.styleCarrouselBars {
-  margin: 0 4px;
-  border-radius: 5px;
-  border: 1px solid rgb(226, 226, 226);
-  padding: 2px 20px;
-}
-
-.activeBar {
-  border: 1px solid rgb(173, 173, 173);
-  background-color: #cac9c9;
 }
 
 .headerBtn {
@@ -261,18 +185,16 @@ body {
 }
 
 .productCard {
-  position: relative;
-  overflow: hidden;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   z-index: 1;
-  border: none;
   height: 100%;
 }
 
 .productCard:hover {
   background-color: rgba(97, 238, 191, 0.288);
   cursor: pointer;
+  border: none;
 }
 
 .cardImg {
