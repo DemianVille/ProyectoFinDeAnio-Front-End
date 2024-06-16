@@ -68,7 +68,7 @@ export default function Home() {
           <p className="mb-5">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
-          <Button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</Button>
+          <button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</button>
         </Alert>
       </div>
 
