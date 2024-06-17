@@ -61,7 +61,7 @@ export default function Home() {
         </Row>
       </div>
       <div className="imgflotante">
-        <Alert variant="dark" className="text-center mt-5 mb-5 backportada">
+        <Alert variant="dark" className="text-center mt-5 mb-5 backportada ">
           <h2 className="mt-5 mb-5">
             <strong className="imgzize">IDEALES PARA TI!</strong>
           </h2>
