@@ -91,7 +91,7 @@ export default function Cart() {
             </div>
             <Link className="w-100" to={"/checkout"}>
               <button className="comprarBtn py-1 w-100">
-                <i className="bi bi-bag"></i> Comprar
+                <i className="bi bi-bag"></i> Checkout
               </button>
             </Link>
             <Form.Check

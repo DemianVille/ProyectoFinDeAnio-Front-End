@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import Products from "../components/Products";
 import Header from "../components/Header";
 import { Container, Row, Col, Button, Image, Alert } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -13,6 +15,9 @@ export default function Home() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -45,6 +50,10 @@ export default function Home() {
           <Col xs={6}>
             <Image
               className="subportada"
+              data-aos="fade-right"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="1100"
               src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
               alt=""
               fluid
@@ -53,6 +62,10 @@ export default function Home() {
           <Col xs={6}>
             <Image
               className="subportada"
+              data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="1100"
               src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
               alt=""
               fluid
@@ -61,8 +74,13 @@ export default function Home() {
         </Row>
       </div>
       <div className="imgflotante">
-        <Alert variant="dark" className="text-center mt-5 mb-5 backportada">
-          <div className="efectoimg">
+        <Alert
+          variant="dark"
+          className="text-center mt-5 mb-5 backportada"
+          data-aos="zoom-out-up"
+          data-aos-duration="1100"
+        >
+          <div className="">
             <h2 className="mt-5 mb-5">
               <strong className="imgzize">IDEALES PARA TI!</strong>
             </h2>
