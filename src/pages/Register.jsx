@@ -47,7 +47,7 @@ export default function Register() {
                 event.preventDefault();
               }}
             >
-              <div className="text-center mb-2">
+              <div className="text-center mb-3 mt-3">
                 <h2>Registrarse</h2>
               </div>
               <Form.Group className="mb-3">
@@ -119,7 +119,9 @@ export default function Register() {
                 />
               </Form.Group>
               <Form.Group className="mb-2">
-                <Form.Label htmlFor="repeatPassword">Repetir contraseña</Form.Label>
+                <Form.Label htmlFor="repeatPassword">
+                  Repetir contraseña
+                </Form.Label>
                 <Form.Control
                   id="repeatPassword"
                   type="password"

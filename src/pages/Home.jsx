@@ -61,14 +61,16 @@ export default function Home() {
         </Row>
       </div>
       <div className="imgflotante">
-        <Alert variant="dark" className="text-center mt-5 mb-5 backportada ">
-          <h2 className="mt-5 mb-5">
-            <strong className="imgzize">IDEALES PARA TI!</strong>
-          </h2>
-          <p className="mb-5">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          </p>
-          <button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</button>
+        <Alert variant="dark" className="text-center mt-5 mb-5 backportada">
+          <div className="efectoimg">
+            <h2 className="mt-5 mb-5">
+              <strong className="imgzize">IDEALES PARA TI!</strong>
+            </h2>
+            <p className="mb-5">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+            <button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</button>
+          </div>
         </Alert>
       </div>
 

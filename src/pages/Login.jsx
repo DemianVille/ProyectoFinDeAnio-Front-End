@@ -13,7 +13,7 @@ export default function Login() {
   return (
     <>
       <NavBar />
-      <Container fluid className="body">
+      <Container className="body">
         <Row className="d-flex justify-content-center">
           <Col md={4}>
             <h2 className="text-center my-3">Iniciar sesión</h2>
@@ -36,10 +36,7 @@ export default function Login() {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="checkbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Mantenerme conectado"
-                />
+                <Form.Check type="checkbox" label="Mantenerme conectado" />
               </Form.Group>
 
               <button

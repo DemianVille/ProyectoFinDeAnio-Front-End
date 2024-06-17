@@ -57,7 +57,7 @@ export default function Checkout() {
           <Form.Group className="mb-3" controlId="company">
             <Form.Control
               type="text"
-              placeholder="Companía (Opcional)"
+              placeholder="Companía (opcional)"
               aria-label="Companía"
             />
           </Form.Group>
@@ -104,10 +104,7 @@ export default function Checkout() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="promotions">
-            <Form.Check
-              type="checkbox"
-              label="Notificame por promociones"
-            />
+            <Form.Check type="checkbox" label="Notificame por promociones" />
           </Form.Group>
         </Form>
 
