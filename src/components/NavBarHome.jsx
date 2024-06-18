@@ -166,7 +166,7 @@ export default function NavBarHome() {
                       </li>
                       <li className="nav-item mx-2">
                         <Link className="nav-link pb-2" to={"/cart"}>
-                          <i className="bi bi-basket-fill navIcon"></i>
+                        <i class="bi bi-bag-fill navIcon"></i>
                         </Link>
                       </li>
                     </ul>
