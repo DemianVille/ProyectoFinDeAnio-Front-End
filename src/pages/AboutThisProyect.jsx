@@ -53,40 +53,84 @@ export default function AboutThisProyect() {
         </header>
         <section className="pt-5">
           <Row className="d-flex">
-            <Col>
-              <div>
-                <Image></Image>
+            <Col className="d-flex" xs={12}>
+              <div className="ourPhotosContainer">
+                <Image
+                  className="ourPhotos"
+                  src="/src/assets/AnthonyPiñeyro.jpg"
+                />
               </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                officia magnam pariatur optio voluptatibus perspiciatis tempora.
-                Officiis ad cumque pariatur voluptatem eaque ab praesentium
-                reiciendis quae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel
-                facilis, porro nemo iure quis dolor, maiores reiciendis eaque
-                quisquam, sit nam et. Assumenda, delectus minima?
-              </p>
-              <div>
-                <Image></Image>
+              <Col className="p-3 pt-5">
+                <h3>Anthony Piñeyro</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                  suscipit voluptatibus quibusdam? Quas facere dolore quod
+                  exercitationem accusamus quaerat possimus iure ut. Corporis
+                  laboriosam molestias rerum voluptates. Repellendus, ea magnam?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Minima non, dolores esse error quas molestias voluptatibus
+                  excepturi placeat, voluptatum beatae, consectetur repellendus
+                  quibusdam cum adipisci molestiae nihil officiis alias
+                  repudiandae!
+                </p>
+              </Col>
+            </Col>
+            <Col className="d-flex" xs={12}>
+              <Col className="p-3 pt-5">
+                <h3>Sofía Rovati</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel
+                  facilis, porro nemo iure quis dolor, maiores reiciendis eaque
+                  quisquam, sit nam et. Assumenda, delectus minima? Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Porro hic ullam
+                  in saepe quae eaque reprehenderit deserunt, dolor doloribus
+                  rerum quas. Optio doloribus alias iusto provident illum eaque
+                  quis magnam?
+                </p>
+              </Col>
+              <div className="ourPhotosContainer">
+                <Image
+                  className="ourPhotos"
+                  src="/src/assets/SofíaRovati.jpg"
+                />
               </div>
-              <div>
-                <Image></Image>
+            </Col>
+            <Col className="d-flex" xs={12}>
+              <div className="ourPhotosContainer">
+                <Image
+                  className="ourPhotos"
+                  src="/src/assets/DemianBrinvillePiquinela.jpg"
+                />
               </div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
-                voluptatem officiis ratione! In expedita voluptatum laborum
-                quae? Esse, repellendus exercitationem.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                cum autem necessitatibus ipsum sunt rerum, dolores commodi
-                mollitia consequatur incidunt distinctio asperiores, iusto,
-                inventore pariatur ullam ex eligendi. Dolores, quam.
-              </p>
-              <div>
-                <Image></Image>
+              <Col className="p-3 pt-5">
+                <h3>Demian Brinville Piquinela</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+                  voluptatem officiis ratione! In expedita voluptatum laborum
+                  quae? Esse, repellendus exercitationem. Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Laborum quo debitis
+                  mollitia cupiditate optio, aperiam architecto ex minima rem
+                  assumenda accusamus explicabo illum doloremque recusandae
+                  repellat similique nulla ratione earum.
+                </p>
+              </Col>
+            </Col>
+            <Col className="d-flex" xs={12}>
+              <Col className="p-3 pt-5">
+                <h3>Alhena</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid cum autem necessitatibus ipsum sunt rerum, dolores
+                  commodi mollitia consequatur incidunt distinctio asperiores,
+                  iusto, inventore pariatur ullam ex eligendi. Dolores, quam.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Cumque repudiandae iste unde dignissimos fuga animi tenetur,
+                  officiis, incidunt corrupti omnis dolorum molestiae sapiente
+                  cupiditate in fugit nobis amet, magnam impedit.
+                </p>
+              </Col>
+              <div className="ourPhotosContainer">
+                <Image className="ourPhotos" src="/src/assets/FotoAlhenaProvisoria.jpg" />
               </div>
             </Col>
           </Row>
