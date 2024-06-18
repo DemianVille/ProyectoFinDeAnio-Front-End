@@ -558,3 +558,21 @@ body {
   background-image: url(/src/assets/homeBefore.jpg);
   background-size: cover;
 }
+
+.aboutUsBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(97, 238, 191);
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.aboutUsBtn:hover{
+  background-color: rgba(97, 238, 191, 0.829);
+}
+
+.aboutUsLink{
+  color: #000;
+  text-decoration: none;
+}

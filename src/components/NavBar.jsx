@@ -99,49 +99,32 @@ export default function NavBarHome() {
                 ))}
               </Nav>
               <Nav>
-                <ul className="navbar-nav mb-2">
-                  <li className="nav-item dropdown" ref={dropdownRef}>
-                    <p
-                      className="nav-link m-0"
-                      role="button"
-                      onClick={handleDropdownToggle}
-                      aria-expanded={isDropdownOpen}
-                    >
-                      <i className="bi bi-person-fill navIcon"></i>
-                    </p>
-                    <ul
-                      className={`dropDownPosition dropdown-menu${
-                        isDropdownOpen ? " show" : ""
-                      }`}
-                    >
-                      <li className="nav-item dropDownItem">
-                        <Link
-                          className="nav-link active text-center"
-                          to={"/login"}
-                        >
-                          Iniciar sesión
-                        </Link>
-                      </li>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li className="nav-item dropDownItem">
-                        <Link
-                          className="nav-link active text-center"
-                          to={"/register"}
-                        >
-                          Registrarse
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
+                <div className="d-flex justify-content-center align-items-center">
 
-                  <li className="nav-item">
+                  <Link
+                              className="nav-link mx-1 active text-center"
+                              to={"/login"}
+                              >
+                             Iniciar sesión
+                            </Link>
+                               
+                               
+
+                            <Link
+                              className="nav-link mx-1 active text-center"
+                              to={"/register"}
+                              >
+                             Registrarse
+                            </Link>
+                              
+                              </div>
+                  </Nav>   
+              <Nav>
+            
                     <Link className="nav-link" to={"/cart"}>
                       <i class="bi bi-bag-fill navIcon"></i>
                     </Link>
-                  </li>
-                </ul>
+               
               </Nav>
             </Navbar.Collapse>
           </Collapse>

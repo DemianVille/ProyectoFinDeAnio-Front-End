@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { Container, Row, Col, Image, Alert } from "react-bootstrap";
 import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import Header from "../components/Header";
-import { Container, Row, Col, Image, Alert } from "react-bootstrap";
+import AboutThisProject from "../components/AboutThisProject";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -119,6 +120,7 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
+      <AboutThisProject/>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
