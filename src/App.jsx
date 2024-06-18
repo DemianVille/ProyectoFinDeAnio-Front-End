@@ -8,6 +8,7 @@ import Checkout from "./pages/Checkout";
 import AboutThisProyect from "./pages/AboutThisProyect";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ScrollToTop from "./components/ScrollToTop";
 import "react-toastify/dist/ReactToastify.css";
 import Cart from "./pages/Cart";
 
@@ -54,7 +55,12 @@ function App() {
       element: <div>Error 404</div>,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <ScrollToTop />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

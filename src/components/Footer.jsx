@@ -77,7 +77,11 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Síguenos</h4>
             <ul className="footerListContact">
               <li>
-                <a href="https://facebook.com" className="footerLink">
+                <a
+                  href="https://facebook.com"
+                  className="footerLink"
+                  target="_blank"
+                >
                   <img
                     className="pb-1"
                     src="/src/assets/facebookLogo.svg"
@@ -87,7 +91,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com" className="footerLink">
+                <a
+                  href="https://twitter.com"
+                  className="footerLink"
+                  target="_blank"
+                >
                   <img
                     className="pb-1"
                     src="/src/assets/twitterLogo.svg"
@@ -97,7 +105,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com" className="footerLink">
+                <a
+                  href="https://instagram.com"
+                  className="footerLink"
+                  target="_blank"
+                >
                   <img
                     className="pb-1"
                     src="/src/assets/instagramLogo.svg"

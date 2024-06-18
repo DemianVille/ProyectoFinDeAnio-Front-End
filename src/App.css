@@ -556,7 +556,5 @@ body {
 
 .imgHomeBefore {
   background-image: url(/src/assets/homeBefore.jpg);
-  background-size: cover;  
-  
+  background-size: cover;
 }
-
