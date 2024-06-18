@@ -10,30 +10,29 @@ export default function AboutThisProyect() {
       <Container className="body">
         <header>
           <Row>
-            <Col md={8}>
-              <h5></h5>
+            <Col md={6}>
+              <h2>Sobre este proyecto</h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                laudantium libero quod commodi deleniti praesentium est
+                asperiores culpa earum, accusantium totam molestiae, corrupti,
+                ducimus similique perferendis. Dolores rem unde asperiores?
+              </p>
+              <div>
+                <Row>
+                  <Col md={6}>
+                    <Image className="" src="" alt="" fluid />
+                  </Col>
+                </Row>
+              </div>
             </Col>
             <Col md={4}>
               <Image src="" alt="" fluid />
             </Col>
           </Row>
         </header>
-        <section>
-          <Row>
-            <Col md={3}>
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-            </Col>
-            <Col md={9}>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-            </Col>
-          </Row>
-        </section>
+        <section></section>
       </Container>
       <Footer />
     </>
