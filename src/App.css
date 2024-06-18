@@ -559,7 +559,6 @@ body {
   background-size: cover;
 }
 
-<<<<<<< HEAD
 .aboutUsBtn{
   position: fixed;
   bottom: 20px;
@@ -577,7 +576,7 @@ body {
   color: #000;
   text-decoration: none;
 }
-=======
+
 .ourPhotosContainer {
   padding: 30px;
 }
@@ -585,4 +584,3 @@ body {
 .ourPhotos {
   width: 250px;
 }
->>>>>>> c0d832dbbbd0012aea9402406707352d19d64aea
