@@ -9,7 +9,6 @@ import {
   Button,
   Container,
   Collapse,
-
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -66,9 +65,7 @@ export default function NavBarHome() {
 
   return (
     <>
-
       <Navbar expand="lg" fixed="top" className=" navShadow ">
-
         <Container fluid>
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
@@ -166,7 +163,6 @@ export default function NavBarHome() {
                             </Link>
                           </li>
                         </ul>
-
                       </li>
                       <li className="nav-item mx-2">
                         <Link className="nav-link pb-2" to={"/cart"}>
@@ -174,11 +170,9 @@ export default function NavBarHome() {
                         </Link>
                       </li>
                     </ul>
-
                   </Nav>
                 </div>
               </div>
-
             </Navbar.Collapse>
           </Collapse>
         </Container>
