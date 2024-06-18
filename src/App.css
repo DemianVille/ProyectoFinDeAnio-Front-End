@@ -529,7 +529,6 @@ body {
   border-radius: 1%;
 }
 
-
 .imgflotante {
   width: 100%;
 }
@@ -561,3 +560,9 @@ body {
   }
 }
 
+/* Sobre este proyecto */
+
+.imgHomeBefore {
+  background-image: url(/src/assets/homeBefore.jpg);
+  height: 100px;
+}
