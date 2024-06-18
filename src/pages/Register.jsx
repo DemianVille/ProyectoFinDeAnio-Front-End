@@ -57,6 +57,7 @@ export default function Register() {
                   type="text"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  placeholder="Juanito"
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -65,6 +66,7 @@ export default function Register() {
                   id="name"
                   type="text"
                   aria-label="First name"
+                  placeholder="Juan"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -75,6 +77,7 @@ export default function Register() {
                   id="lastname"
                   type="text"
                   aria-label="Last name"
+                  placeholder="Pancracio"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 />
@@ -85,6 +88,7 @@ export default function Register() {
                   id="email"
                   type="email"
                   aria-describedby="email"
+                  placeholder="juanpancracio@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -95,6 +99,7 @@ export default function Register() {
                   id="address"
                   type="text"
                   aria-describedby="address"
+                  placeholder="Canelones 1162"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
@@ -105,6 +110,7 @@ export default function Register() {
                   id="phone"
                   type="text"
                   aria-describedby="phone"
+                  placeholder="091234567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
@@ -114,6 +120,7 @@ export default function Register() {
                 <Form.Control
                   id="password"
                   type="password"
+                  placeholder="1234abcd"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -125,6 +132,7 @@ export default function Register() {
                 <Form.Control
                   id="repeatPassword"
                   type="password"
+                  placeholder="1234abcd"
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />

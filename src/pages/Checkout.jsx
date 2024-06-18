@@ -14,7 +14,7 @@ export default function Checkout() {
     <>
       <NavBar />
       <Container className="body">
-        <h2 className="text-center my-3">Carrito</h2>
+        <h2 className="text-center my-3">Checkout</h2>
         <Form
           onSubmit={(event) => {
             event.preventDefault();

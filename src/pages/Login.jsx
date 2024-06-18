@@ -24,15 +24,12 @@ export default function Login() {
             >
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Correo</Form.Label>
-                <Form.Control type="email" placeholder="Ingrese su correo" />
+                <Form.Control type="email" placeholder="ejemplo@gmail.com" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="password">
+              <Form.Group className="mb-3" controlId="1234abcd">
                 <Form.Label>Contraseña</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Ingrese su contraseña"
-                />
+                <Form.Control type="password" placeholder="1234abcd" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="checkbox">

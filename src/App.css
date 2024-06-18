@@ -558,3 +558,11 @@ body {
   background-image: url(/src/assets/homeBefore.jpg);
   background-size: cover;
 }
+
+.ourPhotosContainer {
+  padding: 30px;
+}
+
+.ourPhotos {
+  width: 250px;
+}
