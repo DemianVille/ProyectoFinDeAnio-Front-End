@@ -130,7 +130,7 @@ export default function AboutThisProyect() {
                 </p>
               </Col>
               <div className="ourPhotosContainer">
-                <Image className="ourPhotos" src="" />
+                <Image className="ourPhotos" src="/src/assets/FotoAlhenaProvisoria.jpg" />
               </div>
             </Col>
           </Row>
