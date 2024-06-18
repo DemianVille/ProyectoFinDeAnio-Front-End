@@ -119,7 +119,7 @@ export default function NavBarHome() {
                           className="nav-link active text-center"
                           to={"/login"}
                         >
-                          Iniciar Sesion
+                          Iniciar sesión
                         </Link>
                       </li>
                       <li>

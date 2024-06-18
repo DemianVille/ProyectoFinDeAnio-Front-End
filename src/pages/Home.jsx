@@ -47,7 +47,7 @@ export default function Home() {
       <Header />
       <div className="d-flex justify-content-evenly mt-5">
         <Row>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <Image
               className="subportada"
               data-aos="fade-right"
@@ -59,7 +59,7 @@ export default function Home() {
               fluid
             />
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <Image
               className="subportada"
               data-aos="fade-left"

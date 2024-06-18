@@ -7,12 +7,12 @@ export default function Header() {
     {
       imgSrc: "https://www.sodanca.com/cdn/shop/files/Tiler2-banner.jpg?v=1717042733&width=2400",
       captionTitle: "TILER PECK",
-      captionText: "Revisa la colección Tiler Peck en nombre ahora",
+      captionText: "Revisa la colección Tiler Peck en Copéllia ahora",
     },
     {
       imgSrc: "https://www.sodanca.com/cdn/shop/files/kya-socks-details.jpg?v=1715798267&width=2400",
       captionTitle: "TILER PECK",
-      captionText: "Revisa la colección Tiler Peck en nombre ahora",
+      captionText: "Revisa la colección Tiler Peck en Copéllia ahora",
     },
   ];
 
