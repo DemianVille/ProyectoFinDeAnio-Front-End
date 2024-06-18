@@ -13,6 +13,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function NavBarHome() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -65,7 +66,9 @@ export default function NavBarHome() {
 
   return (
     <>
+
       <Navbar expand="lg" fixed="top" className=" navShadow ">
+
         <Container fluid>
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
@@ -82,7 +85,8 @@ export default function NavBarHome() {
           <Collapse in={!isNavCollapsed}>
             <Navbar.Collapse
               id="navbarSupportedContent"
-              className="navbar-collapse navBarHome px-3"
+              className="navbar-collapse navBar"
+
             >
               <Nav className="categoryPosition w-100">
                 {categories.map((category) => (
@@ -135,9 +139,11 @@ export default function NavBarHome() {
                       </li>
                     </ul>
                   </li>
-                  <li className="nav-item ">
-                    <Link className="nav-link pb-2" to={"/cart"}>
-                      <i className="bi bi-basket-fill navIcon"></i>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/cart"}>
+                      <i className="bi bi-handbag-fill navIcon"></i>
+
                     </Link>
                   </li>
                 </ul>

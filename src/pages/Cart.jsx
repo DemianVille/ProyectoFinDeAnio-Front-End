@@ -3,7 +3,15 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { Container, Row, Col, Button, Image, Form, Card } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Image,
+  Form,
+  Card,
+} from "react-bootstrap";
 
 export default function Cart() {
   const [quantity, setQuantity] = useState(1);
@@ -11,7 +19,7 @@ export default function Cart() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
-  
+
   const addQty = () => {
     setQuantity(quantity + 1);
   };
@@ -27,7 +35,7 @@ export default function Cart() {
       <NavBar />
       <Container className="body">
         <div className="text-center mb-5">
-          <h2>Cart</h2>
+          <h2>Carrito</h2>
           <Link to={"/"} className="continueShopping">
             <span>
               Seguir explorando <i className="bi bi-shop"></i>
@@ -36,36 +44,40 @@ export default function Cart() {
         </div>
         <Row>
           <Col md={8}>
-          <div className="d-flex">
-            <Image
-              src="https://www.sodanca.com/cdn/shop/files/BA26black-1_d1294b0d-fd2a-485c-baaa-3eb59bdf0983_540x.jpg?v=1697658027"
-              className="cartProdImg me-3"
-            />
-            <div>
-              <p className="m-0">Zapatilla para hombre</p>
-              <p className="m-0">Color: Negro</p>
-              <p className="pb-4 m-0">Precio: $35</p>
-              <div className="d-flex m-2 qtyDiv">
+            <div className="d-flex">
+              <Image
+                src="https://www.sodanca.com/cdn/shop/files/BA26black-1_d1294b0d-fd2a-485c-baaa-3eb59bdf0983_540x.jpg?v=1697658027"
+                className="cartProdImg me-3"
+              />
+              <div>
+                <p className="m-0">Zapatilla para hombre</p>
+                <p className="m-0">Color: Negro</p>
+                <p className="pb-4 m-0">Precio: $35</p>
+                <div className="d-flex m-2 qtyDiv">
+                  <button
+                    variant="outline-secondary"
+                    className="qtyBtn"
+                    onClick={resQty}
+                  >
+                    -
+                  </button>
+                  <p className="m-0 qtyNum">{quantity}</p>
+                  <button
+                    variant="outline-secondary"
+                    className="qtyBtn"
+                    onClick={addQty}
+                  >
+                    +
+                  </button>
+                </div>
                 <button
-                  variant="outline-secondary"
-                  className="qtyBtn"
-                  onClick={resQty}
+                  variant="outline-danger"
+                  className="deleteFromCart"
+                  onClick={notify}
                 >
-                  -
-                </button>
-                <p className="m-0 qtyNum">{quantity}</p>
-                <button
-                  variant="outline-secondary"
-                  className="qtyBtn"
-                  onClick={addQty}
-                >
-                  +
+                  <i className="bi bi-trash"></i> Eliminar
                 </button>
               </div>
-              <button variant="outline-danger" className="deleteFromCart" onClick={notify}>
-                <i className="bi bi-trash"></i> Eliminar
-              </button>
-            </div>
             </div>
           </Col>
           <Col md={4} className="cartBox">
@@ -79,7 +91,7 @@ export default function Cart() {
             </div>
             <Link className="w-100" to={"/checkout"}>
               <button className="comprarBtn py-1 w-100">
-                <i className="bi bi-bag"></i> Comprar
+                <i className="bi bi-bag"></i> Checkout
               </button>
             </Link>
             <Form.Check
@@ -89,14 +101,14 @@ export default function Cart() {
               label="Envolver para regalo"
               custom
             >
-            <input
-              className="form-check-input"
-              type="checkbox"
-              id="giftCheckbox"
-            />
-            <label className="form-check-label ms-2" for="giftCheckbox">
-              Envolver para regalo <i class="bi bi-gift"></i>
-            </label>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="giftCheckbox"
+              />
+              <label className="form-check-label ms-2" for="giftCheckbox">
+                Envolver para regalo <i class="bi bi-gift"></i>
+              </label>
             </Form.Check>
           </Col>
         </Row>

@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import {
   Navbar,
   Nav,
-  Row,
   Form,
+  FormControl,
+  Button,
   Container,
   Collapse,
-  Col,
+
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -65,7 +66,9 @@ export default function NavBarHome() {
 
   return (
     <>
+
       <Navbar expand="lg" fixed="top" className=" navShadow ">
+
         <Container fluid>
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
@@ -98,6 +101,7 @@ export default function NavBarHome() {
                   </div>
                 ))}
               </Nav>
+
               <div className="d-flex justify-content-between">
                 <div className="d-flex align-items-center w-100">
                   <div className="w-100">
@@ -162,6 +166,7 @@ export default function NavBarHome() {
                             </Link>
                           </li>
                         </ul>
+
                       </li>
                       <li className="nav-item mx-2">
                         <Link className="nav-link pb-2" to={"/cart"}>
@@ -169,9 +174,11 @@ export default function NavBarHome() {
                         </Link>
                       </li>
                     </ul>
+
                   </Nav>
                 </div>
               </div>
+
             </Navbar.Collapse>
           </Collapse>
         </Container>

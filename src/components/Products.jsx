@@ -30,7 +30,12 @@ export default function Products(id) {
     getProduct();
   }, []);
   return (
-    <Col className="col-12 col-md-6 my-2 col-lg-4">
+    <Col
+      className="col-12 col-md-6 my-2 col-lg-4"
+      data-aos="fade-up"
+      data-aos-duration="1100"
+      key={product.id}
+    >
       <Link to={`/product/${id.id}`} className="textStyleCard">
         <div className="productCard p-1 h-100">
           <img src={product.photo} className="w-100 mb-3 cardImg" />
