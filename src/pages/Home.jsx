@@ -5,7 +5,7 @@ import NavBarHome from "../components/NavBarHome";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import Header from "../components/Header";
-import { Container, Row, Col, Button, Image, Alert } from "react-bootstrap";
+import { Container, Row, Col, Image, Alert } from "react-bootstrap";
 
 export default function Home() {
   const [products, setProducts] = useState([]);

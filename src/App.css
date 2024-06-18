@@ -39,14 +39,6 @@ body {
   background-color: #ffffff;
 }
 
-.navPosition {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 5;
-  max-height: 5rem;
-}
-
 .navbar-collapse {
   background-color: white;
 }
@@ -105,7 +97,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.buttonNav:hover{
+.buttonNav:hover {
   color: white;
   background-color: #000;
 }
@@ -138,11 +130,11 @@ body {
 
 .body {
   min-height: 100vh;
-  margin-top: 6rem;
+  margin-top: 10rem;
 }
 
 .headerContainer {
-  margin-top: 5rem;
+  margin-top: 6.3rem;
 }
 
 .linkLi {
@@ -207,7 +199,7 @@ body {
 
 .categoriesDiv {
   position: sticky;
-  top: 6rem;
+  top: 8rem;
 }
 
 .textStyleCard {
@@ -241,7 +233,7 @@ body {
   border-radius: 0;
   transition: all 0.2s ease-in-out;
 }
-.returnToCart:hover{
+.returnToCart:hover {
   border: none;
   padding: 20px 20px 20px 0;
   background-color: transparent;
@@ -473,11 +465,10 @@ body {
 }
 
 .subportada {
-    animation-name: fadeIn;
-    animation-duration: 2s; 
-    animation-fill-mode: both; /* La animación se quedará en el estado final después de terminar */
-  }
-
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: both; /* La animación se quedará en el estado final después de terminar */
+}
 
 .backportada {
   background-image: url(https://www.sodanca.com/cdn/shop/files/custom-tap-banner.jpg?v=1717043017&width=2400);
@@ -569,6 +560,10 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

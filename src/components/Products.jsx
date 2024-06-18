@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Col, Card } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 export default function Products(id) {
   const [product, setProduct] = useState({});
