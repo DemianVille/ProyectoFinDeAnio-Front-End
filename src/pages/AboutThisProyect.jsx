@@ -54,7 +54,9 @@ export default function AboutThisProyect() {
         <section className="pt-5">
           <Row className="d-flex">
             <Col>
-              <Image></Image>
+              <div>
+                <Image></Image>
+              </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
                 officia magnam pariatur optio voluptatibus perspiciatis tempora.
@@ -66,8 +68,12 @@ export default function AboutThisProyect() {
                 facilis, porro nemo iure quis dolor, maiores reiciendis eaque
                 quisquam, sit nam et. Assumenda, delectus minima?
               </p>
-              <Image></Image>
-              <Image></Image>
+              <div>
+                <Image></Image>
+              </div>
+              <div>
+                <Image></Image>
+              </div>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
                 voluptatem officiis ratione! In expedita voluptatum laborum
@@ -79,7 +85,9 @@ export default function AboutThisProyect() {
                 mollitia consequatur incidunt distinctio asperiores, iusto,
                 inventore pariatur ullam ex eligendi. Dolores, quam.
               </p>
-              <Image></Image>
+              <div>
+                <Image></Image>
+              </div>
             </Col>
           </Row>
         </section>
