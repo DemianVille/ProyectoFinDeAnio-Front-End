@@ -9,8 +9,8 @@ import AboutThisProyect from "./pages/AboutThisProyect";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ScrollToTop from "./components/ScrollToTop";
-import "react-toastify/dist/ReactToastify.css";
 import Cart from "./pages/Cart";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const router = createBrowserRouter([
