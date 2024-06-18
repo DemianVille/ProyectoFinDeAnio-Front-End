@@ -94,7 +94,7 @@ export default function Home() {
 
       <Container>
         <Row className="filterPosition">
-          <Col md={3} className="fontFlamenco">
+          <Col md={3} className="fontFlamenco ">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
               <ul className="unstyleList p-0">
@@ -113,7 +113,7 @@ export default function Home() {
           <Col md={9}>
             <Row>
               {products.map((product) => {
-                return <Products key={product.id} id={product.id} />;
+                return <Products id={product.id} />;
               })}
             </Row>
           </Col>

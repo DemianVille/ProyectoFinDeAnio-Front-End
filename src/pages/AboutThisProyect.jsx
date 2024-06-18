@@ -46,22 +46,7 @@ export default function AboutThisProyect() {
             </Col>
           </Row>
         </header>
-        <section>
-          <Row>
-            <Col md={3}>
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-              <Image src="" alt="" fluid />
-            </Col>
-            <Col md={9}>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-            </Col>
-          </Row>
-        </section>
+        <section></section>
       </Container>
       <Footer />
     </>
