@@ -117,7 +117,7 @@ export default function AboutThisProyect() {
             </Col>
             <Col className="d-flex" xs={12}>
               <Col className="p-3 pt-5">
-                <h3>Alhena</h3>
+                <h3>Alhena Latorre</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Aliquid cum autem necessitatibus ipsum sunt rerum, dolores
@@ -130,7 +130,10 @@ export default function AboutThisProyect() {
                 </p>
               </Col>
               <div className="ourPhotosContainer">
-                <Image className="ourPhotos" src="/src/assets/FotoAlhenaProvisoria.jpg" />
+                <Image
+                  className="ourPhotos"
+                  src="/src/assets/FotoAlhenaProvisoria.jpg"
+                />
               </div>
             </Col>
           </Row>

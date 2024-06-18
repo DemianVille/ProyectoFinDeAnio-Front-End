@@ -78,7 +78,7 @@ export default function Home() {
         <Alert
           variant="dark"
           className="text-center mt-5 mb-5 backportada"
-          data-aos="zoom-out-up"
+          data-aos="fade"
           data-aos-duration="1100"
         >
           <div className="">
@@ -88,7 +88,9 @@ export default function Home() {
             <p className="mb-5">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             </p>
-            <button className="headerBtn mb-5">PERSONALIZA TUS ZAPATOS</button>
+            <button className="headerBtn mb-5" onClick={notify}>
+              PERSONALIZA TUS ZAPATOS
+            </button>
           </div>
         </Alert>
       </div>
@@ -120,7 +122,7 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-      <AboutThisProject/>
+      <AboutThisProject />
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>

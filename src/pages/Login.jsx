@@ -38,7 +38,7 @@ export default function Login() {
 
               <button
                 type="submit"
-                className="ingresarBtn py-1 my-2 w-100"
+                className="ingresarBtn loginBtns py-1 my-2 w-100"
                 onClick={notify}
               >
                 Ingresar
@@ -52,7 +52,7 @@ export default function Login() {
                 <Col className="py-2 d-flex flex-column">
                   <button
                     type="button"
-                    className="googleBtn py-1 my-2"
+                    className="googleBtn loginBtns py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Google
@@ -64,7 +64,7 @@ export default function Login() {
                   </button>
                   <button
                     type="button"
-                    className="facebookBtn py-1 my-2"
+                    className="facebookBtn loginBtns py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Facebook
@@ -76,7 +76,7 @@ export default function Login() {
                   </button>
                   <button
                     type="button"
-                    className="appleBtn py-1 my-2"
+                    className="appleBtn loginBtns py-1 my-2"
                     onClick={notify}
                   >
                     Ingresar con Apple
