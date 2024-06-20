@@ -44,7 +44,7 @@ export default function Login() {
                 Ingresar
               </button>
 
-              <Link to={"/login"} onClick={notify}>
+              <Link to={"/iniciar-sesion"} onClick={notify}>
                 Olvidé mi contraseña
               </Link>
 

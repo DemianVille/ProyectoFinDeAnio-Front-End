@@ -89,7 +89,7 @@ export default function NavBarHome() {
                   <div className="mx-4" key={category.id}>
                     <Link
                       className="linkLi categoriesNav"
-                      to={`/category/${category.id}`}
+                      to={`/categoria/${category.id}`}
                     >
                       <button className="styleButton w-100 p-2">
                         {category.name}
@@ -100,31 +100,25 @@ export default function NavBarHome() {
               </Nav>
               <Nav>
                 <div className="d-flex justify-content-center align-items-center">
+                  <Link
+                    className="nav-link mx-1 active text-center"
+                    to={"/iniciar-sesion"}
+                  >
+                    Iniciar sesión
+                  </Link>
 
                   <Link
-                              className="nav-link mx-1 active text-center"
-                              to={"/login"}
-                              >
-                             Iniciar sesión
-                            </Link>
-                               
-                               
-
-                            <Link
-                              className="nav-link mx-1 active text-center"
-                              to={"/register"}
-                              >
-                             Registrarse
-                            </Link>
-                              
-                              </div>
-                  </Nav>   
+                    className="nav-link mx-1 active text-center"
+                    to={"/registrarse"}
+                  >
+                    Registrarse
+                  </Link>
+                </div>
+              </Nav>
               <Nav>
-            
-                    <Link className="nav-link" to={"/cart"}>
-                      <i class="bi bi-bag-fill navIcon"></i>
-                    </Link>
-               
+                <Link className="nav-link" to={"/carrito"}>
+                  <i class="bi bi-bag-fill navIcon"></i>
+                </Link>
               </Nav>
             </Navbar.Collapse>
           </Collapse>

@@ -94,17 +94,25 @@ export default function Categories() {
             <Row>
               {filterProducts.map((product) => (
                 <Col sm={12} md={6} lg={4} key={product.id} className="my-2">
-                  <Link to={`/product/${product.id}`} className="textStyleCard">
-                  <div className="productCard p-1 h-100">
-          <img src={product.photo} className="w-100 mb-3 cardImg" />
-          <div>
-            <h5 className="text-center fontFlamenco">{product.name}</h5>
-            <p className="text-center m-0 fontRoboto">${product.price}</p>
-            <p className="text-center d-flex justify-content-center">
-              Stock: <p className="fontRoboto ms-1">{product.stock}</p>
-            </p>
-          </div>
-        </div>
+                  <Link
+                    to={`/productos/${product.id}`}
+                    className="textStyleCard"
+                  >
+                    <div className="productCard p-1 h-100">
+                      <img src={product.photo} className="w-100 mb-3 cardImg" />
+                      <div>
+                        <h5 className="text-center fontFlamenco">
+                          {product.name}
+                        </h5>
+                        <p className="text-center m-0 fontRoboto">
+                          ${product.price}
+                        </p>
+                        <p className="text-center d-flex justify-content-center">
+                          Stock:{" "}
+                          <p className="fontRoboto ms-1">{product.stock}</p>
+                        </p>
+                      </div>
+                    </div>
                   </Link>
                 </Col>
               ))}

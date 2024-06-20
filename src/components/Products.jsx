@@ -36,7 +36,7 @@ export default function Products(id) {
       data-aos-duration="1100"
       key={product.id}
     >
-      <Link to={`/product/${id.id}`} className="textStyleCard">
+      <Link to={`/productos/${id.id}`} className="textStyleCard">
         <div className="productCard p-1 h-100">
           <img src={product.photo} className="w-100 mb-3 cardImg" />
           <div>
