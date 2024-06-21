@@ -589,3 +589,82 @@ body {
 .ourPhotos {
   width: 250px;
 }
+
+/* color */
+
+.pink {
+  background-color: pink;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.black {
+  background-color: black;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.white {
+  background-color: rgb(247, 247, 247);
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.gray {
+  background-color: gray;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.red {
+  background-color: red;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.skyblue {
+  background-color: skyblue;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.purple {
+  background-color: purple;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.green {
+  background-color: green;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.blue {
+  background-color: blue;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.bisque {
+  background-color: bisque;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.beige {
+  background-color: beige;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
