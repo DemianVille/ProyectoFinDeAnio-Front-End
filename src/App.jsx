@@ -5,7 +5,7 @@ import Product from "./pages/Product";
 import User from "./pages/User";
 import Category from "./pages/Category";
 import Checkout from "./pages/Checkout";
-import AboutThisProyect from "./pages/AboutThisProyect";
+import AboutThisProyect from "./pages/AboutThisProject";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ScrollToTop from "./components/ScrollToTop";
@@ -19,15 +19,15 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/product/:id",
+      path: "/productos/:id",
       element: <Product />,
     },
     {
-      path: "/user",
+      path: "/usuario",
       element: <User />,
     },
     {
-      path: "/category/:id",
+      path: "/categoria/:id",
       element: <Category />,
     },
     {
@@ -35,19 +35,19 @@ function App() {
       element: <Checkout />,
     },
     {
-      path: "/cart",
+      path: "/carrito",
       element: <Cart />,
     },
     {
-      path: "/login",
+      path: "/iniciar-sesion",
       element: <Login />,
     },
     {
-      path: "/register",
+      path: "/registrarse",
       element: <Register />,
     },
     {
-      path: "/about-this-project",
+      path: "/sobre-este-proyectos",
       element: <AboutThisProyect />,
     },
     {

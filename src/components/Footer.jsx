@@ -12,7 +12,7 @@ export default function Footer() {
             </h4>
             <ul className="footerList">
               <li>
-                <Link to={"/about-this-project"} className="footerLink">
+                <Link to={"/sobre-este-proyecto"} className="footerLink">
                   Sobre este proyecto
                 </Link>
               </li>

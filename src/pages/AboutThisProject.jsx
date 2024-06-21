@@ -6,7 +6,7 @@ import { Container, Row, Col, Button, Image, Alert } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function AboutThisProyect() {
+export default function AboutThisProject() {
   useEffect(() => {
     AOS.init();
   }, []);
