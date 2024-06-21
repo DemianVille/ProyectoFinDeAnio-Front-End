@@ -46,34 +46,32 @@ export default function Home() {
     <>
       <NavBarHome />
       <Header />
-      <div className="d-flex justify-content-evenly mt-5">
-        <Row>
-          <Col xs={12} md={6}>
+      <Container fluid>
+        <Row className="mt-5 gx-2">
+          <Col xs={12} md={6} className="p-0">
             <Image
-              className="subportada"
-              data-aos="fade-right"
+              className="subportada w-100 pe-1"
+              data-aos="fade-left"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration="1100"
               src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
               alt=""
-              fluid
             />
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} className="p-0">
             <Image
-              className="subportada"
-              data-aos="fade-left"
+              className="subportada w-100 ps-1"
+              data-aos="fade-right"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration="1100"
               src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
               alt=""
-              fluid
             />
           </Col>
         </Row>
-      </div>
+      </Container>
       <div className="imgflotante">
         <Alert
           variant="dark"

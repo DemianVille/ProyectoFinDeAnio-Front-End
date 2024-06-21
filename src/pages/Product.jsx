@@ -69,12 +69,11 @@ export default function Product() {
               <hr />
               <div>
                 <p>Colors -</p>
-                <div className="d-flex">
+                <div className="d-flex flex-wrap">
                   {product.colors.colors.map((color) => {
-                    console.log(color);
                     return (
-                      <div className="colorStyle" onClick={notify}>
-                        <div className={color}></div>
+                      <div className="colorStyle my-1" onClick={notify}>
+                        <div className={`productColor-${color}`}></div>
                       </div>
                     );
                   })}

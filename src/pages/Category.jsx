@@ -105,7 +105,7 @@ export default function Categories() {
                           {product.name}
                         </h5>
                         <p className="text-center m-0 fontRoboto">
-                          ${product.price}
+                          ${product.price}.00
                         </p>
                         <p className="text-center d-flex justify-content-center">
                           Stock:{" "}
