@@ -109,7 +109,7 @@ export default function NavBarHome() {
 
                   <Link
                     className="nav-link mx-1 active text-center"
-                    to={"/registrase"}
+                    to={"/registrarse"}
                   >
                     Registrarse
                   </Link>

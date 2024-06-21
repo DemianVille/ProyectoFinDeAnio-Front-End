@@ -109,7 +109,7 @@ export default function Checkout() {
         </Form>
 
         <div className="checkoutBtn mb-3">
-          <Link to={"/cart"}>
+          <Link to={"/carrito"}>
             <button className="returnToCart">
               <i className="bi bi-caret-left"></i> Volver al carrito
             </button>
