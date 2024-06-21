@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./pages/Cart";
 import "react-toastify/dist/ReactToastify.css";
+import Error404 from "./components/Error404";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,7 +53,7 @@ function App() {
     },
     {
       path: "*",
-      element: <div>Error 404</div>,
+      element: <Error404 />,
     },
   ]);
   return (
