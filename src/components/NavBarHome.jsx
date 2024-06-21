@@ -139,7 +139,7 @@ export default function NavBarHome() {
                 </div>
                 <Nav>
                   <Link className="nav-link pb-2" to={"/carrito"}>
-                    <i class="bi bi-bag-fill navIcon"></i>
+                    <i className="bi bi-bag-fill navIcon"></i>
                   </Link>
                 </Nav>
               </div>
