@@ -66,7 +66,7 @@ export default function NavBarHome() {
   return (
     <>
       <Navbar expand="lg" fixed="top" className=" navShadow ">
-        <Container fluid>
+        <Container fluid className="d-flex justify-content-between flex-wrap">
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
               <div className="logotipo">
@@ -98,6 +98,7 @@ export default function NavBarHome() {
                   </div>
                 ))}
               </Nav>
+              {/*   <div> */}
               <Nav>
                 <div className="d-flex justify-content-center align-items-center">
                   <Link
@@ -106,7 +107,6 @@ export default function NavBarHome() {
                   >
                     Iniciar sesión
                   </Link>
-
                   <Link
                     className="nav-link mx-1 active text-center"
                     to={"/registrarse"}
@@ -137,13 +137,13 @@ export default function NavBarHome() {
                     </button>
                   </Form>
                 </div>
-
                 <Nav>
                   <Link className="nav-link pb-2" to={"/carrito"}>
                     <i className="bi bi-bag-fill navIcon"></i>
                   </Link>
                 </Nav>
               </div>
+              {/*      </div> */}
             </Navbar.Collapse>
           </Collapse>
         </Container>
