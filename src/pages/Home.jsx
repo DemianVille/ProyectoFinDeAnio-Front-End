@@ -116,7 +116,7 @@ export default function Home() {
           <Col md={9}>
             <Row>
               {products.map((product) => {
-                return <Products id={product.id} />;
+                return <Products key={product.id} id={product.id} />;
               })}
             </Row>
           </Col>
