@@ -1,40 +1,49 @@
 import React from "react";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
 
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const navigate = useNavigate();
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  useEffect(() => {
-    const postUser = async () => {
-      try {
-        const options = {
-          method: "POST",
-          headers: {
-            accept: "application/json",
-          },
-        };
+  const postUser = async () => {
+    try {
+      const options = {
+        method: "POST",
+        data: {
+          firstname,
+          lastname,
+          email,
+          address,
+          phone,
+          password,
+        },
+      };
 
-        const response = await fetch(`http://localhost:3000/users`, options);
-      } catch (err) {
-        console.error(err);
+      const response = await axios(`http://localhost:3000/users`, options);
+      if (response.data.message === "User created successfully.") {
+        navigate("/iniciar-sesion");
       }
-    };
-    postUser();
-  }, []);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
@@ -50,16 +59,6 @@ export default function Register() {
               <div className="text-center mb-3 mt-3">
                 <h2>Registrarse</h2>
               </div>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="username">Nombre de usuario</Form.Label>
-                <Form.Control
-                  id="username"
-                  type="text"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  placeholder="Juanito"
-                />
-              </Form.Group>
               <Form.Group className="mb-2">
                 <Form.Label htmlFor="name">Nombre</Form.Label>
                 <Form.Control
@@ -67,8 +66,8 @@ export default function Register() {
                   type="text"
                   aria-label="First name"
                   placeholder="Juan"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -78,8 +77,8 @@ export default function Register() {
                   type="text"
                   aria-label="Last name"
                   placeholder="Pancracio"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -148,7 +147,11 @@ export default function Register() {
                 <button
                   type="submit"
                   className="mt-2 py-1 w-100 crearBtn"
-                  onClick={notify}
+                  onClick={() => {
+                    if (password === repeatPassword) {
+                      postUser();
+                    }
+                  }}
                 >
                   Crear cuenta
                 </button>
