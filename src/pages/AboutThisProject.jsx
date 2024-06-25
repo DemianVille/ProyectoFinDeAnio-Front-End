@@ -21,10 +21,9 @@ export default function AboutThisProject() {
               <div className="pe-4">
                 <h2>Sobre este proyecto</h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, architecto reiciendis! Deserunt veniam odit dolorem
-                  quo, id non velit magnam debitis, vel porro fuga modi,
-                  consequatur reprehenderit quisquam perspiciatis iusto.
+                  Para llevar a cabo este e-commerce nos inspiramos en el mundo de la danza, especificamente el ballet y los variopintos accesorios en torno a esta.
+
+                  
                 </p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
