@@ -5,10 +5,12 @@ import App from "./App.jsx";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import cartReduser from "./redux/cartReduser.js";
+import tokenReduser from "./redux/tokenReduser.js";
 
 const store = configureStore({
   reducer: {
     cart: cartReduser,
+    token: tokenReduser,
   },
 });
 

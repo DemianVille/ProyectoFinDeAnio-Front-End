@@ -50,7 +50,7 @@ export default function Home() {
         <Row className="mt-5 gx-2">
           <Col xs={12} md={6} className="p-0">
             <Image
-              className="subportada w-100 pe-1"
+              className="subportada w-100"
               data-aos="fade-left"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
@@ -61,7 +61,7 @@ export default function Home() {
           </Col>
           <Col xs={12} md={6} className="p-0">
             <Image
-              className="subportada w-100 ps-1"
+              className="subportada w-100"
               data-aos="fade-right"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
