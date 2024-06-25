@@ -48,7 +48,7 @@ function App() {
       element: <Register />,
     },
     {
-      path: "/sobre-este-proyectos",
+      path: "/sobre-este-proyecto",
       element: <AboutThisProyect />,
     },
     {
