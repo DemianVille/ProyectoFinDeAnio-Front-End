@@ -84,9 +84,9 @@ export default function NavBarHome() {
               id="navbarSupportedContent"
               className="navbar-collapse navBarHome px-3"
             >
-              <Nav className="categoryPosition w-100">
+              <Nav className="categoryPosition w-100 ">
                 {categories.map((category) => (
-                  <div className="mx-4" key={category.id}>
+                  <div className="mx-4 " key={category.id}>
                     <Link
                       className="linkLi categoriesNav"
                       to={`/categoria/${category.id}`}
@@ -100,15 +100,15 @@ export default function NavBarHome() {
               </Nav>
               {/*   <div> */}
               <Nav>
-                <div className="d-flex justify-content-center align-items-center">
+                <div className="d-flex justify-content-center align-items-center mx-4 ">
                   <Link
-                    className="nav-link mx-1 active text-center"
+                    className="nav-link mx-1 active text-center productCard"
                     to={"/iniciar-sesion"}
                   >
-                    Iniciar sesión
+                    Iniciar
                   </Link>
                   <Link
-                    className="nav-link mx-1 active text-center"
+                    className="nav-link mx-1 active text-center productCard move"
                     to={"/registrarse"}
                   >
                     Registrarse
@@ -125,7 +125,7 @@ export default function NavBarHome() {
                     <input
                       type="text"
                       placeholder="Buscar"
-                      className="inputNav w-100"
+                      className="inputNav w-100 "
                       aria-label="Search"
                     />
                     <button
