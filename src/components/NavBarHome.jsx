@@ -84,9 +84,9 @@ export default function NavBarHome() {
               id="navbarSupportedContent"
               className="navbar-collapse navBarHome px-3"
             >
-              <Nav className="categoryPosition w-100">
+              <Nav className="categoryPosition w-100 ">
                 {categories.map((category) => (
-                  <div className="mx-4" key={category.id}>
+                  <div className="mx-4 " key={category.id}>
                     <Link
                       className="linkLi categoriesNav"
                       to={`/categoria/${category.id}`}
@@ -98,52 +98,53 @@ export default function NavBarHome() {
                   </div>
                 ))}
               </Nav>
-              {/*   <div> */}
-              <Nav>
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link
-                    className="nav-link mx-1 active text-center"
-                    to={"/iniciar-sesion"}
-                  >
-                    Iniciar sesión
-                  </Link>
-                  <Link
-                    className="nav-link mx-1 active text-center"
-                    to={"/registrarse"}
-                  >
-                    Registrarse
-                  </Link>
-                </div>
-              </Nav>
-              <div className="d-flex align-items-center">
-                <div className="w-100 me-2">
-                  <Form
-                    className="d-flex"
-                    role="search"
-                    onSubmit={(event) => event.preventDefault()}
-                  >
-                    <input
-                      type="text"
-                      placeholder="Buscar"
-                      className="inputNav w-100"
-                      aria-label="Search"
-                    />
-                    <button
-                      className="buttonNav"
-                      type="submit"
-                      onClick={notify}
-                    >
-                      <i className="bi bi-search"></i>
-                    </button>
-                  </Form>
-                </div>
+
+              <div>
                 <Nav>
-                  <Link className="nav-link pb-2" to={"/carrito"}>
-                    <i className="bi bi-bag-fill navIcon"></i>
-                  </Link>
+                  <div className="d-flex justify-content-center align-items-center">
+                    <Link
+                      className="nav-link mx-1 active text-center"
+                      to={"/iniciar-sesion"}
+                    >
+                      Iniciar sesión
+                    </Link>
+                    <Link
+                      className="nav-link mx-1 active text-center"
+                      to={"/registrarse"}
+                    >
+                      Registrarse
+                    </Link>
+                  </div>
                 </Nav>
+                <div className="d-flex align-items-center">
+                  <div className="w-100 me-2">
+                    <Form
+                      className="d-flex"
+                      role="search"
+                      onSubmit={(event) => event.preventDefault()}
+                    >
+                      <input
+                        type="text"
+                        placeholder="Buscar"
+                        className="inputNav w-100"
+                        aria-label="Search"
+                      />
+                      <button
+                        className="buttonNav"
+                        type="submit"
+                        onClick={notify}
+                      >
+                        <i className="bi bi-search"></i>
+                      </button>
+                    </Form>
+                  </div>
+                  <Nav>
+                    <Link className="nav-link pb-2" to={"/carrito"}>
+                      <i className="bi bi-bag-fill navIcon"></i>
+                    </Link>
+                  </Nav>
+                </div>
               </div>
-              {/*      </div> */}
             </Navbar.Collapse>
           </Collapse>
         </Container>

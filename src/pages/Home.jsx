@@ -47,7 +47,7 @@ export default function Home() {
       <NavBarHome />
       <Header />
       <Container fluid>
-        <Row className="mt-5 gx-2">
+        <Row className="mt-5 gx-2" data-aos="fade" data-aos-duration="1100">
           <Col xs={12} md={6} className="p-0">
             <Image
               className="subportada w-100"
@@ -87,7 +87,7 @@ export default function Home() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             </p>
             <button className="headerBtn mb-5" onClick={notify}>
-              PERSONALIZA TUS ZAPATOS
+              PERSONALIZA TU ESTILO
             </button>
           </div>
         </Alert>

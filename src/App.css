@@ -34,6 +34,11 @@ body {
 
 /* navBar */
 
+.cartbtn {
+  display: flex;
+  align-content: end;
+}
+
 .navShadow {
   position: relative;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -123,7 +128,7 @@ body {
 .headerBtn {
   border: none;
   background-color: rgb(97, 238, 191);
-  padding: 10px 30px;
+  padding: 5px 20px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -581,6 +586,15 @@ body {
 .imgHomeBefore {
   background-image: url(/src/assets/homeBefore.jpg);
   background-size: cover;
+}
+
+.aboutThisProjectIntro {
+  font-size: small;
+  text-indent: 20px;
+}
+
+.aboutUs {
+  text-indent: 20px;
 }
 
 .aboutUsBtn {

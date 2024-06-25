@@ -101,25 +101,25 @@ export default function NavBarHome() {
               <Nav>
                 <div className="d-flex justify-content-center align-items-center">
                   <Link
-                    className="nav-link mx-1 active text-center"
+                    className="nav-link mx-1 active text-center productCard "
                     to={"/iniciar-sesion"}
                   >
-                    Iniciar sesión
+                    Iniciar
                   </Link>
 
                   <Link
-                    className="nav-link mx-1 active text-center"
+                    className="nav-link mx-1 active text-center productCard "
                     to={"/registrarse"}
                   >
                     Registrarse
                   </Link>
                 </div>
               </Nav>
-              <Nav>
-                <Link className="nav-link" to={"/carrito"}>
-                  <i className="bi bi-bag-fill navIcon"></i>
-                </Link>
-              </Nav>
+                <Nav>
+                  <Link className="nav-link" to={"/carrito"}>
+                    <i className="bi bi-bag-fill navIcon"></i>
+                  </Link>
+                </Nav>
             </Navbar.Collapse>
           </Collapse>
         </Container>
