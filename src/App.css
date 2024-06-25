@@ -583,6 +583,16 @@ body {
   background-size: cover;
 }
 
+.aboutThisProjectIntro {
+  font-size: small;
+  text-indent: 20px;
+
+}
+
+.aboutUs{
+  text-indent: 20px;
+}
+
 .aboutUsBtn {
   position: fixed;
   bottom: 20px;
