@@ -115,11 +115,11 @@ export default function NavBarHome() {
                   </Link>
                 </div>
               </Nav>
-              <Nav>
-                <Link className="nav-link" to={"/carrito"}>
-                  <i className="bi bi-bag-fill navIcon"></i>
-                </Link>
-              </Nav>
+                <Nav>
+                  <Link className="nav-link" to={"/carrito"}>
+                    <i className="bi bi-bag-fill navIcon"></i>
+                  </Link>
+                </Nav>
             </Navbar.Collapse>
           </Collapse>
         </Container>
