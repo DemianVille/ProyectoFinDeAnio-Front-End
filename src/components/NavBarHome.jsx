@@ -100,7 +100,7 @@ export default function NavBarHome() {
               </Nav>
               {/*   <div> */}
               <Nav>
-                <div className="d-flex justify-content-center align-items-center mx-4 ">
+                <div className="d-flex justify-content-center align-items-center mx-4 move ">
                   <Link
                     className="nav-link mx-1 active text-center productCard"
                     to={"/iniciar-sesion"}
@@ -108,7 +108,7 @@ export default function NavBarHome() {
                     Iniciar
                   </Link>
                   <Link
-                    className="nav-link mx-1 active text-center productCard move"
+                    className="nav-link mx-1 active text-center productCard e"
                     to={"/registrarse"}
                   >
                     Registrarse

@@ -87,7 +87,7 @@ export default function Home() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             </p>
             <button className="headerBtn mb-5" onClick={notify}>
-              PERSONALIZA TUS ZAPATOS
+              PERSONALIZA TU ESTILO
             </button>
           </div>
         </Alert>
