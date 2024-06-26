@@ -2,37 +2,15 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct } from "../redux/cartReduser";
+import { deleteProduct, addQty, subQty } from "../redux/cartReduser";
 
 export default function Cart() {
-  const [quantity, setQuantity] = useState(1);
   const products = useSelector((state) => state.cart);
-  console.log(products);
 
   const dispatch = useDispatch();
-
-  const notify = () => {
-    toast.warn("En desarrollo");
-  };
-
-  const addQty = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const resQty = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const destroyProduct = async () => {
-    product.qty = quantity;
-    dispatch(deleteProduct(product));
-  };
 
   return (
     <>
@@ -64,17 +42,23 @@ export default function Cart() {
                           <button
                             variant="outline-secondary"
                             className="qtyBtn"
-                            value={product.qty}
-                            onClick={resQty}
+                            onClick={() => {
+                              if (quantity > 1) {
+                                dispatch(subQty(product));
+                              }
+                            }}
                           >
                             -
                           </button>
-                          <p className="m-0 qtyNum">{quantity}</p>
+                          <p className="m-0 qtyNum">{product.qty}</p>
                           <button
                             variant="outline-secondary"
                             className="qtyBtn"
-                            value={product.qty}
-                            onClick={addQty}
+                            onClick={() => {
+                              if (quantity > 1) {
+                                dispatch(addQty(product));
+                              }
+                            }}
                           >
                             +
                           </button>
@@ -82,7 +66,9 @@ export default function Cart() {
                         <button
                           variant="outline-danger"
                           className="deleteFromCart"
-                          onClick={notify}
+                          onClick={() => {
+                            dispatch(deleteProduct(product.id));
+                          }}
                         >
                           <i className="bi bi-trash"></i> Eliminar
                         </button>
@@ -102,7 +88,7 @@ export default function Cart() {
                 </div>
                 <Link className="w-100" to={"/checkout"}>
                   <button className="comprarBtn py-1 w-100">
-                    <i className="bi bi-bag"></i> Checkout
+                    <i className="bi bi-bag"></i> Comprar
                   </button>
                 </Link>
                 <Form.Check
@@ -126,7 +112,6 @@ export default function Cart() {
           )}
         </div>
       </Container>
-      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );
