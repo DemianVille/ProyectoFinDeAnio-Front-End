@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import { toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const slides = [
@@ -11,6 +12,7 @@ export default function Header() {
       captionTitle: "NUEVAS MALLAS",
       captionText: "Echa un vistazo a la nueva colección de Coppélia",
       captionBtnText: "VER ROPA DE BAILE",
+      captionLink: "/categoria/2",
     },
     {
       imgSrc:
@@ -18,6 +20,7 @@ export default function Header() {
       captionTitle: "VARIEDAD DE ZAPATILLAS",
       captionText: "Encuentra las zapatillas ideales para ti",
       captionBtnText: "VER CALZADO",
+      captionLink: "/categoria/1",
     },
   ];
 
@@ -37,9 +40,11 @@ export default function Header() {
           <Carousel.Caption className="h-100">
             <h5 className="textPostition headerTitle">{slide.captionTitle}</h5>
             <p className="textPostition headerText">{slide.captionText}</p>
-            <button className="headerBtn" onClick={notify}>
-              {slide.captionBtnText}
-            </button>
+            <Link to={slide.captionLink}>
+              <button className="headerBtn" onClick={notify}>
+                {slide.captionBtnText}
+              </button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
