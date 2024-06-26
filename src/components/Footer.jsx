@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Footer() {
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
+
   return (
     <footer className="footer mt-4">
       <div className="container">
@@ -17,12 +22,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Quiénes Somos
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Blog
                 </a>
               </li>
@@ -32,22 +37,22 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Ayuda</h4>
             <ul className="footerList">
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Centro de Ayuda
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Soporte
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Preguntas Frecuentes
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Contacto
                 </a>
               </li>
@@ -57,17 +62,17 @@ export default function Footer() {
             <h4 className="footerSectionTitle">Legal</h4>
             <ul className="footerList">
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Términos de Servicio
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Política de Privacidad
                 </a>
               </li>
               <li>
-                <a href="#" className="footerLink">
+                <a href="#" className="footerLink" onClick={notify}>
                   Política de Cookies
                 </a>
               </li>
