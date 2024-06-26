@@ -84,7 +84,7 @@ export default function NavBarHome() {
               id="navbarSupportedContent"
               className="navbar-collapse navBarHome px-3"
             >
-              <Nav className="categoryPosition w-100 ">
+              <Nav className="categoryPosition w-100">
                 {categories.map((category) => (
                   <div className="mx-4 " key={category.id}>
                     <Link
@@ -99,17 +99,17 @@ export default function NavBarHome() {
                 ))}
               </Nav>
 
-              <div>
+              <div className="d-flex">
                 <Nav>
                   <div className="d-flex justify-content-center align-items-center">
                     <Link
-                      className="nav-link mx-1 active text-center"
-                      to={"/iniciar-sesion"}
+                      className="nav-link mx-2 p-0 active text-center userNavBtn"
+                      to={"/ingresar"}
                     >
-                      Iniciar sesión
+                      Ingresar
                     </Link>
                     <Link
-                      className="nav-link mx-1 active text-center"
+                      className="nav-link mx-2 p-0 active text-center userNavBtn"
                       to={"/registrarse"}
                     >
                       Registrarse

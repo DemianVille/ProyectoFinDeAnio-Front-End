@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import AboutThisProject from "../components/AboutThisProject";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,7 @@ export default function Home() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -48,27 +50,29 @@ export default function Home() {
       <Header />
       <Container fluid>
         <Row className="mt-5 gx-2" data-aos="fade" data-aos-duration="1100">
-          <Col xs={12} md={6} className="p-0">
-            <Image
-              className="subportada w-100"
-              data-aos="fade-left"
-              data-aos-anchor="#example-anchor"
-              data-aos-offset="500"
-              data-aos-duration="1100"
-              src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
-              alt=""
-            />
+          <Col xs={12} md={6} className="py-2 gap-2">
+            <Link to={"/categoria/3"}>
+              <Image
+                className="subportada w-100"
+                data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="1100"
+                src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
+              />
+            </Link>
           </Col>
-          <Col xs={12} md={6} className="p-0">
-            <Image
-              className="subportada w-100"
-              data-aos="fade-right"
-              data-aos-anchor="#example-anchor"
-              data-aos-offset="500"
-              data-aos-duration="1100"
-              src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
-              alt=""
-            />
+          <Col xs={12} md={6} className="py-2 gap-2">
+            <Link to={"/categoria/2"}>
+              <Image
+                className="subportada w-100"
+                data-aos="fade-right"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="1100"
+                src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
+              />
+            </Link>
           </Col>
         </Row>
       </Container>
@@ -81,14 +85,12 @@ export default function Home() {
         >
           <div className="">
             <h2 className="mt-5 mb-5">
-              <strong className="imgzize">IDEALES PARA TI!</strong>
+              <strong className="imgzize">¡IDEALES PARA TI!</strong>
             </h2>
-            <p className="mb-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-            <button className="headerBtn mb-5" onClick={notify}>
-              PERSONALIZA TU ESTILO
-            </button>
+            <p className="mb-5">Busca tu estilo ideal.</p>
+            <Link to={"/categoria/3"}>
+              <button className="headerBtn mb-5">PERSONALIZA TU ESTILO</button>
+            </Link>
           </div>
         </Alert>
       </div>

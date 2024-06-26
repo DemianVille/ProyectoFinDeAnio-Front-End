@@ -40,7 +40,7 @@ function App() {
       element: <Cart />,
     },
     {
-      path: "/iniciar-sesion",
+      path: "/ingresar",
       element: <Login />,
     },
     {
