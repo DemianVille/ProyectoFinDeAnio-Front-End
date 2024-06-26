@@ -1,6 +1,5 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import { toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
@@ -24,10 +23,6 @@ export default function Header() {
     },
   ];
 
-  const notify = () => {
-    toast.warn("En desarrollo");
-  };
-
   return (
     <Carousel className="headerContainer">
       {slides.map((slide, index) => (
@@ -41,9 +36,7 @@ export default function Header() {
             <h5 className="textPostition headerTitle">{slide.captionTitle}</h5>
             <p className="textPostition headerText">{slide.captionText}</p>
             <Link to={slide.captionLink}>
-              <button className="headerBtn" onClick={notify}>
-                {slide.captionBtnText}
-              </button>
+              <button className="headerBtn">{slide.captionBtnText}</button>
             </Link>
           </Carousel.Caption>
         </Carousel.Item>
