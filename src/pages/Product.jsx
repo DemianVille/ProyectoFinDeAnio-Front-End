@@ -5,10 +5,15 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { Container, Row, Col } from "react-bootstrap";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct } from "../redux/cartReduser";
+
 export default function Product() {
   const [product, setProduct] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const params = useParams();
+
+  const dispatch = useDispatch();
 
   const notify = () => {
     toast.warn("En desarrollo");
@@ -22,6 +27,11 @@ export default function Product() {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const addToCart = async () => {
+    product.qty = quantity;
+    dispatch(addProduct(product));
   };
 
   useEffect(() => {
@@ -46,7 +56,7 @@ export default function Product() {
     };
     getProduct();
   }, []);
-
+  
   return (
     product.colors && (
       <>
@@ -89,7 +99,10 @@ export default function Product() {
                   +
                 </button>
               </div>
-              <button className="mt-4 w-100 addToCart" onClick={notify}>
+              <button
+                className="mt-4 w-100 addToCart"
+                onClick={() => addToCart()}
+              >
                 <b>Añadir al carro</b>
               </button>
             </Col>

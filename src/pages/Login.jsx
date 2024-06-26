@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { createToken } from "../redux/tokenReduser";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const notify = () => {
     toast.warn("En desarrollo");
+  };
+
+  const navigate = useNavigate();
+
+  const token = useSelector((state) => state.token);
+  const dispatch = useDispatch();
+
+  const addToken = async () => {
+    try {
+      const options = {
+        method: "POST",
+        data: {
+          email,
+          password,
+        },
+      };
+
+      const response = await axios(`http://localhost:3000/tokens`, options);
+      if (response.data.token) {
+        dispatch(createToken(response.data.token));
+        navigate("/");
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -20,16 +53,25 @@ export default function Login() {
             <Form
               onSubmit={(event) => {
                 event.preventDefault();
+                if (email !== "" && password !== "") addToken();
               }}
             >
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Correo</Form.Label>
-                <Form.Control type="email" placeholder="ejemplo@gmail.com" />
+                <Form.Control
+                  type="email"
+                  placeholder="ejemplo@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="1234abcd">
+              <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Contraseña</Form.Label>
-                <Form.Control type="password" placeholder="1234abcd" />
+                <Form.Control
+                  type="password"
+                  placeholder="1234abcd"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="checkbox">
@@ -39,7 +81,6 @@ export default function Login() {
               <button
                 type="submit"
                 className="ingresarBtn loginBtns py-1 my-2 w-100"
-                onClick={notify}
               >
                 Ingresar
               </button>
