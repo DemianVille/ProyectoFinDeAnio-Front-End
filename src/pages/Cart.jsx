@@ -5,12 +5,24 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct, addQty, subQty } from "../redux/cartReduser";
+import { deleteProduct, addOne, decreaseOne } from "../redux/cartReduser";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
+  let priceSet = 0;
 
   const dispatch = useDispatch();
+
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+    priceSet += product.price * product.qty;
+  }
+  const initialValue = 0;
+  const totalPrice = products.reduce(
+    (acumulator, currentValue) =>
+      acumulator + currentValue.price * currentValue.qty,
+    initialValue
+  );
 
   return (
     <>
@@ -43,9 +55,7 @@ export default function Cart() {
                             variant="outline-secondary"
                             className="qtyBtn"
                             onClick={() => {
-                              if (quantity > 1) {
-                                dispatch(subQty(product));
-                              }
+                                dispatch(decreaseOne(product.id));
                             }}
                           >
                             -
@@ -55,9 +65,9 @@ export default function Cart() {
                             variant="outline-secondary"
                             className="qtyBtn"
                             onClick={() => {
-                              if (quantity > 1) {
-                                dispatch(addQty(product));
-                              }
+                           
+                                dispatch(addOne(product.id));
+                              
                             }}
                           >
                             +
@@ -77,36 +87,38 @@ export default function Cart() {
                   );
                 })}
               </Col>
-              <Col md={4} className="cartBox mt-4">
-                <span>
-                  Notas <i className="bi bi-pen"></i>
-                </span>
-                <Form.Control as="textarea" className="my-3" />
-                <div className="mb-3 d-flex justify-content-between">
-                  <span>Total:</span>
-                  <span>$35</span>
-                </div>
-                <Link className="w-100" to={"/checkout"}>
-                  <button className="comprarBtn py-1 w-100">
-                    <i className="bi bi-bag"></i> Comprar
-                  </button>
-                </Link>
-                <Form.Check
-                  className="mt-3"
-                  type="checkbox"
-                  id="giftCheckbox"
-                  label="Envolver para regalo"
-                  custom
-                >
-                  <input
-                    className="form-check-input"
+              <Col md={4} className="mt-4 p-0">
+                <div className="cartBox">
+                  <span>
+                    Notas <i className="bi bi-pen"></i>
+                  </span>
+                  <Form.Control as="textarea" className="my-3" />
+                  <div className="mb-3 d-flex justify-content-between">
+                    <span>Total:</span>
+                    <span>${totalPrice}.00</span>
+                  </div>
+                  <Link className="w-100" to={"/checkout"}>
+                    <button className="comprarBtn py-1 w-100">
+                      <i className="bi bi-bag"></i> Comprar
+                    </button>
+                  </Link>
+                  <Form.Check
+                    className="mt-3"
                     type="checkbox"
                     id="giftCheckbox"
-                  />
-                  <label className="form-check-label ms-2" for="giftCheckbox">
-                    Envolver para regalo <i class="bi bi-gift"></i>
-                  </label>
-                </Form.Check>
+                    label="Envolver para regalo"
+                    custom
+                  >
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="giftCheckbox"
+                    />
+                    <label className="form-check-label ms-2" for="giftCheckbox">
+                      Envolver para regalo <i class="bi bi-gift"></i>
+                    </label>
+                  </Form.Check>
+                </div>
               </Col>
             </Row>
           )}
