@@ -24,7 +24,7 @@ export default function Product() {
   };
 
   const resQty = () => {
-    if (quantity > 1) {
+    if (qty > 1) {
       setQty(qty - 1);
     }
   };
@@ -94,7 +94,14 @@ export default function Product() {
                   -
                 </button>
                 <p className="m-0 qtyNum fontRoboto">{qty}</p>
-                <button className="qtyBtn" onClick={addQty}>
+                <button
+                  className="qtyBtn"
+                  onClick={() => {
+                    if (product.stock > qty) {
+                      addQty();
+                    }
+                  }}
+                >
                   +
                 </button>
               </div>
