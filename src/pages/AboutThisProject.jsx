@@ -61,7 +61,7 @@ export default function AboutThisProject() {
           </Row>
         </header>
         <section className="pt-5">
-          <Row className="d-flex">
+          <Row className="d-flex" id="aboutUs">
             <Col className="d-flex" xs={12}>
               <div className="ourPhotosContainer">
                 <Image

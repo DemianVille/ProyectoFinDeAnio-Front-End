@@ -33,6 +33,10 @@ body {
   background-color: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* navBar */
 
 .cartbtn {
@@ -158,6 +162,7 @@ body {
 
 .categoriesNav:hover,
 .userNavBtn:hover {
+  margin-bottom: -1px;
   border-bottom: #000000 solid 1px;
 }
 

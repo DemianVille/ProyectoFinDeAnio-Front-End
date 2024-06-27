@@ -49,7 +49,7 @@ export default function Login() {
       <Container className="body">
         <Row className="d-flex justify-content-center">
           <Col md={4}>
-            <h2 className="text-center my-3">Iniciar sesión</h2>
+            <h2 className="text-center my-3">Ingresar</h2>
             <Form
               onSubmit={(event) => {
                 event.preventDefault();
