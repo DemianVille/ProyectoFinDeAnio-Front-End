@@ -94,12 +94,6 @@ html {
   font-size: 2rem;
 }
 
-.inputNav {
-  border-radius: 7px 0 0 7px;
-  border: solid rgba(0, 0, 0, 0.5) 1px;
-  border-right: none;
-}
-
 .buttonNav {
   border-radius: 0 7px 7px 0;
   background-color: transparent;
@@ -238,7 +232,7 @@ html {
   width: 100%;
 }
 
-.imgzize {
+.imgSize {
   font-size: 55px;
 }
 
@@ -540,6 +534,8 @@ html {
   color: white;
   background-position: center center;
   background-size: cover;
+  border-radius: 0% !important;
+  border: none !important;
 }
 
 .alineado {
