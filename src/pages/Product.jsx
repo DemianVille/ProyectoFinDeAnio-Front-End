@@ -6,13 +6,13 @@ import NavBar from "../components/NavBar";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useSelector, useDispatch } from "react-redux";
-import { addProduct, deleteProduct } from "../redux/cartReduser";
+import { addProduct } from "../redux/cartReduser";
 
 export default function Product() {
   const [product, setProduct] = useState([]);
   const [qty, setQty] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(null);
   const params = useParams();
-
   const dispatch = useDispatch();
 
   const notify = () => {
@@ -30,7 +30,7 @@ export default function Product() {
   };
 
   const addToCart = async () => {
-    dispatch(addProduct({ ...product, qty }));
+    dispatch(addProduct({ ...product, qty, color: selectedColor }));
   };
 
   useEffect(() => {
@@ -81,7 +81,14 @@ export default function Product() {
                 <div className="d-flex flex-wrap">
                   {product.colors.colors.map((color) => {
                     return (
-                      <div className="colorStyle my-1" onClick={notify}>
+                      <div
+                        className={`colorStyle my-1 ${
+                          selectedColor === color ? "selected" : ""
+                        }`}
+                        onClick={() => {
+                          setSelectedColor(color);
+                        }}
+                      >
                         <div className={`productColor-${color}`}></div>
                       </div>
                     );

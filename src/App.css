@@ -326,6 +326,10 @@ html {
   cursor: pointer;
 }
 
+.selected {
+  border: solid 1px #000;
+}
+
 .color1 {
   background-color: rgb(252, 225, 168);
   border-radius: 100%;

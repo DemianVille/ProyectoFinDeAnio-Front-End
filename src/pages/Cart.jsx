@@ -48,14 +48,14 @@ export default function Cart() {
                       <Image src={product.photo} className="cartProdImg me-3" />
                       <div>
                         <p className="m-0">{product.name}</p>
-                        <p className="m-0">Color: Negro</p>
+                        <p className="m-0">Color: {product.color}</p>
                         <p className="pb-4 m-0">Precio: ${product.price}.00</p>
                         <div className="d-flex m-2 qtyDiv">
                           <button
                             variant="outline-secondary"
                             className="qtyBtn"
                             onClick={() => {
-                                dispatch(decreaseOne(product.id));
+                              dispatch(decreaseOne(product));
                             }}
                           >
                             -
@@ -65,9 +65,7 @@ export default function Cart() {
                             variant="outline-secondary"
                             className="qtyBtn"
                             onClick={() => {
-                           
-                                dispatch(addOne(product.id));
-                              
+                              dispatch(addOne(product));
                             }}
                           >
                             +
@@ -77,7 +75,7 @@ export default function Cart() {
                           variant="outline-danger"
                           className="deleteFromCart"
                           onClick={() => {
-                            dispatch(deleteProduct(product.id));
+                            dispatch(deleteProduct(product));
                           }}
                         >
                           <i className="bi bi-trash"></i> Eliminar
