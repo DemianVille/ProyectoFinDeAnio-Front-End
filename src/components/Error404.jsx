@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarHome from "./NavBarHome";
+import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Error404() {
   return (
     <>
-      <NavBarHome />
+      <NavBar />
       <Container className="body">
         <Row>
           <Col className="col-12 text-center">

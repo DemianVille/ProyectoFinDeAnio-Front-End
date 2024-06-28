@@ -22,7 +22,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="footerLink" onClick={notify}>
+                <a href="/sobre-este-proyecto" className="footerLink">
                   Quiénes Somos
                 </a>
               </li>

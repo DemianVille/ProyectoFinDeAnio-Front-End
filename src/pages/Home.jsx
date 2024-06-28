@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Container, Row, Col, Image, Alert } from "react-bootstrap";
-import NavBarHome from "../components/NavBarHome";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import Header from "../components/Header";
@@ -17,7 +17,7 @@ export default function Home() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
-  
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <>
-      <NavBarHome />
+      <NavBar />
       <Header />
       <Container fluid>
         <Row className="mt-5 gx-2" data-aos="fade" data-aos-duration="1100">
@@ -85,7 +85,7 @@ export default function Home() {
         >
           <div className="">
             <h2 className="mt-5 mb-5">
-              <strong className="imgzize">¡IDEALES PARA TI!</strong>
+              <strong className="imgSize">¡IDEALES PARA TI!</strong>
             </h2>
             <p className="mb-5">Busca tu estilo ideal.</p>
             <Link to={"/categoria/3"}>

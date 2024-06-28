@@ -8,7 +8,6 @@ import Checkout from "./pages/Checkout";
 import AboutThisProyect from "./pages/AboutThisProject";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./pages/Cart";
 import "react-toastify/dist/ReactToastify.css";
 import Error404 from "./components/Error404";
@@ -58,7 +57,6 @@ function App() {
   ]);
   return (
     <>
-      <ScrollToTop />
       <RouterProvider router={router} />
     </>
   );
