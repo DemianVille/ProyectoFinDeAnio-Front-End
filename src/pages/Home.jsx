@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-
+  const [precioAbierto, setPrecioAbierto] = useState(false);
+  const [talleAbierto, setTalleAbierto] = useState(false);
+  const [ofertaAbierto, setOfertaAbierto] = useState(false);
   const notify = () => {
     toast.warn("En desarrollo");
   };
@@ -100,17 +102,62 @@ export default function Home() {
           <Col md={3} className="fontFlamenco ">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
-              <ul className="unstyleList p-0">
-                <li className="filterStyle firstItem" onClick={notify}>
+              <div className="filterStyle">
+                <div
+                  onClick={() => setPrecioAbierto(!precioAbierto)}
+                  style={{ cursor: "pointer" }}
+                >
                   Precio
-                </li>
-                <li className="filterStyle" onClick={notify}>
-                  Talle
-                </li>
-                <li className="filterStyle lastItem" onClick={notify}>
-                  Ofertas
-                </li>
-              </ul>
+                </div>
+                {precioAbierto && (
+                  <ul className="unstyleList p-0">
+                    <div class="form-check pt-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label
+                        class="form-check-label px-2"
+                        for="flexCheckDefault"
+                      >
+                        <p>Menor a Mayor</p>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label
+                        class="form-check-label px-2"
+                        for="flexCheckDefault"
+                      >
+                        <p>Mayor a Menor</p>
+                      </label>
+                    </div>
+                  </ul>
+                )}
+              </div>
+              <div
+                className="filterStyle"
+                onClick={() => setTalleAbierto(!talleAbierto)}
+                style={{ cursor: "pointer" }}
+              >
+                <p className="m-0">Talle</p>
+                {talleAbierto && <ul className="unstyleList p-0"></ul>}
+              </div>
+              <div
+                className="filterStyle"
+                onClick={() => setOfertaAbierto(!ofertaAbierto)}
+                style={{ cursor: "pointer" }}
+              >
+                <p className="m-0">Ofertas</p>
+                {!ofertaAbierto && <ul className="unstyleList p-0"></ul>}
+              </div>
             </div>
           </Col>
           <Col md={9}>
