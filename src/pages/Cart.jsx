@@ -9,14 +9,9 @@ import { deleteProduct, addOne, decreaseOne } from "../redux/cartReduser";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
-  let priceSet = 0;
 
   const dispatch = useDispatch();
 
-  for (let i = 0; i < products.length; i++) {
-    const product = products[i];
-    priceSet += product.price * product.qty;
-  }
   const initialValue = 0;
   const totalPrice = products.reduce(
     (acumulator, currentValue) =>

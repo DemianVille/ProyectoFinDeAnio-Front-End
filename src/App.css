@@ -273,6 +273,20 @@ html {
 
 /* Checkout */
 
+.checkoutList {
+  background-color: rgb(177, 177, 177);
+}
+
+.imgCheckout {
+  height: 100px;
+  width: 100px;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.productInCheckout{
+  border: solid 1px rgb(200, 200, 200);
+}
+
 .checkoutBtn {
   display: flex;
   justify-content: space-between;
