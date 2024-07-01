@@ -31,7 +31,11 @@ export default function Products(id) {
   }, []);
   return (
     <Col
-      className="col-12 col-md-6 my-2 col-lg-4"
+      xs={12}
+      sm={6}
+      md={4}
+      lg={3}
+      className="my-2"
       data-aos="fade-up"
       data-aos-duration="1100"
       key={product.id}

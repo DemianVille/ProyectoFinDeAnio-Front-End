@@ -97,7 +97,7 @@ export default function Home() {
         </Alert>
       </div>
 
-      <Container>
+      <div className="mx-2">
         <Row className="filterPosition">
           <Col md={3} className="fontFlamenco ">
             <div className="categoriesDiv">
@@ -168,7 +168,7 @@ export default function Home() {
             </Row>
           </Col>
         </Row>
-      </Container>
+      </div>
       <AboutThisProject />
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
