@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Splide } from "@splidejs/react-splide";
 
 export default function Error404() {
   return (
@@ -19,6 +20,9 @@ export default function Error404() {
               </button>
             </Link>
           </Col>
+        </Row>
+        <Row>
+          <Splide />
         </Row>
       </Container>
       <Footer />
