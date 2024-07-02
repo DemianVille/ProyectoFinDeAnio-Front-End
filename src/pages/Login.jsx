@@ -13,6 +13,7 @@ import { createToken } from "../redux/tokenReduser";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState("");
 
   const notify = () => {
     toast.warn("En desarrollo");
@@ -37,6 +38,8 @@ export default function Login() {
       if (response.data.token) {
         dispatch(createToken(response.data.token));
         navigate("/");
+      } else {
+        setMsg(response.data.message);
       }
     } catch (err) {
       console.error(err);
@@ -78,6 +81,14 @@ export default function Login() {
                 <Form.Check type="checkbox" label="Mantenerme conectado" />
               </Form.Group>
 
+              {msg === "This user doesn't exist." && (
+                <div className="mb-2">
+                <span className="invalidUser p-2">
+                  Correo o contraseña incorrecto
+                </span>
+                </div>
+              )}
+
               <button
                 type="submit"
                 className="ingresarBtn loginBtns py-1 my-2 w-100"
@@ -85,7 +96,7 @@ export default function Login() {
                 Ingresar
               </button>
 
-              <Link to={"/iniciar-sesion"} onClick={notify}>
+              <Link to={"/ingresar"} onClick={notify}>
                 Olvidé mi contraseña
               </Link>
 

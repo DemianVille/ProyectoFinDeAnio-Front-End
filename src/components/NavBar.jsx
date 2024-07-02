@@ -1,44 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  Container,
-  Collapse,
-} from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteToken } from "../redux/tokenReduser";
+import { Navbar, Nav, Container, Collapse } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function NavBarHome() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const token = useSelector((state) => state.token);
+  const dispatch = useDispatch();
   const [categories, setCategories] = useState([]);
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
-  const notify = () => {
-    toast.warn("En desarrollo");
-  };
-
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -99,21 +71,32 @@ export default function NavBarHome() {
                 ))}
               </Nav>
               <Nav>
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link
-                    className="nav-link mx-2 p-0 active text-center userNavBtn"
-                    to={"/ingresar"}
-                  >
-                    Ingresar
-                  </Link>
+                {token === null ? (
+                  <div className="d-flex justify-content-center align-items-center">
+                    <Link
+                      className="nav-link mx-2 p-0 active text-center userNavBtn"
+                      to={"/ingresar"}
+                    >
+                      Ingresar
+                    </Link>
 
-                  <Link
-                    className="nav-link mx-2 p-0 active text-center userNavBtn"
-                    to={"/registrarse"}
-                  >
-                    Registrarse
-                  </Link>
-                </div>
+                    <Link
+                      className="nav-link mx-2 p-0 active text-center userNavBtn"
+                      to={"/registrarse"}
+                    >
+                      Registrarse
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="d-flex justify-content-center align-items-center">
+                    <button
+                      className="logoutBtn nav-link mx-2 p-0 active text-center userNavBtn"
+                      onClick={() => dispatch(deleteToken())}
+                    >
+                      Cerrar sesión
+                    </button>
+                  </div>
+                )}
               </Nav>
               <Nav>
                 <Link className="nav-link cartNavBtn" to={"/carrito"}>
@@ -124,7 +107,6 @@ export default function NavBarHome() {
           </Collapse>
         </Container>
       </Navbar>
-      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

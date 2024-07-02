@@ -94,6 +94,10 @@ html {
   font-size: 2rem;
 }
 
+.logoutBtn {
+  width: 83px;
+}
+
 .buttonNav {
   border-radius: 0 7px 7px 0;
   background-color: transparent;
@@ -283,7 +287,7 @@ html {
   border-right: 1px solid rgb(200, 200, 200);
 }
 
-.productInCheckout{
+.productInCheckout {
   border: solid 1px rgb(200, 200, 200);
 }
 
@@ -480,6 +484,11 @@ html {
 }
 
 /* LogIn Btns */
+
+.invalidUser{
+  background-color: #ffe5e3;
+  border: #f0b1ac solid 1px;
+}
 
 .ingresarBtn:hover,
 .crearBtn:hover {
