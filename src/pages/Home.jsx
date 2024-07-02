@@ -111,6 +111,49 @@ export default function Home() {
 
       <div className="mx-2">
         <Row className="filterPosition">
+          <Col className="d-flex justify-content-center" md={12}>
+            <Splide
+              tag="section"
+              options={{ rewind: true, width: 1350 }}
+              aria-label="Productos destacados"
+            >
+              {groupedProducts.map((group, index) => (
+                <SplideSlide key={index}>
+                  <Row className="p-5">
+                    {group.map((product) => (
+                      <Col key={product.id} xs={12} md={6} lg={3}>
+                        <Link
+                          to={`/productos/${product.id}`}
+                          className="textStyleCard"
+                        >
+                          <div className="productCard p-1 h-100">
+                            <img
+                              src={product.photo}
+                              className="w-100 mb-3 cardImg"
+                            />
+                            <div>
+                              <h5 className="text-center fontFlamenco">
+                                {product.name}
+                              </h5>
+                              <p className="text-center m-0 fontRoboto">
+                                ${product.price}.00
+                              </p>
+                              <p className="text-center d-flex justify-content-center">
+                                Stock:{" "}
+                                <p className="fontRoboto ms-1">
+                                  {product.stock}
+                                </p>
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </Col>
+                    ))}
+                  </Row>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </Col>
           <Col md={3} className="fontFlamenco ">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
@@ -173,49 +216,6 @@ export default function Home() {
             </div>
           </Col>
           <Col md={9}>
-            <Splide
-              tag="section"
-              options={{ rewind: true }}
-              aria-label="Productos destacados"
-            >
-              {groupedProducts.map((group, index) => (
-                <SplideSlide key={index}>
-                  <Row className="p-5">
-                    {group.map((product) => (
-                      <Col key={product.id} xs={12} md={6} lg={3}>
-                        <Link
-                          to={`/productos/${product.id}`}
-                          className="textStyleCard"
-                        >
-                          <div className="productCard p-1 h-100">
-                            <img
-                              src={product.photo}
-                              className="w-100 mb-3 cardImg"
-                            />
-                            <div>
-                              <h5 className="text-center fontFlamenco">
-                                {product.name}
-                              </h5>
-                              <p className="text-center m-0 fontRoboto">
-                                ${product.price}.00
-                              </p>
-                              <p className="text-center d-flex justify-content-center">
-                                Stock:{" "}
-                                <p className="fontRoboto ms-1">
-                                  {product.stock}
-                                </p>
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </Col>
-                    ))}
-                  </Row>
-                </SplideSlide>
-              ))}
-            </Splide>
-          </Col>
-          <Col md={12}>
             <Row>
               {products.map((product) => {
                 return <Products key={product.id} id={product.id} />;
