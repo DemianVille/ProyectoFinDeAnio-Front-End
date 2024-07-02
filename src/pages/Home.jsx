@@ -10,6 +10,8 @@ import AboutThisProject from "../components/AboutThisProject";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -45,6 +47,16 @@ export default function Home() {
     };
     getProducts();
   }, []);
+
+  const groupProducts = (products, groupSize) => {
+    const grouped = [];
+    for (let i = 0; i < products.length; i += groupSize) {
+      grouped.push(products.slice(i, i + groupSize));
+    }
+    return grouped;
+  };
+
+  const groupedProducts = groupProducts(products, 4);
 
   return (
     <>
@@ -161,6 +173,49 @@ export default function Home() {
             </div>
           </Col>
           <Col md={9}>
+            <Splide
+              tag="section"
+              options={{ rewind: true }}
+              aria-label="Productos destacados"
+            >
+              {groupedProducts.map((group, index) => (
+                <SplideSlide key={index}>
+                  <Row className="p-5">
+                    {group.map((product) => (
+                      <Col key={product.id} xs={12} md={6} lg={3}>
+                        <Link
+                          to={`/productos/${product.id}`}
+                          className="textStyleCard"
+                        >
+                          <div className="productCard p-1 h-100">
+                            <img
+                              src={product.photo}
+                              className="w-100 mb-3 cardImg"
+                            />
+                            <div>
+                              <h5 className="text-center fontFlamenco">
+                                {product.name}
+                              </h5>
+                              <p className="text-center m-0 fontRoboto">
+                                ${product.price}.00
+                              </p>
+                              <p className="text-center d-flex justify-content-center">
+                                Stock:{" "}
+                                <p className="fontRoboto ms-1">
+                                  {product.stock}
+                                </p>
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </Col>
+                    ))}
+                  </Row>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </Col>
+          <Col md={12}>
             <Row>
               {products.map((product) => {
                 return <Products key={product.id} id={product.id} />;
