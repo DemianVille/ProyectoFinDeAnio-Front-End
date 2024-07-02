@@ -38,7 +38,7 @@ export default function Register() {
 
       const response = await axios(`http://localhost:3000/users`, options);
       if (response.data.message === "User created successfully.") {
-        navigate("/ingrsar");
+        navigate("/ingresar");
       }
     } catch (err) {
       console.error(err);
