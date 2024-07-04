@@ -485,7 +485,7 @@ html {
 
 /* LogIn Btns */
 
-.invalidUser{
+.invalidUser {
   background-color: #ffe5e3;
   border: #f0b1ac solid 1px;
 }
@@ -624,6 +624,16 @@ html {
 .aboutThisProjectIntro {
   font-size: medium;
   text-indent: 20px;
+}
+
+.loginAdmin {
+  background-color: rgb(97, 238, 191);
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginAdmin:hover {
+  background-color: rgba(74, 235, 181, 0.568);
 }
 
 .aboutUs {

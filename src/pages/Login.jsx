@@ -36,7 +36,7 @@ export default function Login() {
 
       const response = await axios(`http://localhost:3000/tokens`, options);
       if (response.data.token) {
-        dispatch(createToken(response.data.token));
+        dispatch(createToken(response.data));
         navigate("/");
       } else {
         setMsg(response.data.message);
@@ -83,9 +83,9 @@ export default function Login() {
 
               {msg === "This user doesn't exist." && (
                 <div className="mb-2">
-                <span className="invalidUser p-2">
-                  Correo o contraseña incorrecto
-                </span>
+                  <span className="invalidUser p-2">
+                    Correo o contraseña incorrecto
+                  </span>
                 </div>
               )}
 

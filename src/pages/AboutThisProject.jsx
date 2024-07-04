@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Container, Row, Col, Button, Image, Alert } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,9 +29,9 @@ export default function AboutThisProject() {
                   que también incluye una amplia variedad de accesorios
                   relacionados con esta. Nos propusimos capturar y reflejar el
                   ambiente de la danza clásica, la diversion y belleza del
-                  ballet en cada aspecto del sitio web. 
-                  </p>
-                  <p className="aboutThisProjectIntro">
+                  ballet en cada aspecto del sitio web.
+                </p>
+                <p className="aboutThisProjectIntro">
                   Para la interfaz del usuario (Front-End) del sitio web, se
                   desarrolló una aplicación utilizando la biblioteca React, para
                   que el desarrollo fuese eficiente. Por otro lado, para la
@@ -40,7 +41,7 @@ export default function AboutThisProject() {
                   para la gestionar el almacenamiento de datos, también
                   utilizamos y GitHub para la gestión del código y la eficiente
                   colaboración de cada integrante en el proyecto.
-               </p>
+                </p>
               </div>
             </Col>
             <Col xs={12} md={6}>
@@ -59,6 +60,13 @@ export default function AboutThisProject() {
               </div>
             </Col>
           </Row>
+          <div className="d-flex justify-content-center">
+            <Link to={"http://localhost:5174/admin/login"}>
+              <button className="loginAdmin py-2 px-3 mt-5">
+                Ingresar como admin
+              </button>
+            </Link>
+          </div>
         </header>
         <section className="pt-5">
           <Row className="d-flex" id="aboutUs">
