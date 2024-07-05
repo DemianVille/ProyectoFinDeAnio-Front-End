@@ -160,7 +160,7 @@ html {
 
 .categoriesNav:hover,
 .userNavBtn:hover {
-  text-decoration: underline;
+  text-decoration: underline rgb(152, 151, 151);
 }
 
 .categoryPosition {
@@ -615,6 +615,26 @@ html {
 
 /* Sobre este proyecto */
 
+.logInAsAdimnBtn:hover > .adminTestUser {
+  visibility: visible;
+}
+
+.adminTestUser {
+  color: white;
+  visibility: hidden;
+}
+
+.boutProjectBackground {
+  color: white;
+  height: 100%;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.581),
+      rgba(0, 0, 0, 0.382)
+    ),
+    url(/src//assets/Excalidraw.jpg);
+}
+
 .imgHomeBefore {
   background-image: url(/src/assets/homeBefore.jpg);
   background-size: cover;
@@ -646,6 +666,7 @@ html {
   background-color: rgb(97, 238, 191);
   border: none;
   transition: all 0.2s ease-in-out;
+  z-index: 1;
 }
 
 .aboutUsBtn:hover {
