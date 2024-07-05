@@ -118,10 +118,10 @@ export default function Home() {
               aria-label="Productos destacados"
             >
               {groupedProducts.map((group, index) => (
-                <SplideSlide key={index}>
-                  <Row className="p-5">
+                <SplideSlide key={index} className="w-100">
+                  <Row className="p-5 w-100">
                     {group.map((product) => (
-                      <Col key={product.id} xs={12} md={6} lg={3}>
+                      <Col key={product.id}>
                         <Link
                           to={`/productos/${product.id}`}
                           className="textStyleCard"
