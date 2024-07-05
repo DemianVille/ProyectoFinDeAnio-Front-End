@@ -16,7 +16,7 @@ export default function AboutThisProject() {
     <>
       <NavBar />
       <Container className="body">
-        <header className="pb-5">
+        <header className="boutProjectBackground p-5">
           <Row>
             <Col xs={12} md={6} className="aboutProject d-flex">
               <div className="pe-4">
@@ -60,12 +60,18 @@ export default function AboutThisProject() {
               </div>
             </Col>
           </Row>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex flex-column align-items-center logInAsAdimnBtn">
             <Link to={"http://localhost:5174/admin/login"}>
               <button className="loginAdmin py-2 px-3 mt-5">
                 Ingresar como admin
               </button>
             </Link>
+            <p className="adminTestUser pt-3 p-2">
+              Admin test: admin@admin.uy - Password: 123
+            </p>
+            <p className="adminTestUser p-1">
+              User test: test@user.uy - Password: 123
+            </p>
           </div>
         </header>
         <section className="pt-5">
