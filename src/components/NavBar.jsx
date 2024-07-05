@@ -60,10 +60,10 @@ export default function NavBarHome() {
                 {categories.map((category) => (
                   <div className="mx-4" key={category.id}>
                     <Link
-                      className="linkLi categoriesNav"
+                      className="linkLi"
                       to={`/categoria/${category.id}`}
                     >
-                      <button className="styleButton w-100 p-2">
+                      <button className="styleButton categoriesNav w-100 p-2">
                         {category.name}
                       </button>
                     </Link>
