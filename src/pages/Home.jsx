@@ -18,9 +18,6 @@ export default function Home() {
   const [precioAbierto, setPrecioAbierto] = useState(false);
   const [talleAbierto, setTalleAbierto] = useState(false);
   const [ofertaAbierto, setOfertaAbierto] = useState(false);
-  const notify = () => {
-    toast.warn("En desarrollo");
-  };
 
   useEffect(() => {
     AOS.init();
@@ -47,16 +44,6 @@ export default function Home() {
     };
     getProducts();
   }, []);
-
-  const groupProducts = (products, groupSize) => {
-    const grouped = [];
-    for (let i = 0; i < products.length; i += groupSize) {
-      grouped.push(products.slice(i, i + groupSize));
-    }
-    return grouped;
-  };
-
-  const groupedProducts = groupProducts(products, 4);
 
   return (
     <>
@@ -110,48 +97,47 @@ export default function Home() {
       </div>
 
       <div className="mx-2">
-        <Row className="filterPosition">
+        <Row className="filterPosition w-100">
           <Col className="d-flex justify-content-center" md={12}>
             <Splide
               tag="section"
-              options={{ rewind: true, width: 1350 }}
+              options={{
+                rewind: true,
+                width: 1350,
+                drag: true,
+                sliceToShow: 4,
+              }}
               aria-label="Productos destacados"
             >
-              {groupedProducts.map((group, index) => (
-                <SplideSlide key={index} className="w-100">
-                  <Row className="p-5 w-100">
-                    {group.map((product) => (
-                      <Col key={product.id}>
-                        <Link
-                          to={`/productos/${product.id}`}
-                          className="textStyleCard"
-                        >
-                          <div className="productCard p-1 h-100">
-                            <img
-                              src={product.photo}
-                              className="w-100 mb-3 cardImg"
-                            />
-                            <div>
-                              <h5 className="text-center fontFlamenco">
-                                {product.name}
-                              </h5>
-                              <p className="text-center m-0 fontRoboto">
-                                ${product.price}.00
-                              </p>
-                              <p className="text-center d-flex justify-content-center">
-                                Stock:{" "}
-                                <p className="fontRoboto ms-1">
-                                  {product.stock}
-                                </p>
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </Col>
-                    ))}
-                  </Row>
-                </SplideSlide>
-              ))}
+              {products.map((product) => {
+                return (
+                  <div key={product.id}>
+                    <Link
+                      to={`/productos/${product.id}`}
+                      className="textStyleCard"
+                    >
+                      <div className="productCard p-1">
+                        <img
+                          src={product.photo}
+                          className="w-100 mb-3 cardImg"
+                        />
+                        <div>
+                          <h5 className="text-center fontFlamenco">
+                            {product.name}
+                          </h5>
+                          <p className="text-center m-0 fontRoboto">
+                            ${product.price}.00
+                          </p>
+                          <p className="text-center d-flex justify-content-center">
+                            Stock:{" "}
+                            <p className="fontRoboto ms-1">{product.stock}</p>
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })}
             </Splide>
           </Col>
           <Col md={3} className="fontFlamenco ">
