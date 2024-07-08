@@ -149,8 +149,6 @@ html {
 .linkLi {
   text-decoration: none;
   color: black;
-  /*  display: -webkit-box;
-  text-overflow: ellipsis; */
 }
 
 .styleButton {
