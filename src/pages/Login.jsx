@@ -63,7 +63,7 @@ export default function Login() {
                 <Form.Label>Correo</Form.Label>
                 <Form.Control
                   type="email"
-                  placeholder="ejemplo@gmail.com"
+                  placeholder="test@user.uy"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Form.Group>
@@ -72,7 +72,7 @@ export default function Login() {
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="1234abcd"
+                  placeholder="123"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>

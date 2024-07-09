@@ -47,6 +47,10 @@ export default function Home() {
     getProducts();
   }, []);
 
+  const notify = () => {
+    toast.warn("En desarrollo");
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -164,7 +168,9 @@ export default function Home() {
               <h5>Filtros</h5>
               <div className="filterStyle">
                 <div
-                  onClick={() => setPrecioAbierto(!precioAbierto)}
+                  onClick={
+                    () => notify() /* setPrecioAbierto(!precioAbierto) */
+                  }
                   style={{ cursor: "pointer" }}
                 >
                   Precio
@@ -204,7 +210,7 @@ export default function Home() {
               </div>
               <div
                 className="filterStyle"
-                onClick={() => setTalleAbierto(!talleAbierto)}
+                onClick={() => notify() /* setTalleAbierto(!talleAbierto) */}
                 style={{ cursor: "pointer" }}
               >
                 <p className="m-0">Talle</p>
@@ -212,7 +218,7 @@ export default function Home() {
               </div>
               <div
                 className="filterStyle"
-                onClick={() => setOfertaAbierto(!ofertaAbierto)}
+                onClick={() => notify() /* setOfertaAbierto(!ofertaAbierto) */}
                 style={{ cursor: "pointer" }}
               >
                 <p className="m-0">Ofertas</p>

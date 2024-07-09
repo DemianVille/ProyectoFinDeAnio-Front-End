@@ -6,7 +6,7 @@ import { Navbar, Nav, Container, Collapse } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function NavBarHome() {
+export default function NavBar() {
   const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
   const [categories, setCategories] = useState([]);
@@ -37,7 +37,7 @@ export default function NavBarHome() {
 
   return (
     <>
-      <Navbar expand="lg" fixed="top" className=" navShadow ">
+      <Navbar expand="lg" fixed="top" className="navShadow">
         <Container fluid>
           <Link to={"/"} className="homeInfo">
             <div className="logoInfo">
@@ -59,10 +59,7 @@ export default function NavBarHome() {
               <Nav className="categoryPosition w-100">
                 {categories.map((category) => (
                   <div className="mx-4" key={category.id}>
-                    <Link
-                      className="linkLi"
-                      to={`/categoria/${category.id}`}
-                    >
+                    <Link className="linkLi" to={`/categoria/${category.id}`}>
                       <button className="styleButton categoriesNav w-100 p-2">
                         {category.name}
                       </button>
