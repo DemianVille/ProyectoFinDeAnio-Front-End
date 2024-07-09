@@ -45,6 +45,28 @@ export default function Home() {
     getProducts();
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    accessibility: true,
+    adaptiveHeight: true,
+    arrows: true,
+    draggable: true,
+    slickPause: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <NavBar />
@@ -78,7 +100,8 @@ export default function Home() {
         </Row>
         <Col className="d-flex justify-content-center slide" md={12}>
           <Slider
-            className="lg:content-['no-slider']"
+            {...settings}
+            className="slider"
             index={index}
             onSlide={setIndex}
           >

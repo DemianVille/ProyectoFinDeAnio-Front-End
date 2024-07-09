@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 export default function Error404() {
-  const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -34,11 +33,14 @@ export default function Error404() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    accessibility: true,
+    adaptiveHeight: true,
+    arrows: true,
+    draggable: true,
+    slickPause: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 768,

@@ -37,6 +37,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.slider {
+  height: 500px;
+  width: 500px;
+}
+
 /* navBar */
 
 .cartbtn {
