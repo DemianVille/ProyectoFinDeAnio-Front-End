@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -144,7 +144,7 @@ export default function Register() {
                 />
               </Form.Group>
               <div className="d-flex justify-content-center">
-                <button
+                <Button
                   type="submit"
                   className="mt-2 py-1 w-100 crearBtn"
                   onClick={() => {
@@ -154,7 +154,7 @@ export default function Register() {
                   }}
                 >
                   Crear cuenta
-                </button>
+                </Button>
               </div>
             </Form>
           </Col>

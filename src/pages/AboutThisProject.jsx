@@ -155,7 +155,7 @@ export default function AboutThisProject() {
               <div className="ourPhotosContainer">
                 <Image
                   className="ourPhotos"
-                  src="/src/assets/FotoAlhenaProvisoria.jpg"
+                  src="/src/assets/Alhena Latorre.jpg"
                 />
               </div>
             </Col>

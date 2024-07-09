@@ -2,12 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
 
 export default function Error404() {
+  const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -31,15 +31,24 @@ export default function Error404() {
     getProducts();
   }, []);
 
-  const groupProducts = (products, groupSize) => {
-    const grouped = [];
-    for (let i = 0; i < products.length; i += groupSize) {
-      grouped.push(products.slice(i, i + groupSize));
-    }
-    return grouped;
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  const groupedProducts = groupProducts(products, 4);
 
   return (
     <>
@@ -65,45 +74,26 @@ export default function Error404() {
         <div className="fs-2 text-center mt-4">
           <p>¡Tal vez te interesen estos productos!</p>
         </div>
-        <Splide
-          tag="section"
-          options={{ rewind: true }}
-          aria-label="Productos destacados"
-        >
-          {groupedProducts.map((group, index) => (
-            <SplideSlide key={index}>
-              <Row className="p-5">
-                {group.map((product) => (
-                  <Col key={product.id} xs={12} md={6} lg={3}>
-                    <Link
-                      to={`/productos/${product.id}`}
-                      className="textStyleCard"
-                    >
-                      <div className="productCard p-1 h-100">
-                        <img
-                          src={product.photo}
-                          className="w-100 mb-3 cardImg"
-                        />
-                        <div>
-                          <h5 className="text-center fontFlamenco">
-                            {product.name}
-                          </h5>
-                          <p className="text-center m-0 fontRoboto">
-                            ${product.price}.00
-                          </p>
-                          <p className="text-center d-flex justify-content-center">
-                            Stock:{" "}
-                            <p className="fontRoboto ms-1">{product.stock}</p>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </Col>
-                ))}
-              </Row>
-            </SplideSlide>
-          ))}
-        </Splide>
+        <Slider {...settings}>
+          {products.map((product) => {
+            return (
+              <Link to={`/productos/${product.id}`} className="textStyleCard">
+                <div className="productCard p-1 h-100">
+                  <img src={product.photo} className="w-100 mb-3 cardImg" />
+                  <div>
+                    <h5 className="text-center fontFlamenco">{product.name}</h5>
+                    <p className="text-center m-0 fontRoboto">
+                      ${product.price}.00
+                    </p>
+                    <p className="text-center d-flex justify-content-center">
+                      Stock: <p className="fontRoboto ms-1">{product.stock}</p>
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </Slider>
       </Container>
       <Footer />
     </>

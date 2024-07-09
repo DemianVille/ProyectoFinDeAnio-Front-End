@@ -10,14 +10,14 @@ import AboutThisProject from "../components/AboutThisProject";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import Slider from "react-slick";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [precioAbierto, setPrecioAbierto] = useState(false);
   const [talleAbierto, setTalleAbierto] = useState(false);
   const [ofertaAbierto, setOfertaAbierto] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     AOS.init();
@@ -76,6 +76,35 @@ export default function Home() {
             </Link>
           </Col>
         </Row>
+        <Col className="d-flex justify-content-center slide" md={12}>
+          <Slider
+            className="lg:content-['no-slider']"
+            index={index}
+            onSlide={setIndex}
+          >
+            {products.map((product) => {
+              return (
+                <Link to={`/productos/${product.id}`} className="textStyleCard">
+                  <div className="productCard p-1 h-100">
+                    <img src={product.photo} className="w-100 mb-3 cardImg" />
+                    <div>
+                      <h5 className="text-center fontFlamenco">
+                        {product.name}
+                      </h5>
+                      <p className="text-center m-0 fontRoboto">
+                        ${product.price}.00
+                      </p>
+                      <p className="text-center d-flex justify-content-center">
+                        Stock:{" "}
+                        <p className="fontRoboto ms-1">{product.stock}</p>
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </Slider>
+        </Col>
       </Container>
       <div className="imgflotante">
         <Alert
@@ -98,48 +127,6 @@ export default function Home() {
 
       <div className="mx-2">
         <Row className="filterPosition w-100">
-          <Col className="d-flex justify-content-center" md={12}>
-            <Splide
-              tag="section"
-              options={{
-                rewind: true,
-                width: 1350,
-                drag: true,
-                sliceToShow: 4,
-              }}
-              aria-label="Productos destacados"
-            >
-              {products.map((product) => {
-                return (
-                  <div key={product.id}>
-                    <Link
-                      to={`/productos/${product.id}`}
-                      className="textStyleCard"
-                    >
-                      <div className="productCard p-1">
-                        <img
-                          src={product.photo}
-                          className="w-100 mb-3 cardImg"
-                        />
-                        <div>
-                          <h5 className="text-center fontFlamenco">
-                            {product.name}
-                          </h5>
-                          <p className="text-center m-0 fontRoboto">
-                            ${product.price}.00
-                          </p>
-                          <p className="text-center d-flex justify-content-center">
-                            Stock:{" "}
-                            <p className="fontRoboto ms-1">{product.stock}</p>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </Splide>
-          </Col>
           <Col md={3} className="fontFlamenco ">
             <div className="categoriesDiv">
               <h5>Filtros</h5>
