@@ -615,15 +615,6 @@ html {
 
 /* Sobre este proyecto */
 
-.logInAsAdimnBtn:hover > .adminTestUser {
-  visibility: visible;
-}
-
-.adminTestUser {
-  color: white;
-  visibility: hidden;
-}
-
 .boutProjectBackground {
   color: white;
   height: 100%;

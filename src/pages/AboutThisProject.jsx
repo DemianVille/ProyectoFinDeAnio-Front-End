@@ -66,12 +66,10 @@ export default function AboutThisProject() {
                 Ingresar como admin
               </button>
             </Link>
-            <p className="adminTestUser pt-3 p-2">
+            <p className="mt-3 p-2">
               Admin test: admin@admin.uy - Password: 123
             </p>
-            <p className="adminTestUser p-1">
-              User test: test@user.uy - Password: 123
-            </p>
+            <p className="p-1">User test: test@user.uy - Password: 123</p>
           </div>
         </header>
         <section className="pt-5">
