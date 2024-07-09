@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Error404() {
   const [products, setProducts] = useState([]);
@@ -40,7 +42,9 @@ export default function Error404() {
     slickPause: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 768,
@@ -76,26 +80,41 @@ export default function Error404() {
         <div className="fs-2 text-center mt-4">
           <p>¡Tal vez te interesen estos productos!</p>
         </div>
-        <Slider {...settings}>
-          {products.map((product) => {
-            return (
-              <Link to={`/productos/${product.id}`} className="textStyleCard">
-                <div className="productCard p-1 h-100">
-                  <img src={product.photo} className="w-100 mb-3 cardImg" />
-                  <div>
-                    <h5 className="text-center fontFlamenco">{product.name}</h5>
-                    <p className="text-center m-0 fontRoboto">
-                      ${product.price}.00
-                    </p>
-                    <p className="text-center d-flex justify-content-center">
-                      Stock: <p className="fontRoboto ms-1">{product.stock}</p>
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </Slider>
+        <div className="w-100">
+          <Container className="fluid">
+            <Row className="m-0 w-100 pb-5">
+              <Slider {...settings}>
+                {products.map((product) => {
+                  return (
+                    <Link
+                      to={`/productos/${product.id}`}
+                      className="textStyleCard"
+                    >
+                      <div className="productCard p-1 h-100">
+                        <img
+                          src={product.photo}
+                          className="w-100 mb-3 cardImg"
+                        />
+                        <div>
+                          <h5 className="text-center fontFlamenco">
+                            {product.name}
+                          </h5>
+                          <p className="text-center m-0 fontRoboto">
+                            ${product.price}.00
+                          </p>
+                          <p className="text-center d-flex justify-content-center">
+                            Stock:{" "}
+                            <p className="fontRoboto ms-1">{product.stock}</p>
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </Slider>
+            </Row>
+          </Container>
+        </div>
       </Container>
       <Footer />
     </>

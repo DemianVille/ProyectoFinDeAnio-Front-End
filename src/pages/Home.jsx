@@ -11,6 +11,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -55,7 +57,9 @@ export default function Home() {
     slickPause: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 768,
@@ -98,36 +102,41 @@ export default function Home() {
             </Link>
           </Col>
         </Row>
-        <Col className="d-flex justify-content-center slide" md={12}>
-          <Slider
-            {...settings}
-            className="slider"
-            index={index}
-            onSlide={setIndex}
-          >
-            {products.map((product) => {
-              return (
-                <Link to={`/productos/${product.id}`} className="textStyleCard">
-                  <div className="productCard p-1 h-100">
-                    <img src={product.photo} className="w-100 mb-3 cardImg" />
-                    <div>
-                      <h5 className="text-center fontFlamenco">
-                        {product.name}
-                      </h5>
-                      <p className="text-center m-0 fontRoboto">
-                        ${product.price}.00
-                      </p>
-                      <p className="text-center d-flex justify-content-center">
-                        Stock:{" "}
-                        <p className="fontRoboto ms-1">{product.stock}</p>
-                      </p>
+        <Container className="fluid">
+          <Row className="m-0 w-100 p-3">
+            <Slider
+              {...settings}
+              className="w-100"
+              index={index}
+              onSlide={setIndex}
+            >
+              {products.map((product) => {
+                return (
+                  <Link
+                    to={`/productos/${product.id}`}
+                    className="textStyleCard"
+                  >
+                    <div className="productCard p-1 h-100">
+                      <img src={product.photo} className="w-100 mb-3 cardImg" />
+                      <div>
+                        <h5 className="text-center fontFlamenco">
+                          {product.name}
+                        </h5>
+                        <p className="text-center m-0 fontRoboto">
+                          ${product.price}.00
+                        </p>
+                        <p className="text-center d-flex justify-content-center">
+                          Stock:{" "}
+                          <p className="fontRoboto ms-1">{product.stock}</p>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </Slider>
-        </Col>
+                  </Link>
+                );
+              })}
+            </Slider>
+          </Row>
+        </Container>
       </Container>
       <div className="imgflotante">
         <Alert
@@ -138,10 +147,10 @@ export default function Home() {
         >
           <div className="">
             <h2 className="mt-5 mb-5">
-              <strong className="imgSize">¡IDEALES PARA TI!</strong>
+              <strong className="imgSize fs-1">¡IDEALES PARA TI!</strong>
             </h2>
-            <p className="mb-5">Busca tu estilo ideal.</p>
-            <Link to={"/categoria/3"}>
+            <p className="mb-5 fs-5">Busca tu estilo ideal.</p>
+            <Link to={"/categoria/1"}>
               <button className="headerBtn mb-5">PERSONALIZA TU ESTILO</button>
             </Link>
           </div>

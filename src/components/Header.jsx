@@ -9,7 +9,7 @@ export default function Header() {
       imgSrc:
         "https://www.sodanca.com/cdn/shop/files/Tiler2-banner.jpg?v=1717042733&width=2400",
       captionTitle: "NUEVAS MALLAS",
-      captionText: "Echa un vistazo a la nueva colección de Coppélia",
+      captionText: "Echa un vistazo a la nueva colección de Copéllia",
       captionBtnText: "VER ROPA DE BAILE",
       captionLink: "/categoria/2",
     },
