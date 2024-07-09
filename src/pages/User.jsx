@@ -17,14 +17,21 @@ export default function User() {
       <Container className="body">
         <Row>
           <Col xs={12}>
+            <div className="text-center">
+              <h2 className="mb-3">Perfil</h2>
+            </div>
             <Form
+              className="pt-3"
               onSubmit={(event) => {
                 event.preventDefault();
               }}
             >
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="name">Nombre</Form.Label>
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="name">
+                  Nombre
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="name"
                   type="text"
                   aria-label="First name"
@@ -33,9 +40,13 @@ export default function User() {
                   onChange={(e) => setFirstname(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="lastname">Apellido</Form.Label>
+              <hr />
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="lastname">
+                  Apellido
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="lastname"
                   type="text"
                   aria-label="Last name"
@@ -44,9 +55,13 @@ export default function User() {
                   onChange={(e) => setLastname(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="email">E-mail</Form.Label>
+              <hr />
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="email">
+                  Email
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="email"
                   type="email"
                   aria-describedby="email"
@@ -55,9 +70,13 @@ export default function User() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="address">Dirección</Form.Label>
+              <hr />
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="address">
+                  Dirección
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="address"
                   type="text"
                   aria-describedby="address"
@@ -66,9 +85,13 @@ export default function User() {
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="phone">Teléfono</Form.Label>
+              <hr />
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="phone">
+                  Teléfono
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="phone"
                   type="text"
                   aria-describedby="phone"
@@ -77,9 +100,13 @@ export default function User() {
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
-                <Form.Label htmlFor="password">Contraseña</Form.Label>
+              <hr />
+              <Form.Group className="mb-2 d-flex">
+                <Form.Label className="me-5 w-25" htmlFor="password">
+                  Contraseña
+                </Form.Label>
                 <Form.Control
+                  className="ms-5"
                   id="password"
                   type="password"
                   placeholder="1234abcd"
@@ -87,10 +114,11 @@ export default function User() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
+              <hr />
               <div className="d-flex justify-content-center">
-                <Button type="submit" className="mt-2 py-1 w-100 crearBtn">
+                <button type="submit" className="mt-2 py-1 w-100 crearBtn">
                   Guardar cambios
-                </Button>
+                </button>
               </div>
             </Form>
           </Col>
