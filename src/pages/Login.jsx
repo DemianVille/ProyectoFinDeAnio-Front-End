@@ -35,7 +35,7 @@ export default function Login() {
       };
 
       const response = await axios(`http://localhost:3000/tokens`, options);
-      if (response.data.token) {
+      if (response.data.token && response.data.user) {
         dispatch(createToken(response.data));
         navigate("/");
       } else {
