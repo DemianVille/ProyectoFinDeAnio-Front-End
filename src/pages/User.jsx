@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function User() {
   const [firstname, setFirstname] = useState("");
@@ -115,8 +116,13 @@ export default function User() {
                 />
               </Form.Group>
               <hr />
-              <div className="d-flex justify-content-center">
-                <button type="submit" className="mt-2 py-1 w-100 crearBtn">
+              <div className="d-flex justify-content-end">
+                <Link to={"/"}>
+                  <button type="button" className="mt-2 me-2 py-1 cancelarBtn">
+                    Cancelar
+                  </button>
+                </Link>
+                <button type="submit" className="mt-2 py-1 crearBtn">
                   Guardar cambios
                 </button>
               </div>

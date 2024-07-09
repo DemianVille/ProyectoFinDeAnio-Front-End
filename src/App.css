@@ -488,14 +488,16 @@ html {
 }
 
 .ingresarBtn:hover,
-.crearBtn:hover {
+.crearBtn:hover,
+.cancelarBtn:hover {
   background-color: rgba(114, 221, 185, 0.568);
   color: #1d1d1d;
   transition: all 0.2s ease-in-out;
 }
 
 .ingresarBtn,
-.crearBtn {
+.crearBtn,
+.cancelarBtn {
   background-color: rgba(97, 238, 191, 0.568);
   border: none;
   border-radius: 0;
