@@ -119,13 +119,17 @@ html {
   background-color: #e4e4e444;
 }
 
-/* carousel */
+/* Carousel */
 
 .carousel-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
+}
+
+.headerBtn:hover {
+  background-color: rgba(114, 221, 185);
 }
 
 .headerBtn {
@@ -135,10 +139,14 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
-/* body */
+/* Body */
 
 .body {
   min-height: 100vh;
+  margin-top: 10rem;
+}
+
+.nobody {
   margin-top: 10rem;
 }
 
@@ -460,7 +468,7 @@ html {
   padding-top: 20px;
 }
 
-/* scrollBar */
+/* ScrollBar */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -613,7 +621,7 @@ html {
   border-radius: 1%;
 }
 
-/* Sobre este proyecto */
+/* About This Project */
 
 .boutProjectBackground {
   color: white;
