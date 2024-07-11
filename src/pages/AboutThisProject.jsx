@@ -117,8 +117,8 @@ export default function AboutThisProject() {
                     transiciones, efectos al pasar el cursor, etc., asegurandome
                     de que las animaciones no afecten negativamente el
                     rendimiento de la aplicación. Esto lo hice apoyandomé en
-                    herramientas externas que facilitaron la implemetación de
-                    dichas animaciones.
+                    dependencias externas, como aos, que facilitaron la
+                    implemetación de dichas animaciones.
                   </p>
                 </Col>
               </Col>
@@ -126,10 +126,12 @@ export default function AboutThisProject() {
                 <Col className="p-3 pt-5">
                   <h3>Sofía Rovati</h3>
                   <p className="aboutUs">
-                    Por mi parte, participé en el diseño UX/UI, para asegurar
-                    que la interfaz sea fácil e intuitiva de usar, y que la
-                    navegación y la interacción con la página web se integren
-                    junto con la funcionalidad de la misma como se planeó.
+                    Por mi parte, participé en el diseño UX/UI, poniendo en
+                    practica lo aprendido en un taller dado a inicios de este
+                    año proporcionado por Practia, para asegurar que la interfaz
+                    sea fácil e intuitiva de usar, y que la navegación y la
+                    interacción con la página web se integren junto con la
+                    funcionalidad de la misma como se planeó.
                   </p>
                 </Col>
                 <div className="ourPhotosContainer">
