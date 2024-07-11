@@ -52,10 +52,10 @@ export default function AboutThisProject() {
                     className="w-100 imgHomeAfter"
                     data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
-                    data-aos-delay="62000"
+                    data-aos-delay="3000"
                     data-aos-offset="500"
                     data-aos-duration="1100"
-                    src="/src/assets/gifHomeAfter.gif"
+                    src="/src/assets/gifCompra.gif"
                   />
                 </div>
               </div>
