@@ -50,7 +50,7 @@ export default function Login() {
     <>
       <NavBar />
       <Container className="body">
-        <Row className="d-flex justify-content-center">
+        <Row className="d-flex flex-column align-items-center">
           <Col md={4}>
             <h2 className="text-center my-3">Ingresar</h2>
             <Form
@@ -141,6 +141,19 @@ export default function Login() {
                 </Col>
               </Row>
             </Form>
+          </Col>
+          <Col md={4} className="my-5">
+            <p>
+              <b>Usuario de prueba</b>
+            </p>
+            <p>
+              Para simplificar el acceso a la aplicación, se proporciona el
+              siguiente usuario de prueba:
+            </p>
+            <ul>
+              <li>E-mail: test@user.uy</li>
+              <li>Contraseña: 123</li>
+            </ul>
           </Col>
         </Row>
       </Container>
