@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct, addOne, decreaseOne } from "../redux/cartReduser";
+import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
 
 export default function Checkout() {
   const products = useSelector((state) => state.cart);

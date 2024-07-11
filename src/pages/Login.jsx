@@ -8,7 +8,7 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
-import { createToken } from "../redux/tokenReduser";
+import { createToken } from "../redux/tokenReducer";
 
 export default function Login() {
   const [email, setEmail] = useState("");
