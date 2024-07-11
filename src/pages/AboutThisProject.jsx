@@ -18,7 +18,7 @@ export default function AboutThisProject() {
       <Container className="nobody pb-5">
         <header>
           <Row>
-            <Col xs={12} md={6} className="aboutProject d-flex">
+            <Col xs={12} lg={6} className="aboutProject d-flex">
               <div className="pe-4">
                 <h2>Sobre este proyecto</h2>
                 <p className="aboutThisProjectIntro">
@@ -45,7 +45,7 @@ export default function AboutThisProject() {
                 </p>
               </div>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} lg={6}>
               <div className="imgHomeBefore ">
                 <div>
                   <Image
@@ -99,10 +99,13 @@ export default function AboutThisProject() {
         </header>
         <section className="pt-5">
           <Row className="d-flex" id="aboutUs">
-            <Col xs={4}>
-              <Image></Image>
+            <Col xs={12} lg={5}>
+              <Image
+                className="w-100 pt-4"
+                src="/src/assets/UserFlow.png"
+              ></Image>
             </Col>
-            <Col xs={8}>
+            <Col xs={12} lg={7}>
               <Col className="d-flex" xs={12}>
                 <div className="ourPhotosContainer">
                   <Image
