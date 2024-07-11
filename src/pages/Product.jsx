@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useSelector, useDispatch } from "react-redux";
-import { addProduct } from "../redux/cartReduser";
+import { addProduct } from "../redux/cartReducer";
 
 export default function Product() {
   const [product, setProduct] = useState([]);
