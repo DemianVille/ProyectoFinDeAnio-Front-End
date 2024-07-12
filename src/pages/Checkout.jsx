@@ -120,28 +120,6 @@ export default function Checkout() {
                   <option value="Argentina">Argentina</option>
                 </Form.Select>
               </Form.Group>
-
-              <Row className="mb-3">
-                <Col>
-                  <Form.Control
-                    type="text"
-                    placeholder="Nombre"
-                    aria-label="Nombre"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </Col>
-                <Col>
-                  <Form.Control
-                    type="text"
-                    placeholder="Apellido"
-                    aria-label="Apellido"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                </Col>
-              </Row>
-
               <Form.Group className="mb-3" controlId="company">
                 <Form.Control
                   type="text"
