@@ -164,9 +164,17 @@ html {
   background-color: transparent;
 }
 
-.categoriesNav:hover,
-.userNavBtn:hover {
+.categoriesNav:hover {
   text-decoration: underline rgb(152, 151, 151);
+}
+
+.userNavBtn {
+  color: #585858;
+  transition: all 0.2s ease-in-out;
+}
+
+.userNavBtn:hover {
+  color: #303030;
 }
 
 .categoryPosition {

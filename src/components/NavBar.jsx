@@ -86,12 +86,9 @@ export default function NavBar() {
                   </div>
                 ) : (
                   <div className="d-flex justify-content-center align-items-center">
-                    <button
-                      className="logoutBtn nav-link mx-2 p-0 active text-center userNavBtn"
-                      onClick={() => dispatch(deleteToken())}
-                    >
-                      Cerrar sesión
-                    </button>
+                    <Link className="nav-link cartNavBtn" to={"/usuario"}>
+                      <i class="bi bi-person-fill userNavBtn navIcon"></i>
+                    </Link>
                   </div>
                 )}
               </Nav>
