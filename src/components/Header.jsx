@@ -33,10 +33,12 @@ export default function Header() {
             alt={`Slide ${index + 1}`}
           />
           <Carousel.Caption className="h-100">
-            <h5 className="textPostition headerTitle">{slide.captionTitle}</h5>
-            <p className="textPostition headerText">{slide.captionText}</p>
+            <h5 className="textPostition headerTitle fs-2">
+              {slide.captionTitle}
+            </h5>
+            <p className="textPostition headerText fs-4">{slide.captionText}</p>
             <Link to={slide.captionLink}>
-              <button className="headerBtn">{slide.captionBtnText}</button>
+              <button className="headerBtn fs-4">{slide.captionBtnText}</button>
             </Link>
           </Carousel.Caption>
         </Carousel.Item>
