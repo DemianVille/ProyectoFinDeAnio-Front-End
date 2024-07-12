@@ -65,17 +65,16 @@ export default function AboutThisProject() {
 
         <header>
           <Row>
-            <Col xs={12} lg={6} className="mt-5">
-              <div className="imgHomeBefore ">
+            <Col xs={12} lg={6} className="mt-5 pe-3">
+              <div>
                 <div>
                   <Image
                     className="w-100 imgHomeAfter"
-                    data-aos="fade-left"
+                    data-aos="fade-right"
                     data-aos-anchor="#example-anchor"
-                    data-aos-delay="3000"
                     data-aos-offset="500"
                     data-aos-duration="1100"
-                    src="/src/assets/gifCompra.gif"
+                    src="/src/assets/coding.gif"
                   />
                 </div>
               </div>
