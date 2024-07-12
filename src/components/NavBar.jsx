@@ -60,7 +60,7 @@ export default function NavBar() {
                 {categories.map((category) => (
                   <div className="mx-4" key={category.id}>
                     <Link className="linkLi" to={`/categoria/${category.id}`}>
-                      <button className="styleButton categoriesNav w-100 p-2">
+                      <button className="styleButton categoriesNav w-100 p-2 fs-4">
                         {category.name}
                       </button>
                     </Link>
@@ -71,14 +71,14 @@ export default function NavBar() {
                 {token === null ? (
                   <div className="d-flex justify-content-center align-items-center">
                     <Link
-                      className="nav-link mx-2 p-0 active text-center userNavBtn"
+                      className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
                       to={"/ingresar"}
                     >
                       Ingresar
                     </Link>
 
                     <Link
-                      className="nav-link mx-2 p-0 active text-center userNavBtn"
+                      className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
                       to={"/registrarse"}
                     >
                       Registrarse
