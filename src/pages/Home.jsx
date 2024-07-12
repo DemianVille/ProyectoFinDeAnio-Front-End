@@ -89,7 +89,7 @@ export default function Home() {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration="1100"
-                src="https://www.sodanca.com/cdn/shop/files/body-liners-q2_900x.jpg?v=1716232055"
+                src="/src/assets/CatHombresImg.png"
               />
             </Link>
           </Col>
@@ -101,7 +101,7 @@ export default function Home() {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration="1100"
-                src="https://www.sodanca.com/cdn/shop/files/tights-square-1_900x.jpg?v=1714536944"
+                src="/src/assets/CatDanzaImg.png"
               />
             </Link>
           </Col>
