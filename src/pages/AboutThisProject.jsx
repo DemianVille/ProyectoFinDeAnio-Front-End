@@ -18,7 +18,7 @@ export default function AboutThisProject() {
       <Container className="nobody pb-5">
         <header>
           <Row>
-            <Col xs={12} md={6} className="aboutProject d-flex">
+            <Col xs={12} lg={6} className="aboutProject d-flex">
               <div className="pe-4">
                 <h2>Sobre este proyecto</h2>
                 <p className="aboutThisProjectIntro">
@@ -45,7 +45,7 @@ export default function AboutThisProject() {
                 </p>
               </div>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} lg={6}>
               <div className="imgHomeBefore ">
                 <div>
                   <Image
@@ -62,47 +62,68 @@ export default function AboutThisProject() {
             </Col>
           </Row>
         </header>
+
+        <header>
+          <Row>
+            <Col xs={12} lg={6} className="mt-5">
+              <div className="imgHomeBefore ">
+                <div>
+                  <Image
+                    className="w-100 imgHomeAfter"
+                    data-aos="fade-left"
+                    data-aos-anchor="#example-anchor"
+                    data-aos-delay="3000"
+                    data-aos-offset="500"
+                    data-aos-duration="1100"
+                    src="/src/assets/gifCompra.gif"
+                  />
+                </div>
+              </div>
+            </Col>
+            <Col xs={12} lg={6} className="aboutProject d-flex mt-5">
+              <div className="d-flex flex-column align-items-center logInAsAdimnBtn">
+                <div>
+                  <h2>Usuarios de prueba</h2>
+                  <p className="ms-4">
+                    Para simplificar el acceso a la aplicación, se proporcionan
+                    los siguientes usuarios de prueba:
+                  </p>
+                  <p>
+                    <b>Administrador:</b>
+                  </p>
+                  <ul>
+                    <li>E-mail: admin@admin.uy</li>
+                    <li>Contraseña: 123</li>
+                  </ul>
+                  <p>
+                    <b>Usuario:</b>
+                  </p>
+                  <ul>
+                    <li>E-mail: test@user.uy</li>
+                    <li>Contraseña: 123</li>
+                  </ul>
+                  <Link to={"http://localhost:5174/admin/login"}>
+                    <button className="loginAdmin py-2 px-3 mt-5">
+                      Ingresar como administrador
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </header>
       </Container>
       <Image className="w-100 fluid py-5" src="/src/assets/Excalidraw.jpg" />
       <Container>
-        <header>
-          <div className="d-flex flex-column align-items-center logInAsAdimnBtn">
-            <Link to={"http://localhost:5174/admin/login"}>
-              <button className="loginAdmin py-2 px-3 mt-5">
-                Ingresar como administrador
-              </button>
-            </Link>
-            <div>
-              <p>
-                <b>Usuarios de prueba</b>
-              </p>
-              <p className="ms-4">
-                Para simplificar el acceso a la aplicación, se proporcionan los
-                siguientes usuarios de prueba:
-              </p>
-              <p>
-                <b>Administrador:</b>
-              </p>
-              <ul>
-                <li>E-mail: admin@admin.uy</li>
-                <li>Contraseña: 123</li>
-              </ul>
-              <p>
-                <b>Usuario:</b>
-              </p>
-              <ul>
-                <li>E-mail: test@user.uy</li>
-                <li>Contraseña: 123</li>
-              </ul>
-            </div>
-          </div>
-        </header>
         <section className="pt-5">
           <Row className="d-flex" id="aboutUs">
-            <Col xs={4}>
-              <Image></Image>
+            <Col xs={12} lg={5}>
+              <Image
+                className="w-100 pt-4"
+                src="/src/assets/UserFlow.png"
+              ></Image>
             </Col>
-            <Col xs={8}>
+            <Col xs={12} lg={7}>
               <Col className="d-flex" xs={12}>
                 <div className="ourPhotosContainer">
                   <Image

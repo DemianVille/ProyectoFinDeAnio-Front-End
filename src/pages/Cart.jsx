@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
-
 import { useSelector, useDispatch } from "react-redux";
 import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
 

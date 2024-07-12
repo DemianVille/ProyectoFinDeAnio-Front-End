@@ -16,7 +16,7 @@ export default function Product() {
   const dispatch = useDispatch();
 
   const notify = () => {
-    toast.warn("En desarrollo");
+    toast.success("Producto agregado exitosamente!");
   };
 
   const addQty = () => {
@@ -114,14 +114,21 @@ export default function Product() {
               </div>
               <button
                 className="mt-4 w-100 addToCart"
-                onClick={() => addToCart()}
+                onClick={() => {
+                  addToCart();
+                  notify();
+                }}
               >
                 <b>Añadir al carro</b>
               </button>
             </Col>
           </Row>
         </Container>
-        <ToastContainer position="top-right" autoClose={3000} />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          className="notifyProduct"
+        />
         <Footer />
       </>
     )

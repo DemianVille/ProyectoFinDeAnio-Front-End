@@ -168,9 +168,7 @@ export default function Home() {
               <h5>Filtros</h5>
               <div className="filterStyle">
                 <div
-                  onClick={
-                    () => notify() /* setPrecioAbierto(!precioAbierto) */
-                  }
+                  onClick={() => setPrecioAbierto(!precioAbierto)}
                   style={{ cursor: "pointer" }}
                 >
                   Precio
@@ -181,8 +179,8 @@ export default function Home() {
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        value=""
                         id="flexCheckDefault"
+                        onClick={() => notify()}
                       />
                       <label
                         class="form-check-label px-2"
@@ -195,8 +193,8 @@ export default function Home() {
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        value=""
                         id="flexCheckDefault"
+                        onClick={() => notify()}
                       />
                       <label
                         class="form-check-label px-2"
