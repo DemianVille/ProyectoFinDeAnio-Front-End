@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "../components/Footer";
+import axios from "axios";
 import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
@@ -10,6 +11,21 @@ import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
 
 export default function Checkout() {
   const products = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.token.user);
+  const token = useSelector((state) => state.token.token);
+  const [country, setCountry] = useState("");
+  const [userName, setUserName] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [apartment, setApartment] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [company, setCompany] = useState("");
+  const [postCode, setPostCode] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [userId, setUserId] = useState(0);
+
   const notify = () => {
     toast.warn("En desarrollo");
   };
@@ -20,6 +36,28 @@ export default function Checkout() {
       acumulator + currentValue.price * currentValue.qty,
     initialValue
   );
+
+  const addOrder = async () => {
+    try {
+      const options = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          products,
+          address,
+          userId,
+          userName,
+        },
+      };
+
+      const response = await axios(`http://localhost:3000/orders`, options);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
@@ -42,10 +80,10 @@ export default function Checkout() {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Juan Perez</Form.Label>
+                <Form.Label>Nombre</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Nombre"
+                  placeholder="Juan Perez"
                   aria-label="Nombre"
                 />
               </Form.Group>
@@ -59,19 +97,20 @@ export default function Checkout() {
                   />
                 </Col>
                 <Col>
-                  <Form.Label>CVC</Form.Label>
+                  <Form.Label>CVV</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="1234"
-                    aria-label="CVC"
+                    placeholder="123"
+                    aria-label="CVV"
                   />
                 </Col>
               </Row>
               <hr className="my-5" />
               <Form.Group className="mb-3" controlId="countrySelect">
                 <Form.Label>País/Región</Form.Label>
-                <Form.Select>
-                  <option value="Argentina">Uruguay</option>
+                <Form.Select onChange={(e) => setCountry(e.target.value)}>
+                  <option>Elige un país</option>
+                  <option value="Uruguay">Uruguay</option>
                   <option value="Brasil">Brasil</option>
                   <option value="Colombia">Colombia</option>
                   <option value="Guyana">Guyana</option>
@@ -81,7 +120,7 @@ export default function Checkout() {
                   <option value="Chile">Chile</option>
                   <option value="Ecuador">Ecuador</option>
                   <option value="Perú">Perú</option>
-                  <option value="Uruguay">Argentina</option>
+                  <option value="Argentina">Argentina</option>
                 </Form.Select>
               </Form.Group>
 
@@ -91,6 +130,8 @@ export default function Checkout() {
                     type="text"
                     placeholder="Nombre"
                     aria-label="Nombre"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </Col>
                 <Col>
@@ -98,6 +139,8 @@ export default function Checkout() {
                     type="text"
                     placeholder="Apellido"
                     aria-label="Apellido"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                   />
                 </Col>
               </Row>
@@ -107,6 +150,8 @@ export default function Checkout() {
                   type="text"
                   placeholder="Companía (opcional)"
                   aria-label="Companía"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                 />
               </Form.Group>
 
@@ -115,14 +160,18 @@ export default function Checkout() {
                   type="text"
                   placeholder="Dirección"
                   aria-label="Dirección"
+                  value={street}
+                  onChange={(e) => setStreet(e.target.value)}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="apartment">
                 <Form.Control
                   type="text"
-                  placeholder="Apartamento (Opcional)"
+                  placeholder="Apartamento (opcional)"
                   aria-label="Apartamento"
+                  value={apartment}
+                  onChange={(e) => setApartment(e.target.value)}
                 />
               </Form.Group>
 
@@ -132,6 +181,8 @@ export default function Checkout() {
                     type="text"
                     placeholder="Ciudad"
                     aria-label="Ciudad"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                   />
                 </Col>
                 <Col>
@@ -139,6 +190,8 @@ export default function Checkout() {
                     type="text"
                     placeholder="Código postal"
                     aria-label="Código postal"
+                    value={postCode}
+                    onChange={(e) => setPostCode(e.target.value)}
                   />
                 </Col>
               </Row>
@@ -148,6 +201,8 @@ export default function Checkout() {
                   type="text"
                   placeholder="Teléfono"
                   aria-label="Teléfono"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </Form.Group>
 
@@ -165,7 +220,18 @@ export default function Checkout() {
                   <i className="bi bi-caret-left"></i> Volver al carrito
                 </button>
               </Link>
-              <button className="continueShoppingBtn">Terminar compra</button>
+              <button
+                className="continueShoppingBtn"
+                onClick={() => {
+                  setUserId(user.id);
+                  setAddress(
+                    `${country} ${city} ${street} ${apartment} ${postCode}`
+                  );
+                  addOrder();
+                }}
+              >
+                Terminar compra
+              </button>
             </div>
           </Col>
           <Col xs={12} lg={6} className="mt-lg-5 p-3">
