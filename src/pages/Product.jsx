@@ -16,7 +16,7 @@ export default function Product() {
   const dispatch = useDispatch();
 
   const notify = () => {
-    toast.success("Producto agregado exitosamente!");
+    toast.success("¡Producto agregado exitosamente!");
   };
 
   const addQty = () => {
