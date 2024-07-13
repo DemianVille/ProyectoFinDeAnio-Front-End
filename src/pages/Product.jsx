@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { Container, Row, Col } from "react-bootstrap";
-
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../redux/cartReducer";
+const url = import.meta.env.VITE_URL;
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -43,10 +43,7 @@ export default function Product() {
           },
         };
 
-        const response = await fetch(
-          `http://localhost:3000/products/${params.id}`,
-          options
-        );
+        const response = await fetch(`${url}products/${params.id}`, options);
         const allProductObject = await response.json();
         setProduct(allProductObject);
       } catch (err) {

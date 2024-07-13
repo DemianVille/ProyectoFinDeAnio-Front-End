@@ -5,8 +5,8 @@ import axios from "axios";
 import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
-
 import { useSelector, useDispatch } from "react-redux";
+const url = import.meta.env.VITE_URL;
 
 export default function Checkout() {
   const products = useSelector((state) => state.cart);
@@ -50,7 +50,7 @@ export default function Checkout() {
         },
       };
 
-      const response = await axios(`http://localhost:3000/orders`, options);
+      const response = await axios(`${url}orders`, options);
     } catch (err) {
       console.error(err);
     }

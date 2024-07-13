@@ -5,6 +5,7 @@ import { deleteToken } from "../redux/tokenReducer";
 import { Navbar, Nav, Container, Collapse } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+const url = import.meta.env.VITE_URL;
 
 export default function NavBar() {
   const token = useSelector((state) => state.token);
@@ -22,10 +23,7 @@ export default function NavBar() {
           },
         };
 
-        const response = await fetch(
-          `http://localhost:3000/categories`,
-          options
-        );
+        const response = await fetch(`${url}categories`, options);
         const allCategoriesObject = await response.json();
         setCategories(allCategoriesObject);
       } catch (err) {

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+const url = import.meta.env.VITE_URL;
 
 export default function Error404() {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ export default function Error404() {
           },
         };
 
-        const response = await fetch(`http://localhost:3000/products`, options);
+        const response = await fetch(`${url}products`, options);
         const allProductsObject = await response.json();
         setProducts(allProductsObject);
       } catch (err) {

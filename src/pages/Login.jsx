@@ -6,9 +6,9 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
 import { useSelector, useDispatch } from "react-redux";
 import { createToken } from "../redux/tokenReducer";
+const url = import.meta.env.VITE_URL;
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -34,7 +34,7 @@ export default function Login() {
         },
       };
 
-      const response = await axios(`http://localhost:3000/tokens`, options);
+      const response = await axios(`${url}tokens`, options);
       if (response.data.token && response.data.user) {
         dispatch(createToken(response.data));
         navigate("/");

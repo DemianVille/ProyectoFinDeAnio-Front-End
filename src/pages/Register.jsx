@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+const url = import.meta.env.VITE_URL;
 
 export default function Register() {
   const notify = () => {
@@ -36,7 +37,7 @@ export default function Register() {
         },
       };
 
-      const response = await axios(`http://localhost:3000/users`, options);
+      const response = await axios(`${url}users`, options);
       if (response.data.message === "User created successfully.") {
         navigate("/ingresar");
       }

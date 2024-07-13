@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
+const url = import.meta.env.VITE_URL;
 
 export default function Categories() {
   const [category, setCategory] = useState({});
@@ -24,10 +25,7 @@ export default function Categories() {
           },
         };
 
-        const response = await fetch(
-          `http://localhost:3000/categories/${params.id}`,
-          options
-        );
+        const response = await fetch(`${url}categories/${params.id}`, options);
         const categoryObject = await response.json();
         setCategory(categoryObject);
       } catch (err) {
@@ -47,7 +45,7 @@ export default function Categories() {
           },
         };
 
-        const response = await fetch(`http://localhost:3000/products`, options);
+        const response = await fetch(`${url}products`, options);
         const allProductsObject = await response.json();
         setFilterProducts(
           allProductsObject.filter((product) => product.categoryId == params.id)

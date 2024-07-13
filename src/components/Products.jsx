@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
+const url = import.meta.env.VITE_URL;
 
 export default function Products(id) {
   const [product, setProduct] = useState({});
@@ -17,10 +18,7 @@ export default function Products(id) {
           },
         };
 
-        const response = await fetch(
-          `http://localhost:3000/products/${id.id}`,
-          options
-        );
+        const response = await fetch(`${url}products/${id.id}`, options);
         const allProductObject = await response.json();
         setProduct(allProductObject);
       } catch (err) {
