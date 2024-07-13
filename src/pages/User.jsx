@@ -76,6 +76,17 @@ export default function User() {
   return (
     <>
       <NavBar />
+      <div expand="lg" className="p-0 m-0 d-flex justify-content-end logoutBtn">
+        <button
+          className=" nav-link mx-2 p-0 active"
+          onClick={() => {
+            navigate("/");
+            dispatch(deleteToken());
+          }}
+        >
+          Cerrar sesión <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
       <Container className="body">
         <Row>
           <Col xs={12}>
@@ -197,15 +208,6 @@ export default function User() {
                   >
                     <small>Guardar cambios</small>
                   </button>
-                  {/* <button
-                    className="mt-2 py-1 crearBtn"
-                    onClick={() => {
-                      navigate("/");
-                      dispatch(deleteToken());
-                    }}
-                  >
-                    Cerrar sesión
-                  </button> */}
                 </div>
               </div>
               <div className="d-flex justify-content-end"></div>

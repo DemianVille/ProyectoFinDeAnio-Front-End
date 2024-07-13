@@ -95,7 +95,9 @@ html {
 }
 
 .logoutBtn {
-  width: 83px;
+  position: relative;
+  top: 8rem;
+  right: 0;
 }
 
 .buttonNav {
