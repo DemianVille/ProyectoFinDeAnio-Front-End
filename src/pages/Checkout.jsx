@@ -197,12 +197,12 @@ export default function Checkout() {
               </Link>
               <button
                 className="continueShoppingBtn"
-                onClick={() => {
-                  setUserId(user.id);
-                  setAddress(
+                onClick={async () => {
+                  await setUserId(user.id);
+                  await setAddress(
                     `${country} ${city} ${street} ${apartment} ${postCode}`
                   );
-                  addOrder();
+                  await addOrder();
                 }}
               >
                 Terminar compra
