@@ -182,16 +182,22 @@ export default function User() {
                     <i className="bi bi-caret-left"></i> Volver al inicio
                   </button>
                 </Link>
-                <div className="d-flex flex-column">
+                <div>
                   <button
-                    className="continueShoppingBtn"
+                    className="mt-3 py-1 mx-2 deleteUserBtn"
+                    onClick={handleShow}
+                  >
+                    <small>Eliminar cuenta</small>
+                  </button>
+                  <button
+                    className="py-1 continueShoppingBtn"
                     onClick={async () => {
                       editUser();
                     }}
                   >
-                    Guardar cambios
+                    <small>Guardar cambios</small>
                   </button>
-                  <button
+                  {/* <button
                     className="mt-2 py-1 crearBtn"
                     onClick={() => {
                       navigate("/");
@@ -199,13 +205,7 @@ export default function User() {
                     }}
                   >
                     Cerrar sesión
-                  </button>
-                  <button
-                    className="mt-2 py-1 deleteUserBtn"
-                    onClick={handleShow}
-                  >
-                    <small>Eliminar cuenta</small>
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="d-flex justify-content-end"></div>
