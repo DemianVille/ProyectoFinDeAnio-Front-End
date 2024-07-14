@@ -32,7 +32,7 @@ export default function User() {
     toast.warn("No puedes eliminar este usuario");
   };
 
-  const guardado = () => {
+  const saved = () => {
     toast.success("¡Cambios guardados exitosamente!");
   };
 
@@ -208,7 +208,7 @@ export default function User() {
                     className="py-1 continueShoppingBtn"
                     onClick={async () => {
                       editUser();
-                      guardado();
+                      saved();
                     }}
                   >
                     <small>Guardar cambios</small>

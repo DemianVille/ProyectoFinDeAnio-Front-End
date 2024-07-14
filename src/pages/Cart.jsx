@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
+  const token = useSelector((state) => state.token.token);
 
   const dispatch = useDispatch();
 
