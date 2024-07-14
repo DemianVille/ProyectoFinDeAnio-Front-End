@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
@@ -17,6 +18,10 @@ export default function Cart() {
       acumulator + currentValue.price * currentValue.qty,
     initialValue
   );
+
+  const notify = () => {
+    toast.warn("¡Debes ingresar para realizar una compra!");
+  };
 
   return (
     <>
@@ -89,7 +94,16 @@ export default function Cart() {
                     <span>Total:</span>
                     <span>${totalPrice}.00</span>
                   </div>
-                  <Link className="w-100" to={"/checkout"}>
+                  <Link
+                    className="w-100"
+                    onClick={() => {
+                      if (!token) {
+                        notify();
+                      } else {
+                        to = "checkout";
+                      }
+                    }}
+                  >
                     <button className="comprarBtn py-1 w-100">
                       <i className="bi bi-bag"></i> Comprar
                     </button>
@@ -116,6 +130,11 @@ export default function Cart() {
           )}
         </div>
       </Container>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        className="notifyProduct"
+      />
       <Footer />
     </>
   );
