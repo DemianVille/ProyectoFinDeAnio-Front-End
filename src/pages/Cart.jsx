@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
@@ -9,8 +9,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
-  const token = useSelector((state) => state.token.token);
+  const token = useSelector((state) => state.token);
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const initialValue = 0;
@@ -21,7 +22,7 @@ export default function Cart() {
   );
 
   const notify = () => {
-    toast.warn("¡Debes ingresar para realizar una compra!");
+    toast.warn("¡Debes iniciar sesión para realizar una compra!");
   };
 
   return (
@@ -95,20 +96,18 @@ export default function Cart() {
                     <span>Total:</span>
                     <span>${totalPrice}.00</span>
                   </div>
-                  <Link
-                    className="w-100"
+                  <button
+                    className="comprarBtn py-1 w-100"
                     onClick={() => {
                       if (!token) {
                         notify();
                       } else {
-                        to = "checkout";
+                        navigate("/checkout");
                       }
                     }}
                   >
-                    <button className="comprarBtn py-1 w-100">
-                      <i className="bi bi-bag"></i> Comprar
-                    </button>
-                  </Link>
+                    <i className="bi bi-bag"></i> Comprar
+                  </button>
                   <Form.Check
                     className="mt-3"
                     type="checkbox"
