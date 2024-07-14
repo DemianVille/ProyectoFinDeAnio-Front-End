@@ -95,7 +95,9 @@ html {
 }
 
 .logoutBtn {
-  width: 83px;
+  position: relative;
+  top: 8rem;
+  right: 10px;
 }
 
 .buttonNav {
@@ -334,7 +336,6 @@ html {
   border-radius: 0;
   color: white;
   border: none;
-  padding: 20px;
   transition: all 0.2s ease-in-out;
 }
 .continueShoppingBtn:hover {
@@ -515,11 +516,17 @@ html {
   transition: all 0.2s ease-in-out;
 }
 
-.deleteUserBtn{
+.deleteUserBtn:hover {
+  background-color: rgba(255, 91, 91, 0.705);
+  padding: 20px;
+}
+
+.deleteUserBtn {
   background-color: rgba(252, 118, 118, 0.568);
   color: #000;
   transition: all 0.2s ease-in-out;
   border: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .ingresarBtn,

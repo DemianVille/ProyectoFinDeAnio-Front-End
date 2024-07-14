@@ -102,7 +102,10 @@ export default function AboutThisProject() {
                     <li>E-mail: test@user.uy</li>
                     <li>Contraseña: 123</li>
                   </ul>
-                  <Link to={"http://localhost:5174/admin/login"}>
+                  <Link
+                    to={"http://localhost:5174/admin/login"}
+                    target="blank_"
+                  >
                     <button className="loginAdmin py-2 px-3 mt-5">
                       Ingresar como administrador
                     </button>

@@ -32,6 +32,10 @@ export default function User() {
     toast.warn("No puedes eliminar este usuario");
   };
 
+  const saved = () => {
+    toast.success("¡Cambios guardados exitosamente!");
+  };
+
   const editUser = async () => {
     try {
       const options = {
@@ -76,6 +80,17 @@ export default function User() {
   return (
     <>
       <NavBar />
+      <div expand="lg" className="p-0 m-0 d-flex justify-content-end logoutBtn">
+        <button
+          className=" nav-link mx-2 p-0 active"
+          onClick={() => {
+            navigate("/");
+            dispatch(deleteToken());
+          }}
+        >
+          Cerrar sesión <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
       <Container className="body">
         <Row>
           <Col xs={12}>
@@ -182,29 +197,21 @@ export default function User() {
                     <i className="bi bi-caret-left"></i> Volver al inicio
                   </button>
                 </Link>
-                <div className="d-flex flex-column">
+                <div>
                   <button
-                    className="continueShoppingBtn"
-                    onClick={async () => {
-                      editUser();
-                    }}
-                  >
-                    Guardar cambios
-                  </button>
-                  <button
-                    className="mt-2 py-1 crearBtn"
-                    onClick={() => {
-                      navigate("/");
-                      dispatch(deleteToken());
-                    }}
-                  >
-                    Cerrar sesión
-                  </button>
-                  <button
-                    className="mt-2 py-1 deleteUserBtn"
+                    className="mt-3 py-1 mx-2 deleteUserBtn"
                     onClick={handleShow}
                   >
                     <small>Eliminar cuenta</small>
+                  </button>
+                  <button
+                    className="py-1 continueShoppingBtn"
+                    onClick={async () => {
+                      editUser();
+                      saved();
+                    }}
+                  >
+                    <small>Guardar cambios</small>
                   </button>
                 </div>
               </div>
