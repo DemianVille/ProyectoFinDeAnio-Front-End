@@ -4,8 +4,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
 const url = import.meta.env.VITE_URL;
 
 export default function Register() {
@@ -157,6 +157,10 @@ export default function Register() {
                   Crear cuenta
                 </button>
               </div>
+              <p className="py-2">
+                ¿Ya tienes una cuenta? Ingresa{" "}
+                <Link to={"/ingresar"}>aquí</Link>
+              </p>
             </Form>
           </Col>
         </Row>
