@@ -6,6 +6,7 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+const url = import.meta.env.VITE_URL;
 
 export default function AboutThisProject() {
   useEffect(() => {
