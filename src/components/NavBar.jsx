@@ -70,14 +70,14 @@ export default function NavBar() {
                   {token === null ? (
                     <div className="d-flex justify-content-center align-items-center">
                       <Link
-                        className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
+                        className="nav-link mx-2 p-0 active text-center categoriesNav userNavBtn fs-5"
                         to={"/ingresar"}
                       >
                         Ingresar
                       </Link>
 
                       <Link
-                        className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
+                        className="nav-link mx-2 p-0 active text-center categoriesNav userNavBtn fs-5"
                         to={"/registrarse"}
                       >
                         Registrarse
