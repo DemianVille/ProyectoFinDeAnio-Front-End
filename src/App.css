@@ -77,10 +77,12 @@ html {
   text-decoration: none;
   width: 300px;
 }
-.userInfo{
-  width: 300px;
-  display: flex;
-  justify-content: right;
+@media only screen and (min-width: 992px){
+  .userInfo{
+    width: 300px;
+    display: flex;
+    justify-content: right;
+  }
 }
 
 .pageName {

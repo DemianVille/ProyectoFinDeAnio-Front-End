@@ -90,9 +90,11 @@ export default function NavBar() {
                       </Link>
                     </div>
                   )}
-                  <Link className="nav-link cartNavBtn" to={"/carrito"}>
-                    <i className="bi bi-bag-fill navIcon"></i>
-                  </Link>
+                  <Nav>
+                    <Link className="nav-link cartNavBtn" to={"/carrito"}>
+                      <i className="bi bi-bag-fill navIcon"></i>
+                    </Link>
+                  </Nav>
                 </div>
               </Nav>
             </Navbar.Collapse>
