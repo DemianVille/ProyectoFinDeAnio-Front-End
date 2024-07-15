@@ -118,9 +118,9 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-      <Container fluid>
-        <Row className="m-0 w-100 p-3">
-          <Slider {...settings} className="w-100" afterChange={setIndex}>
+      <Container>
+        <Row className="m-0 w-100">
+          <Slider {...settings} className="w-100 mt-4" afterChange={setIndex}>
             {products.map((product) => (
               <Link
                 to={`/productos/${product.id}`}

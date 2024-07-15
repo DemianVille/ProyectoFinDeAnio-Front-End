@@ -9,6 +9,19 @@ import { addProduct } from "../redux/cartReducer";
 const url = import.meta.env.VITE_URL;
 
 export default function Product() {
+  const token = useSelector((state) => state.token);
+  const [xs, setXs] = useState("");
+  const [s, setS] = useState("");
+  const [m, setM] = useState("");
+  const [l, setL] = useState("");
+  const [xl, setXl] = useState("");
+  const [foot36, setFoot36] = useState("");
+  const [foot37, setFoot37] = useState("");
+  const [foot38, setFoot38] = useState("");
+  const [foot39, setFoot39] = useState("");
+  const [foot40, setFoot40] = useState("");
+  const [foot41, setFoot41] = useState("");
+  const [size, setSize] = useState(null);
   const [product, setProduct] = useState([]);
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState(null);
@@ -17,6 +30,12 @@ export default function Product() {
 
   const notify = () => {
     toast.success("¡Producto agregado exitosamente!");
+  };
+  const sizeOrColor = () => {
+    toast.warn("Selecciona un color y un talle");
+  };
+  const login = () => {
+    toast.warn("Necesitas iniciar sesión para agregar productos al carrito");
   };
 
   const addQty = () => {
@@ -30,7 +49,7 @@ export default function Product() {
   };
 
   const addToCart = async () => {
-    dispatch(addProduct({ ...product, qty, color: selectedColor }));
+    dispatch(addProduct({ ...product, qty, color: selectedColor, size }));
   };
 
   useEffect(() => {
@@ -92,6 +111,189 @@ export default function Product() {
                   })}
                 </div>
               </div>
+              <div className="mt-2">
+                <p>Talles -</p>
+                <div className="d-flex flex-wrap">
+                  {product.categoryId == 1 ? (
+                    <div className="mt-2">
+                      <button
+                        onClick={() => {
+                          setFoot36("selected");
+                          setFoot37("");
+                          setFoot38("");
+                          setFoot39("");
+                          setFoot40("");
+                          setFoot41("");
+                          setSize(36);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot36 === "selected" && "selected"
+                        }`}
+                      >
+                        36
+                      </button>
+                      <button
+                        onClick={() => {
+                          setFoot36("");
+                          setFoot37("selected");
+                          setFoot38("");
+                          setFoot39("");
+                          setFoot40("");
+                          setFoot41("");
+                          setSize(37);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot37 === "selected" && "selected"
+                        }`}
+                      >
+                        37
+                      </button>
+                      <button
+                        onClick={() => {
+                          setFoot36("");
+                          setFoot37("");
+                          setFoot38("selected");
+                          setFoot39("");
+                          setFoot40("");
+                          setFoot41("");
+                          setSize(38);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot38 === "selected" && "selected"
+                        }`}
+                      >
+                        38
+                      </button>
+                      <button
+                        onClick={() => {
+                          setFoot36("");
+                          setFoot37("");
+                          setFoot38("");
+                          setFoot39("selected");
+                          setFoot40("");
+                          setFoot41("");
+                          setSize(39);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot39 === "selected" && "selected"
+                        }`}
+                      >
+                        39
+                      </button>
+                      <button
+                        onClick={() => {
+                          setFoot36("");
+                          setFoot37("");
+                          setFoot38("");
+                          setFoot39("");
+                          setFoot40("selected");
+                          setFoot41("");
+                          setSize(40);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot40 === "selected" && "selected"
+                        }`}
+                      >
+                        40
+                      </button>
+                      <button
+                        onClick={() => {
+                          setFoot36("");
+                          setFoot37("");
+                          setFoot38("");
+                          setFoot39("");
+                          setFoot40("");
+                          setFoot41("selected");
+                          setSize(41);
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          foot41 === "selected" && "selected"
+                        }`}
+                      >
+                        41
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="mt-2">
+                      <button
+                        onClick={() => {
+                          setXs("selected");
+                          setS("");
+                          setM("");
+                          setL("");
+                          setXl("");
+                          setSize("xs");
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          xs === "selected" && "selected"
+                        }`}
+                      >
+                        XS
+                      </button>
+                      <button
+                        onClick={() => {
+                          setXs("");
+                          setS("selected");
+                          setM("");
+                          setL("");
+                          setXl("");
+                          setSize("s");
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          s === "selected" && "selected"
+                        }`}
+                      >
+                        S
+                      </button>
+                      <button
+                        onClick={() => {
+                          setXs("");
+                          setS("");
+                          setM("selected");
+                          setL("");
+                          setXl("");
+                          setSize("m");
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          m === "selected" && "selected"
+                        }`}
+                      >
+                        M
+                      </button>
+                      <button
+                        onClick={() => {
+                          setXs("");
+                          setS("");
+                          setM("");
+                          setL("selected");
+                          setXl("");
+                          setSize("l");
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          l === "selected" && "selected"
+                        }`}
+                      >
+                        L
+                      </button>
+                      <button
+                        onClick={() => {
+                          setXs("");
+                          setS("");
+                          setM("");
+                          setL("");
+                          setXl("selected");
+                          setSize("xl");
+                        }}
+                        className={`sizeBtn mx-1 ${
+                          xl === "selected" && "selected"
+                        }`}
+                      >
+                        XL
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
               <p className="mt-3">Cantidad -</p>
               <div className="d-flex qtyDiv">
                 <button className="qtyBtn" onClick={resQty}>
@@ -112,8 +314,14 @@ export default function Product() {
               <button
                 className="mt-4 w-100 addToCart"
                 onClick={() => {
-                  addToCart();
-                  notify();
+                  if (!size || !selectedColor) {
+                    sizeOrColor();
+                  } else if (!token) {
+                    login();
+                  } else {
+                    addToCart();
+                    notify();
+                  }
                 }}
               >
                 <b>Añadir al carro</b>

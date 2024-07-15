@@ -2,9 +2,15 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct, addOne, decreaseOne } from "../redux/cartReducer";
+import {
+  deleteProduct,
+  addOne,
+  decreaseOne,
+  cleanCart,
+} from "../redux/cartReducer";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Cart() {
@@ -24,6 +30,12 @@ export default function Cart() {
   const notify = () => {
     toast.warn("¡Debes iniciar sesión para realizar una compra!");
   };
+
+  useEffect(() => {
+    if (!token) {
+      dispatch(cleanCart());
+    }
+  }, [token]);
 
   return (
     <>
@@ -50,6 +62,7 @@ export default function Cart() {
                       <div>
                         <p className="m-0">{product.name}</p>
                         <p className="m-0">Color: {product.color}</p>
+                        <p className="m-0">Talle: {product.size}</p>
                         <p className="pb-4 m-0">Precio: ${product.price}.00</p>
                         <div className="d-flex m-2 qtyDiv">
                           <button
