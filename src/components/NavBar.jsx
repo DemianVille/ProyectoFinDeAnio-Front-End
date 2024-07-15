@@ -65,7 +65,7 @@ export default function NavBar() {
                   </div>
                 ))}
               </Nav>
-              <Nav>
+              <Nav className="userInfo">
                 {token === null ? (
                   <div className="d-flex justify-content-center align-items-center">
                     <Link
@@ -89,8 +89,6 @@ export default function NavBar() {
                     </Link>
                   </div>
                 )}
-              </Nav>
-              <Nav>
                 <Link className="nav-link cartNavBtn" to={"/carrito"}>
                   <i className="bi bi-bag-fill navIcon"></i>
                 </Link>

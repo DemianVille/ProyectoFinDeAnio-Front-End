@@ -616,6 +616,15 @@ html {
 
 /* Cart */
 
+.userInfo{
+  width: 300px;
+  justify-content: right;
+}
+
+.homeInfo{
+  width: 300px;
+}
+
 .cartNavBtn {
   display: inline-block;
   align-self: center;
