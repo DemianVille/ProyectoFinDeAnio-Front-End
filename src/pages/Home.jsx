@@ -17,7 +17,6 @@ const url = import.meta.env.VITE_URL;
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-  const [productsCarousel, setProductsCarousel] = useState([]);
   const [xs, setXs] = useState("");
   const [s, setS] = useState("");
   const [m, setM] = useState("");

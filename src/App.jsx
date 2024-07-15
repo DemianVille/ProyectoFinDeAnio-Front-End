@@ -11,8 +11,15 @@ import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import "react-toastify/dist/ReactToastify.css";
 import Error404 from "./components/Error404";
+import { useSelector, useDispatch } from "react-redux";
+import { cleanCart } from "./redux/cartReducer";
 
 function App() {
+  const token = useSelector((state) => state.token);
+  const dispatch = useDispatch();
+
+  !token && dispatch(cleanCart());
+
   const router = createBrowserRouter([
     {
       path: "/",

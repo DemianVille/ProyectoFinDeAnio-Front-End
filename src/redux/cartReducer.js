@@ -42,10 +42,15 @@ const cartSlice = createSlice({
           !(item.id === itemToDelete.id && item.color === itemToDelete.color)
       );
     },
+    cleanCart(state, action) {
+      const initialState = [];
+      return initialState;
+    },
   },
 });
 
 const { actions, reducer } = cartSlice;
 
-export const { addProduct, addOne, decreaseOne, deleteProduct } = actions;
+export const { addProduct, addOne, decreaseOne, deleteProduct, cleanCart } =
+  actions;
 export default reducer;
