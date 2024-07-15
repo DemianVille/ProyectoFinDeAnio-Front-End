@@ -161,6 +161,12 @@ html {
   color: black;
 }
 
+.sizeBtn{
+  border: 1px solid rgb(163, 163, 163);
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
 .styleButton {
   border: none;
   background-color: transparent;
@@ -340,10 +346,6 @@ html {
 }
 .continueShoppingBtn:hover {
   background-color: #131313;
-  border-radius: 0;
-  color: white;
-  border: none;
-  padding: 20px;
 }
 
 /* Product */
@@ -513,12 +515,10 @@ html {
 .cancelarBtn:hover {
   background-color: rgba(114, 221, 185, 0.568);
   color: #1d1d1d;
-  transition: all 0.2s ease-in-out;
 }
 
 .deleteUserBtn:hover {
   background-color: rgba(255, 91, 91, 0.705);
-  padding: 20px;
 }
 
 .deleteUserBtn {
@@ -526,7 +526,18 @@ html {
   color: #000;
   transition: all 0.2s ease-in-out;
   border: none;
+}
+
+.goToHomeBtn{
+  background-color: rgba(97, 238, 191, 0.568);
+  border: none;
   transition: all 0.2s ease-in-out;
+  color: #000;
+}
+
+.goToHomeBtn:hover{
+  background-color: rgba(114, 221, 185, 0.568);
+  color: #1d1d1d;
 }
 
 .ingresarBtn,
@@ -536,6 +547,7 @@ html {
   border: none;
   border-radius: 0;
   color: #000;
+  transition: all 0.2s ease-in-out;
 }
 
 .googleBtn:hover {
@@ -631,6 +643,7 @@ html {
 .backToHomePage:hover {
   color: black;
   background-color: rgba(114, 221, 185, 0.568);
+  transition: all 0.2s ease-in-out;
 }
 
 .comprarBtn,

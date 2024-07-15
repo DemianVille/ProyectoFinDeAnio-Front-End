@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "../components/Footer";
 import axios from "axios";
 import NavBar from "../components/NavBar";
-import { Link } from "react-router-dom";
-import { Container, Form, Row, Col } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Container, Form, Row, Col, Modal } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 const url = import.meta.env.VITE_URL;
 
@@ -12,21 +12,38 @@ export default function Checkout() {
   const products = useSelector((state) => state.cart);
   const user = useSelector((state) => state.token.user);
   const token = useSelector((state) => state.token.token);
+  const [show, setShow] = useState(false);
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
   const [apartment, setApartment] = useState("");
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [company, setCompany] = useState("");
   const [postCode, setPostCode] = useState("");
   const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [userId, setUserId] = useState(0);
+  const [address, setAddress] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [creditCard, setCreditCard] = useState("");
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const [cvv, setCvv] = useState("");
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const notify = () => {
     toast.warn("En desarrollo");
   };
+  const orderSuccess = () => {
+    toast.success("Compra realizada con éxito");
+  };
+  const orderProblem = () => {
+    toast.warn("Hubo un problema con su compra");
+  };
+  const orderFill = () => {
+    toast.warn("Completa todos los campos");
+  };
+
+  const navigate = useNavigate();
 
   const initialValue = 0;
   const totalPrice = products.reduce(
@@ -51,10 +68,26 @@ export default function Checkout() {
       };
 
       const response = await axios(`${url}orders`, options);
+      if (response.data.message === "Order received.") {
+        handleShow();
+      } else {
+        orderProblem();
+      }
     } catch (err) {
       console.error(err);
     }
   };
+
+  const handleOrder = async () => {
+    setUserId(user.id);
+    setAddress(`${country} ${city} ${street} ${apartment} ${postCode}`);
+  };
+
+  useEffect(() => {
+    if (userId && address) {
+      addOrder();
+    }
+  }, [userId, address]);
 
   return (
     <>
@@ -74,6 +107,8 @@ export default function Checkout() {
                   type="text"
                   placeholder="XXXX-XXXX-XXXX-XXXX"
                   aria-label="Tarjeta"
+                  value={creditCard}
+                  onChange={(e) => setCreditCard(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="name">
@@ -82,6 +117,8 @@ export default function Checkout() {
                   type="text"
                   placeholder="Juan Perez"
                   aria-label="Nombre"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </Form.Group>
               <Row className="mb-3">
@@ -91,6 +128,8 @@ export default function Checkout() {
                     type="date"
                     placeholder="Fecha de expiración"
                     aria-label="Expiración"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                   />
                 </Col>
                 <Col>
@@ -99,6 +138,8 @@ export default function Checkout() {
                     type="text"
                     placeholder="123"
                     aria-label="CVV"
+                    value={cvv}
+                    onChange={(e) => setCvv(e.target.value)}
                   />
                 </Col>
               </Row>
@@ -197,12 +238,22 @@ export default function Checkout() {
               </Link>
               <button
                 className="continueShoppingBtn"
-                onClick={async () => {
-                  await setUserId(user.id);
-                  await setAddress(
-                    `${country} ${city} ${street} ${apartment} ${postCode}`
-                  );
-                  await addOrder();
+                onClick={() => {
+                  if (
+                    country === "" ||
+                    city === "" ||
+                    street === "" ||
+                    postCode === "" ||
+                    phone === "" ||
+                    creditCard === "" ||
+                    name === "" ||
+                    date === "" ||
+                    cvv === ""
+                  ) {
+                    orderFill();
+                  } else {
+                    handleOrder();
+                  }
                 }}
               >
                 Terminar compra
@@ -235,6 +286,27 @@ export default function Checkout() {
       </Container>
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
+      <Modal show={show}>
+        <Modal.Body>
+          <h2 className="text-center">Compra realizada con éxito</h2>
+        </Modal.Body>
+        <Modal.Footer>
+          <h4 className="text-center w-100">¿Volver al inicio?</h4>
+          <div className="w-100 d-flex align-items-center justify-content-between">
+            <button className="mt-2 p-2 crearBtn" onClick={handleClose}>
+              Cerrar
+            </button>
+            <button
+              className="mt-2 p-2 goToHomeBtn"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Seguir comprando
+            </button>
+          </div>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

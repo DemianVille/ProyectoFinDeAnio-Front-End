@@ -211,7 +211,7 @@ export default function User() {
                       saved();
                     }}
                   >
-                    <small>Guardar cambios</small>
+                    Guardar cambios
                   </button>
                 </div>
               </div>
