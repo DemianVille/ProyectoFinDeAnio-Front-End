@@ -222,7 +222,7 @@ export default function Product() {
                           setM("");
                           setL("");
                           setXl("");
-                          setSize("xs");
+                          setSize("XS");
                         }}
                         className={`sizeBtn mx-1 ${
                           xs === "selected" && "selected"
@@ -237,7 +237,7 @@ export default function Product() {
                           setM("");
                           setL("");
                           setXl("");
-                          setSize("s");
+                          setSize("S");
                         }}
                         className={`sizeBtn mx-1 ${
                           s === "selected" && "selected"
@@ -252,7 +252,7 @@ export default function Product() {
                           setM("selected");
                           setL("");
                           setXl("");
-                          setSize("m");
+                          setSize("M");
                         }}
                         className={`sizeBtn mx-1 ${
                           m === "selected" && "selected"
@@ -267,7 +267,7 @@ export default function Product() {
                           setM("");
                           setL("selected");
                           setXl("");
-                          setSize("l");
+                          setSize("L");
                         }}
                         className={`sizeBtn mx-1 ${
                           l === "selected" && "selected"
@@ -282,7 +282,7 @@ export default function Product() {
                           setM("");
                           setL("");
                           setXl("selected");
-                          setSize("xl");
+                          setSize("XL");
                         }}
                         className={`sizeBtn mx-1 ${
                           xl === "selected" && "selected"

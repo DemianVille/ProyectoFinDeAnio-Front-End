@@ -65,33 +65,35 @@ export default function NavBar() {
                   </div>
                 ))}
               </Nav>
-              <Nav className="userInfo">
-                {token === null ? (
-                  <div className="d-flex justify-content-center align-items-center">
-                    <Link
-                      className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
-                      to={"/ingresar"}
-                    >
-                      Ingresar
-                    </Link>
+              <Nav>
+                <div className="userInfo">
+                  {token === null ? (
+                    <div className="d-flex justify-content-center align-items-center">
+                      <Link
+                        className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
+                        to={"/ingresar"}
+                      >
+                        Ingresar
+                      </Link>
 
-                    <Link
-                      className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
-                      to={"/registrarse"}
-                    >
-                      Registrarse
-                    </Link>
-                  </div>
-                ) : (
-                  <div className="d-flex justify-content-center align-items-center">
-                    <Link className="nav-link cartNavBtn" to={"/usuario"}>
-                      <i class="bi bi-person-fill userNavBtn navIcon"></i>
-                    </Link>
-                  </div>
-                )}
-                <Link className="nav-link cartNavBtn" to={"/carrito"}>
-                  <i className="bi bi-bag-fill navIcon"></i>
-                </Link>
+                      <Link
+                        className="nav-link mx-2 p-0 active text-center userNavBtn fs-5"
+                        to={"/registrarse"}
+                      >
+                        Registrarse
+                      </Link>
+                    </div>
+                  ) : (
+                    <div className="d-flex justify-content-center align-items-center">
+                      <Link className="nav-link cartNavBtn" to={"/usuario"}>
+                        <i class="bi bi-person-fill userNavBtn navIcon"></i>
+                      </Link>
+                    </div>
+                  )}
+                  <Link className="nav-link cartNavBtn" to={"/carrito"}>
+                    <i className="bi bi-bag-fill navIcon"></i>
+                  </Link>
+                </div>
               </Nav>
             </Navbar.Collapse>
           </Collapse>
