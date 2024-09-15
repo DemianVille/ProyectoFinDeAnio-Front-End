@@ -28,6 +28,7 @@ export default function Categories() {
   const notify = () => {
     toast.warn("En desarrollo");
   };
+  console.log(url);
 
   useEffect(() => {
     const getCategory = async () => {
