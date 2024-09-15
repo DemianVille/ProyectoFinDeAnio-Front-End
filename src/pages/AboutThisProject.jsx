@@ -103,7 +103,7 @@ export default function AboutThisProject() {
                     <li>Contraseña: 123</li>
                   </ul>
                   <Link
-                    to={"http://localhost:5174/admin/login"}
+                    to={"https://copellia-admin.vercel.app/admin/login"}
                     target="blank_"
                   >
                     <button className="loginAdmin py-2 px-3 mt-5">
