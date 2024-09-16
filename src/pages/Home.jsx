@@ -100,7 +100,7 @@ export default function Home() {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration="1100"
-                src="/public/img/CatHombresImg.png"
+                src="/img/CatHombresImg.png"
               />
             </Link>
           </Col>
@@ -112,7 +112,7 @@ export default function Home() {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration="1100"
-                src="/public/img/CatDanzaImg.png"
+                src="/img/CatDanzaImg.png"
               />
             </Link>
           </Col>

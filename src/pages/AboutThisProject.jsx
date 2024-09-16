@@ -56,7 +56,7 @@ export default function AboutThisProject() {
                     data-aos-delay="3000"
                     data-aos-offset="500"
                     data-aos-duration="1100"
-                    src="/public/img/gifCompra.gif"
+                    src="/img/gifCompra.gif"
                   />
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function AboutThisProject() {
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration="1100"
-                    src="/public/img/coding.gif"
+                    src="/img/coding.gif"
                   />
                 </div>
               </div>
@@ -116,14 +116,14 @@ export default function AboutThisProject() {
           </Row>
         </header>
       </Container>
-      <Image className="w-100 fluid py-5" src="/public/img/Excalidraw.jpg" />
+      <Image className="w-100 fluid py-5" src="/img/Excalidraw.jpg" />
       <Container>
         <section className="pt-5">
           <Row className="d-flex" id="aboutUs">
             <Col xs={12} lg={5}>
               <Image
                 className="w-100 pt-4"
-                src="/public/img/UserFlow.png"
+                src="/img/UserFlow.png"
               ></Image>
             </Col>
             <Col xs={12} lg={7}>
@@ -131,7 +131,7 @@ export default function AboutThisProject() {
                 <div className="ourPhotosContainer">
                   <Image
                     className="ourPhotos"
-                    src="/public/img/AnthonyPiñeyro.jpg"
+                    src="/img/AnthonyPiñeyro.jpg"
                   />
                 </div>
                 <Col className="p-3 pt-5">
@@ -161,7 +161,7 @@ export default function AboutThisProject() {
                 <div className="ourPhotosContainer">
                   <Image
                     className="ourPhotos"
-                    src="/public/img/SofíaRovati.jpg"
+                    src="/img/SofíaRovati.jpg"
                   />
                 </div>
               </Col>
@@ -169,7 +169,7 @@ export default function AboutThisProject() {
                 <div className="ourPhotosContainer">
                   <Image
                     className="ourPhotos"
-                    src="/public/img/DemianBrinvillePiquinela.jpg"
+                    src="/img/DemianBrinvillePiquinela.jpg"
                   />
                 </div>
                 <Col className="p-3 pt-5">
@@ -196,7 +196,7 @@ export default function AboutThisProject() {
                 <div className="ourPhotosContainer">
                   <Image
                     className="ourPhotos"
-                    src="/public/img/Alhena Latorre.jpg"
+                    src="/img/Alhena Latorre.jpg"
                   />
                 </div>
               </Col>

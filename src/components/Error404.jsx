@@ -69,7 +69,7 @@ export default function Error404() {
               </p>
               <p>Esta página no existe</p>
             </div>
-            <Image src="/public/img/Ballerina.png" />
+            <Image src="/img/Ballerina.png" />
             <br />
             <Link to={"/"}>
               <button className="backToHomePage p-2 my-2">

@@ -89,7 +89,7 @@ export default function Footer() {
                 >
                   <img
                     className="pb-1"
-                    src="/public/img/facebookLogo.svg"
+                    src="/img/facebookLogo.svg"
                     alt="Facebook Logo"
                   />{" "}
                   Facebook
@@ -103,7 +103,7 @@ export default function Footer() {
                 >
                   <img
                     className="pb-1"
-                    src="/public/img/twitterLogo.svg"
+                    src="/img/twitterLogo.svg"
                     alt="Facebook Logo"
                   />{" "}
                   Twitter
@@ -117,7 +117,7 @@ export default function Footer() {
                 >
                   <img
                     className="pb-1"
-                    src="/public/img/instagramLogo.svg"
+                    src="/img/instagramLogo.svg"
                     alt="Facebook Logo"
                   />{" "}
                   Instagram
