@@ -110,7 +110,7 @@ export default function Login() {
                     Ingresar con Google
                     <img
                       className="boton"
-                      src="/src/assets/googleLogo.svg"
+                      src="/public/img/googleLogo.svg"
                       alt="Google Logo"
                     />
                   </button>
@@ -122,7 +122,7 @@ export default function Login() {
                     Ingresar con Facebook
                     <img
                       className="boton"
-                      src="/src/assets/facebookLogo.svg"
+                      src="/public/img/facebookLogo.svg"
                       alt="Facebook Logo"
                     />
                   </button>
@@ -134,7 +134,7 @@ export default function Login() {
                     Ingresar con Apple
                     <img
                       className="boton"
-                      src="/src/assets/appleLogo.svg"
+                      src="/public/img/appleLogo.svg"
                       alt="Apple Logo"
                     />
                   </button>
